@@ -1,0 +1,3125 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " site-uuid="86b376c5-ohhh-eeee-ahhh-oooo443540e3" site-env="prod" site-file="/mnt/www/html/uwmed/docroot/modules/custom/uwmcs_utils/uwmcs_utils.module">
+  <head>
+      <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b55cc6ce81",applicationID:"55451763"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="title" content="About UW School of Medicine | UW Medicine" />
+<link rel="canonical" href="https://www.uwmedicine.org/school-of-medicine/about" />
+<meta name="twitter:card" content="summary" />
+<meta property="og:site_name" content="UW Medicine" />
+<meta name="twitter:title" content="About UW School of Medicine" />
+<meta name="twitter:site" content="@uwmedicine" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.uwmedicine.org//school-of-medicine/about" />
+<meta property="og:title" content="About UW School of Medicine | UW Medicine" />
+<meta name="twitter:url" content="https://www.uwmedicine.org//school-of-medicine/about" />
+<link rel="apple-touch-icon" sizes="180x180" href="/sites/stevie/files/favicons/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/sites/stevie/files/favicons/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/sites/stevie/files/favicons/favicon-16x16.png"/>
+<link rel="manifest" href="/sites/stevie/files/favicons/site.webmanifest"/>
+<link rel="mask-icon" href="/sites/stevie/files/favicons/safari-pinned-tab.svg" color="#5bbad5"/>
+<meta name="msapplication-TileColor" content="#da532c"/>
+<meta name="theme-color" content="#ffffff"/>
+<meta name="favicon-generator" content="Drupal responsive_favicons + realfavicongenerator.net" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "https://www.uwmedicine.org#webpage",
+            "author": {
+                "@type": "Organization",
+                "@id": "https://www.uwmedicine.org#organization",
+                "name": "UW Medicine",
+                "url": "https://www.uwmedicine.org"
+            },
+            "isAccessibleForFree": "True"
+        },
+        {
+            "@type": "MedicalOrganization",
+            "@id": "https://www.uwmedicine.org#organization",
+            "name": "UW Medicine",
+            "url": "https://www.uwmedicine.org",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1 (206) 520-5000",
+                "contactType": "Customer service"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.uwmedicine.org#website",
+            "name": "UW Medicine",
+            "url": "https://www.uwmedicine.org",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "query": "https://www.uwmedicine.org/search?s={search_term_string}",
+                "query-input": "required name=search_term_string",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://www.uwmedicine.org/search?s={search_term_string}"
+                }
+            }
+        }
+    ]
+}</script>
+<link rel="revision" href="/school-of-medicine/about" />
+<script src="/sites/stevie/files/google_tag/google_tag.script.js?q2h8dj"></script>
+
+        <title>About UW School of Medicine | UW Medicine</title>
+    
+  <link rel="stylesheet" href="/sites/stevie/files/css/css_PXKyJUac5CjOsyl7xA6aCmq51JomRky41Sc9wSdnkNM.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/modules/custom/uwmcs_utils/assets/uwm_page.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/sites/stevie/files/css/css_v52pnKvzGMwJsCsbQob1gLXKl-3n3S7iFQHISwvruAA.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/sites/stevie/files/css/css_nTRHARe-dDn68ifuYiay34OPb2R121jq-Lfsn4ipcQc.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Encode+Sans:300,400,500,600,700|Open+Sans:300,300i,400,400i,600,600i,700,700i" media="all" />
+
+  
+<!--[if lte IE 8]>
+<script src="/sites/stevie/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  </head>
+  <body  class="path-node-20916 user-role-anonymous is-path-node is-page-node-type-uwm-hub-page">
+      
+<a href="#main-content" class="skip-link visually-hidden visually-hidden--focusable">
+      Skip to main content
+  </a>
+  
+
+<header class="uwm-header">
+    <nav class="navbar navbar-expand-md flex-md-column">
+    <div class="purple container-fluid">
+
+                        <a class="navbar-brand" href="/" title="Home" rel="home">
+                <img src="/themes/custom/uwmbase/dist/images/uw-medicine-logo.svg"
+                     height="21" width="158" alt="UW Medicine">
+            </a>
+
+                          <button type="button" class="navbar-toggler ml-auto text-white"
+                        data-toggle="collapse"
+                        data-target=".search-collapse">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+
+                <button type="button" class="navbar-toggler text-white"
+                        data-toggle="collapse"
+                        data-target="#mainNavigationMobile"
+                        aria-controls="mainNavigationMobile" aria-expanded="false" aria-label="Toggle main navigation">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+
+
+                    
+
+        <div id="quickLinksNavigation" class="uwm-quick-links ml-auto d-none d-md-block">
+            <ul class="navbar-nav">
+            <li><a href="/patient-care/ecare">eCare Patient Portal</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="http://providerresource.uwmedicine.org/">For Providers</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/research">Research</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/school-of-medicine">School of Medicine</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/about/contact-us">Contact Us</a></li>
+                </ul>
+
+    </div>
+        <div class="d-none d-lg-block">
+            <form class="form-inline header-search-form"
+                  action="/search" accept-charset="UTF-8" method="get">
+
+                <div class="input-group header-search">
+
+                    <input name="s" type="text" class="form-control" value=""
+                           aria-label="Search terms" autocomplete="off">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+
+                </div>
+
+            </form>
+
+        </div>
+        <button type="button" class="navbar-toggler d-none d-md-inline-block d-lg-none text-white"
+            data-toggle="collapse"
+            data-target=".search-collapse">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <div class="search-collapse collapse">
+
+    <form class="form-inline header-search-form"
+          action="/search" accept-charset="UTF-8" method="get">
+        <div class="input-group">
+            <i class="fa fa-search uw-fa" aria-hidden="true"></i>
+            <input name="s" title="Search" type="text"
+                    class="form-control"
+                    aria-label="Search terms" value="" autocomplete="off">
+            <button type="button" class="navbar-toggler uw-fa"
+                    data-toggle="collapse"
+                    data-target=".search-collapse">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </form>
+    </div>
+
+    <div class="white container-fluid p-md-0 pl-lg-3">
+            
+            
+            
+
+    <div id="mainNavigation" class="collapse navbar-collapse uwm-main-navigation">
+        <ul class="navbar-nav mr-auto">
+                             <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find care"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find care
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find care">
+                                    <a class="dropdown-item" href="/services/urgent-care">Urgent care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/primary-care">Primary care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/services/virtual-clinic">Virtual clinic <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/emergency-medicine">Emergency rooms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties">Medical specialties <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/providers">Find a provider <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                    <i class="uw-b"></i>
+                                    <li class="nav-item"><a class="nav-link" href="/patient-care/making-an-appointment">Make an appointment <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        
+                    <i class="uw-b"></i>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find health &amp; patient resources"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find health &amp; patient resources
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find health &amp; patient resources">
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/">Conditions and symptoms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/Wellness/">Prevention and wellness <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">Patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/patient-education">Patient education <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                    <i class="uw-b"></i>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-I want to..."
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">I want to...
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-I want to...">
+                                    <a class="dropdown-item" href="https://www.uwmedicine.org/patient-resources/make-an-appointment">Make an appointment <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-care/ecare">Sign up or sign in for eCare <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/billing-and-insurance">Pay my bill  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/access-medical-records-images">Access medical records and images  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/interpreter-services">Find an interpreter  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/pharmacy-locations">Find a pharmacy <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">View all patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/provider-resource/refer-patient">Refer a patient <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                        </ul>
+    </div>
+
+    <div id="mainNavigationMobile" class="collapse navbar-collapse uwm-main-navigation-mobile d-md-none">
+        <ul class="navbar-nav mr-auto">
+                             <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find care"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find care
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find care">
+                                    <a class="dropdown-item" href="/services/urgent-care">Urgent care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/primary-care">Primary care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/services/virtual-clinic">Virtual clinic <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/emergency-medicine">Emergency rooms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties">Medical specialties <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/providers">Find a provider <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                                    <li class="nav-item"><a class="nav-link" href="/patient-care/making-an-appointment">Make an appointment <i class="fa fa-angle-right"
+                        aria-hidden="true"></i></a></li>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find health &amp; patient resources"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find health &amp; patient resources
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find health &amp; patient resources">
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/">Conditions and symptoms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/Wellness/">Prevention and wellness <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">Patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/patient-education">Patient education <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-I want to..."
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">I want to...
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-I want to...">
+                                    <a class="dropdown-item" href="https://www.uwmedicine.org/patient-resources/make-an-appointment">Make an appointment <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-care/ecare">Sign up or sign in for eCare <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/billing-and-insurance">Pay my bill  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/access-medical-records-images">Access medical records and images  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/interpreter-services">Find an interpreter  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/pharmacy-locations">Find a pharmacy <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">View all patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/provider-resource/refer-patient">Refer a patient <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                        </ul>
+
+        
+
+        <div class="make-a-gift-navigation">
+                    <div class="wrapper">
+
+                        <div class="gift-btn btn btn--border btn--primary btn--animated">
+                            <div class="uw-ac"></div>
+                            <a href="http://www.acceleratemed.org/give/?source=MEDXCL,MDNOVT,UWMEDS,HCMISS,ADISUN,NWMEDI,VALLEY,MEDNEI,AIRFUN">Make a Gift
+                                &nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+        
+
+        <div class="uwm-quick-links">
+            <ul class="navbar-nav">
+            <li><a href="/patient-care/ecare">eCare Patient Portal</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="http://providerresource.uwmedicine.org/">For Providers</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/research">Research</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/school-of-medicine">School of Medicine</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/about/contact-us">Contact Us</a></li>
+                </ul>
+
+        </div>
+    </div>
+
+
+                        <div id="makeAGift" class="uwm-make-a-gift-button ml-auto d-none d-md-block">
+            
+
+    
+        <ul class="navbar-nav">
+                    <li> 
+            <a href="http://www.acceleratemed.org/give/?source=MEDXCL%2CMDNOVT%2CUWMEDS%2CHCMISS%2CADISUN%2CNWMEDI%2CVALLEY%2CMEDNEI%2CAIRFUN">
+            <i class="u-a" aria-hidden="true"></i>
+            Make a Gift
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+                </ul>
+
+
+
+        </div>
+        
+        </div>
+    <div class="row shadow"></div>
+
+
+    
+    </nav>
+</header>
+
+
+  <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRG725G" height="0" width="0" title="Google Tag Manager"></iframe></noscript>
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+        
+
+
+
+    <div id="main-container" role="main"  class="main-container uwm-accent-color__light-purple
+">
+                                            
+
+
+
+                    
+                                                
+                            <a id="main-content"></a>
+            
+
+  
+    
+
+  <article class=""  role="article" about="/school-of-medicine/about" class="node node-uwm_hub_page view-mode-full">
+
+        
+      
+            <div class="field field--name-field-uwm-hero field--type-entity-reference-revisions field--label-hidden field__item">
+
+
+
+
+  <div class="paragraph paragraph--type--uwm-image-hero paragraph--view-mode--default" id="ppg-17441">
+    <div class="uwm-image-hero__background" style="background-image: url(/sites/stevie/files/2018-11/about-hero.jpg)">
+                <div class="container container-xl">
+          <div class="row uwm-image-hero justify-content-between">
+            <div class="uwm-image-hero__content col-lg-8">
+              <h1 class="uwm-image-hero__heading">About UW School of Medicine</h1>
+            </div>
+                        <div
+              class="uwm-image-hero__links-with-icon__desktop col-lg-3">
+              <ul class="uwm-links-with-icon__list list-unstyled">
+      
+    <li class="uwm-links-with-icon__item" id="ppg-17446">
+                    <a href="/school-of-medicine/admissions" class="uwm-cta cta-to-school-of-medicine-admissions cta-from-school-of-medicine-about btn btn-default" data-context-title="Admissions"><span class="btn__text">Apply</span><span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span></a>            </li>
+
+      
+    <li class="uwm-links-with-icon__item" id="ppg-17451">
+                    <a href="/school-of-medicine/contact" class="uwm-cta cta-to-school-of-medicine-contact cta-from-school-of-medicine-about btn btn-default" data-context-title="Contact UW School of Medicine"><span class="btn__text">Contact</span><span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span></a>            </li>
+
+      
+    <li class="uwm-links-with-icon__item" id="ppg-17456">
+                    <a href="/school-of-medicine/gme" class="uwm-cta cta-to-school-of-medicine-gme cta-from-school-of-medicine-about btn btn-default" data-context-title="Graduate Medical Education"><span class="btn__text">Graduate Medical Education</span><span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span></a>            </li>
+
+      
+    <li class="uwm-links-with-icon__item" id="ppg-17461">
+                    <a href="/school-of-medicine/md-program" class="uwm-cta cta-to-school-of-medicine-md-program cta-from-school-of-medicine-about btn btn-default" data-context-title="M.D. Program"><span class="btn__text">M.D. Program</span><span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span></a>            </li>
+
+      
+    <li class="uwm-links-with-icon__item" id="ppg-17466">
+                    <a href="/school-of-medicine/phd-program" class="uwm-cta cta-to-school-of-medicine-phd-program cta-from-school-of-medicine-about btn btn-default" data-context-title="Biomedical Graduate Education Programs"><span class="btn__text">Ph.D. Program</span><span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span></a>            </li>
+
+  </ul>
+
+            </div>
+                      </div>
+        </div>
+              
+    </div>
+        <div class="image-hero__back-button col-xs-12">
+                <a href="/school-of-medicine"><i class="fa fa-angle-left"></i> Back
+                    to UW School of Medicine
+                    <i class="right-border-angle hidden-xs" aria-hidden="true"></i>
+                </a>
+            </div>
+      </div>
+
+      <div class="uwm-image-hero__links-with-icon container-xl p-0">       <ul class="uwm-links-with-icon__list list-unstyled">
+      
+    <li class="uwm-links-with-icon__item" id="ppg-17446">
+                    <a href="/school-of-medicine/admissions" class="uwm-cta cta-to-school-of-medicine-admissions cta-from-school-of-medicine-about btn btn-default" data-context-title="Admissions"><span class="btn__text">Apply</span><span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span></a>            </li>
+
+      
+    <li class="uwm-links-with-icon__item" id="ppg-17451">
+                    <a href="/school-of-medicine/contact" class="uwm-cta cta-to-school-of-medicine-contact cta-from-school-of-medicine-about btn btn-default" data-context-title="Contact UW School of Medicine"><span class="btn__text">Contact</span><span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span></a>            </li>
+
+      
+    <li class="uwm-links-with-icon__item" id="ppg-17456">
+                    <a href="/school-of-medicine/gme" class="uwm-cta cta-to-school-of-medicine-gme cta-from-school-of-medicine-about btn btn-default" data-context-title="Graduate Medical Education"><span class="btn__text">Graduate Medical Education</span><span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span></a>            </li>
+
+      
+    <li class="uwm-links-with-icon__item" id="ppg-17461">
+                    <a href="/school-of-medicine/md-program" class="uwm-cta cta-to-school-of-medicine-md-program cta-from-school-of-medicine-about btn btn-default" data-context-title="M.D. Program"><span class="btn__text">M.D. Program</span><span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span></a>            </li>
+
+      
+    <li class="uwm-links-with-icon__item" id="ppg-17466">
+                    <a href="/school-of-medicine/phd-program" class="uwm-cta cta-to-school-of-medicine-phd-program cta-from-school-of-medicine-about btn btn-default" data-context-title="Biomedical Graduate Education Programs"><span class="btn__text">Ph.D. Program</span><span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span></a>            </li>
+
+  </ul>
+
+    </div>
+  
+
+</div>
+      
+      <div class="field field--name-field-uwm-sections field--type-entity-reference-revisions field--label-hidden field__items">
+              
+<section class="uwm-section paragraph--view-mode--default paragraph--id--17471">
+
+    
+    
+  <div class="container-xl">
+
+              
+  <h2 class="field field--name-field-uwm-section-heading field--type-text">Founded in 1946, innovating every day since.</h2>
+
+    
+        
+      <div class="field field--name-field-uwm-component field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <div class="bs_grid container">
+<div class="row row-1">
+<div class="col-sm-4">
+<div class="content">
+<h3>Global Impact</h3>
+
+<p>Recognized for advancing medical knowledge through scientific research; UW Medicine scientists explore every aspect of health and disease, from the molecular mechanisms of gene action to population studies of global illnesses.</p>
+</div>
+</div>
+
+<div class="col-sm-4">
+<div class="content">
+<h3>Elevating Communities</h3>
+
+<p>Our graduates: physicians, scientists, allied health personnel and scholars in medical history and ethics, go on to serve in a wide variety of capacities. Many M.D. and physician assistant alumni practice in areas of need, such as rural towns, inner cities and in developing nations.</p>
+</div>
+</div>
+
+<div class="col-sm-4">
+<div class="content">
+<h3>Interdisciplinary Collaboration</h3>
+
+<p>Recognized for excellence in training primary care physicians and advancing medical knowledge through research, UW Medicine scientists, educators and clinicians are dedicated to helping each other reach the common goals of improving health and alleviating suffering from disease.</p>
+</div>
+</div>
+</div>
+</div>
+
+                      </div>
+      
+      </div>
+</div>
+          </div>
+  
+
+  </div>
+</section>
+
+              
+<section class="uwm-section paragraph--view-mode--default paragraph--id--17481 uwm-section--background-gray">
+
+    
+    
+  <div class="container-xl">
+
+              
+  <h2 class="field field--name-field-uwm-section-heading field--type-text">What makes the UW School of Medicine different?</h2>
+
+    
+        
+      <div class="field field--name-field-uwm-component field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+
+
+<div  class="paragraph paragraph--type--uwm-accordion paragraph--view-mode--default paragraph--id--17486">
+
+
+
+
+<div class="uwm-accordion uwm-acc-t-both" id="accordion-17486" role="tablist">
+
+        
+                        <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17486-1">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators 
+            w-100"
+                id="button-accordion-17486-1"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17486-1"
+                aria-expanded="true"
+                aria-controls="collapse-accordion-17486-1"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Mission and values
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17486-1" class="collapse show" role="tabpanel" data-parent="#accordion-17486" aria-labelledby="heading-accordion-17486-1">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>Our mission guides us to improve the health of the public by educating and empowering the next generation of physicians, researchers and stewards of wellness in the Pacific Northwest and beyond.</p>
+
+<p><a class="btn btn-cta" href="/school-of-medicine/about/mission">LEARN MORE</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17486-2">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17486-2"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17486-2"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17486-2"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>History
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17486-2" class="collapse " role="tabpanel" data-parent="#accordion-17486" aria-labelledby="heading-accordion-17486-2">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>The University of Washington School of Medicine (UWSOM) was founded in 1946. In the early 1970s, it formed a unique partnership with the states of Washington, Alaska, Montana and Idaho, adding Wyoming in 1996, to provide innovative and cost-effective medical education to this region known as WWAMI.</p>
+
+<p>Recognized for advancing medical knowledge through scientific research, UW Medicine scientists explore every aspect of health and disease, from the molecular mechanisms of gene action to population studies of global illnesses. Their work has contributed to improved understanding of the causes of disease and to better treatments and prevention of many disorders. </p>
+
+<p>Full-time physician faculty staff UW Medical Center and Harborview Medical Center, as well as the Veterans Affairs Puget Sound Health Care System and Seattle Children’s. UWSOM faculty also practice in UW Medicine Neighborhood Clinic locations throughout Puget Sound, and provide expert consultation to practicing physicians throughout the five-state region.</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17486-3">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17486-3"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17486-3"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17486-3"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Awards and rankings
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17486-3" class="collapse " role="tabpanel" data-parent="#accordion-17486" aria-labelledby="heading-accordion-17486-3">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>The University of Washington School of Medicine is consistently recognized as one of the nation's top schools for training physicians, and one of the nation’s leading research institutions. In 2018, <em>U.S. News &amp; World Report </em>ranked UWSOM as No. 3 in the nation for primary care education.</p>
+
+<p><a class="btn btn-cta" href="/school-of-medicine/about/awards">LEARN MORE</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17486-4">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17486-4"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17486-4"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17486-4"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Commitment to equity, diversity and inclusion
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17486-4" class="collapse " role="tabpanel" data-parent="#accordion-17486" aria-labelledby="heading-accordion-17486-4">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>The UWSOM is committed to building and sustaining a multicultural community that fosters equity, diversity and inclusion. We believe that this is achieved by intentionally creating opportunities for involvement, participation and growth for each individual and by nurturing a positive institutional climate through professional development, education, policy and practice.</p>
+
+<p><a class="btn btn-cta" href="/school-of-medicine/about/diversity-commitment">LEARN MORE</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17486-5">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17486-5"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17486-5"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17486-5"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Continuous Professionalism Improvement
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17486-5" class="collapse " role="tabpanel" data-parent="#accordion-17486" aria-labelledby="heading-accordion-17486-5">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>The UW School of Medicine is committed to the promotion of professionalism in our community of faculty, staff, trainees and students. To support this, the Committee for Continuous Professionalism Improvement (CPI) was created in 2007 by Dr. Paul Ramsey. The CPI Committee is charged with overseeing and promoting professionalism throughout the medical school and all teaching sites.</p>
+
+<p><a class="btn btn-cta" href="/school-of-medicine/about/continuous-professional-improvement">Learn more</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17486-6">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17486-6"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17486-6"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17486-6"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>WWAMI - The only five-state medical school in the country
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17486-6" class="collapse " role="tabpanel" data-parent="#accordion-17486" aria-labelledby="heading-accordion-17486-6">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p> </p>
+
+<ul><li>The <a href="https://www.uwmedicine.org/education/md-program/wwami">WWAMI (Washington, Wyoming, Alaska, Montana and Idaho</a>) states make up 27% of the land mass of the United States but contain only 3.3% of the population.</li>
+	<li>UW School of Medicine is the only medical school for the five-state WWAMI region, and the only five-state medical school in the country.</li>
+	<li>The school is nationally recognized for its innovative regional training program.</li>
+	<li>Students from <a href="http://www.uwyo.edu/WWAMI/index.html">Wyoming</a>, <a href="http://www.uaa.alaska.edu/wwami/index.cfm">Alaska</a>, <a href="http://www.montana.edu/wwwwami/">Montana</a> and <a href="http://www.uidaho.edu/academics/wwami/">Idaho</a> complete the Foundations phase of the curriculum in small learning groups in their respective home states.</li>
+	<li>Students from Washington attend their Foundations phase in Seattle or Spokane.</li>
+	<li><a href="https://education.uwmedicine.org/curriculum/by-phase/patient-care/">Regional Clerkship Sites</a>: UWSOM prides itself on the depth and breadth of excellent clinical educational opportunities available throughout all of the five states that comprise WWAMI medical education program. The regional nature of our medical school allows our students to experience the entire gamut of medical care, both rural and urban, including private practice, community health care centers, community hospitals, tertiary care hospitals and quaternary care hospitals.</li>
+</ul><p><a class="btn btn-cta" href="/school-of-medicine/md-program/wwami">LEARN MORE</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17486-7">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17486-7"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17486-7"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17486-7"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>UW School of Medicine scope of clinical training
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17486-7" class="collapse " role="tabpanel" data-parent="#accordion-17486" aria-labelledby="heading-accordion-17486-7">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>The <a href="https://www.uwmedicine.org/education/about">UW School of Medicine</a> provides opportunities for <a href="https://www.uwmedicine.org/education/about/region-and-world">training with providers in all types of medical care settings</a>.</p>
+
+<ul><li><strong>Tertiary care</strong>- UW Medical Center; Seattle Children’s Hospital; VA Puget Sound Health Care System; Harborview Medical Center (level 1 trauma center)</li>
+	<li><strong>Affiliated Community Hospitals</strong></li>
+	<li><strong>Community Healthcare Centers </strong>(urban and rural)</li>
+	<li><strong>Private Practices </strong>(urban and rural)</li>
+	<li><strong>International Health Clinics </strong>(local and abroad)</li>
+	<li><strong>Indian Health Service Clinics </strong>A distinguishing characteristic of the UWSOM is interdisciplinary collaboration. Scientists, educators and clinicians are dedicated to helping each other reach the common goals of improving people's health and alleviating suffering from disease.</li>
+</ul>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17486-8">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17486-8"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17486-8"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17486-8"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Research opportunities
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17486-8" class="collapse " role="tabpanel" data-parent="#accordion-17486" aria-labelledby="heading-accordion-17486-8">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <ul><li>Since 1974, the UW School of Medicine has ranked consistently among the top three schools in receipt of National Institutes of Health (NIH) grant funding.</li>
+	<li>UWSOM is currently ranked tenth in the country among research-oriented medical schools.</li>
+	<li>A number of established and start-up biotechnology companies, including Zymogenetics and ICOS, have their roots in <a href="https://www.uwmedicine.org/Research/Pages/default.aspx">UW School of Medicine research</a>.</li>
+	<li><a href="https://www.uwmedicine.org/education/md-phd-program">M.D./Ph.D. Program (MSTP)</a> The Medical Scientist Training Program is designed for highly qualified candidates who wish to obtain both M.D. and Ph.D. degrees and to pursue careers in basic medical research.</li>
+	<li><a href="https://www.uwmedicine.org/education/phd-program">Ph.D. Programs</a> The UWSOM provides advanced scientific training toward Ph.D. degrees in biomedical research in a resource-rich, collaborative environment dedicated to scientific discovery.</li>
+</ul>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17486-9">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17486-9"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17486-9"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17486-9"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Rural programs
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17486-9" class="collapse " role="tabpanel" data-parent="#accordion-17486" aria-labelledby="heading-accordion-17486-9">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>Clinical experiences are available at 60 sites for required clerkships in addition to 120 RUOP sites and 15 WRITE sites. TRACKs are also available to allow students to spend an entire year in one WWAMI state.</p>
+
+<ul><li><a href="https://depts.washington.edu/fammed/education/programs/ruop/">RUOP</a>: Rural Underserved Opportunities Program, a four-week, elective immersion experience in community medicine for students between their first and second years of medical school.</li>
+	<li><a href="https://blogs.uw.edu/write/">WRITE</a>: WWAMI Rural Integrated Training Experience, a 20-week, rural clinical medical training experience for a pre-selected group of third-year medical students.</li>
+	<li>TRACK: WWAMI State Track Program, allows a select group of students to complete most of the required clerkships scheduled in one specific site/state throughout the WWAMI region during their third or fourth year of medical school.</li>
+	<li><a href="https://www.uwmedicine.org/education/md-program/admissions/trust">TRUST:</a> Our Targeted Rural Underserved Track Program is available in Washington, Wyoming, Alaska, Montana and Idaho and is an integrated program for students interested in rural or underserved medicine. Beginning the summer before medical school and continuing throughout the curriculum, TRUST scholars participate in clinical and classroom experiences, online discussions, and regional or national conferences, exposing them to the satisfaction, challenges and lifestyle of a physician practicing in rural and underserved areas.</li>
+</ul><p><a class="btn btn-cta" href="/school-of-medicine/admissions/rural-programs">LEARN MORE</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17486-10">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17486-10"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17486-10"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17486-10"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>The Colleges
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17486-10" class="collapse " role="tabpanel" data-parent="#accordion-17486" aria-labelledby="heading-accordion-17486-10">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>The UW School of Medicine has undergone many innovative changes over the past 40 years. <a href="https://www.uwmedicine.org/education/md-program/current-students/the-colleges">The Colleges </a>was incorporated to provide consistent mentoring in clinical skills, professionalism and patient-centered care. The Colleges structure helps make a large university intimate.</p>
+
+<ul><li>8 colleges</li>
+	<li>6-7 faculty mentors in each college</li>
+	<li>6-7 students per year for each faculty mentor</li>
+</ul>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17486-11">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17486-11"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17486-11"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17486-11"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Pathways Program
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17486-11" class="collapse " role="tabpanel" data-parent="#accordion-17486" aria-labelledby="heading-accordion-17486-11">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>Medical students can select one or more of <a href="https://www.uwmedicine.org/education/md-program/current-students/curriculum/programs/pathways">five pathways</a> to develop knowledge and skills specifically tailored to working with vulnerable populations here and abroad. Each Pathway allows students to organize their courses, clinical rotations and volunteer opportunities around a particular community, population, or aspect of underserved medicine with mentorship from faculty, staff and community providers and partners who share those interests. </p>
+
+<ul><li><a href="http://depts.washington.edu/fammed/education/programs/upath">Underserved Pathway</a></li>
+	<li><a href="http://cedi-web01.s.uw.edu/pathways-electives/indian-health-pathway/">Indian Health Pathway</a></li>
+	<li><a href="http://globalhealth.washington.edu/academics/certificates-and-fellowships/global-health-pathway-ghp">Global Health Pathway</a></li>
+	<li><a href="http://cedi-web01.s.uw.edu/pathways-electives/hispanic-health-pathway/">Hispanic Health Pathway</a></li>
+	<li><a href="http://depts.washington.edu/cedi/wp_cedi/lgbtq-health-pathway/">LGBTQ Pathway</a></li>
+</ul>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17486-12">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17486-12"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17486-12"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17486-12"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Policies and procedures
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17486-12" class="collapse " role="tabpanel" data-parent="#accordion-17486" aria-labelledby="heading-accordion-17486-12">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p> </p>
+
+<h5>M.D. Program policies</h5>
+
+<p><a class="btn btn-cta" href="/school-of-medicine/policies-procedures-reporting">LEARN MORE</a></p>
+
+<p> </p>
+
+<p> </p>
+
+<h5>Graduate Medical Education policies</h5>
+
+<p><a class="btn btn-cta" href="/school-of-medicine/policies-procedures-reporting/gme">LEARN MORE</a></p>
+
+<p> </p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+          </div>
+  
+
+  </div>
+</section>
+
+              
+<section class="uwm-section paragraph--view-mode--default paragraph--id--17601">
+
+    
+    
+  <div class="container-xl">
+
+              
+  <h2 class="field field--name-field-uwm-section-heading field--type-text"><a id="depts"></a>UW School of Medicine departments and programs</h2>
+
+    
+        
+      <div class="field field--name-field-uwm-component field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>Many of the departments listed below are linked to independent, departmentally or divisionally maintained websites. (MEDEX Northwest is the physician assistant training program.)</p>
+
+                      </div>
+      
+      </div>
+</div>
+              <div class="field__item">
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <div class="collapse show" id="viewMoreCollapse1">
+<div>
+<div class="bs_grid container">
+<div class="row row-1">
+<div class="col-md-4">
+<div class="content">
+<ul><li><a href="https://aid.uw.edu/">Allergy and Infectious Diseases (Dept. Of Medicine)</a></li>
+	<li><a href="http://depts.washington.edu/anesth/">Anesthesiology and Pain Medicine</a></li>
+	<li><a href="http://depts.washington.edu/biowww/">Biochemistry</a></li>
+	<li><a href="http://depts.washington.edu/bioe/">Bioengineering</a></li>
+	<li><a href="http://depts.washington.edu/bhdept/">Bioethics and Humanities</a></li>
+	<li><a href="http://www.biostr.washington.edu/">Biological Structure</a></li>
+	<li><a href="http://bime.uw.edu/">Biomedical Informatics and Medical Education</a></li>
+	<li><a href="https://cardiology.uw.edu/">Cardiology</a> (Dept. Of Medicine)</li>
+	<li><a href="http://depts.washington.edu/compmed/">Comparative Medicine</a></li>
+	<li><a href="http://medicine.uw.edu/">Department of Medicine</a></li>
+	<li><a href="http://depts.washington.edu/dermatol/">Dermatology</a> (Dept. Of Medicine)</li>
+	<li><a href="https://em.uw.edu/">Emergency Medicine</a></li>
+	<li><a href="https://depts.washington.edu/fammed/">Family Medicine</a></li>
+	<li><a href="http://www.uwgi.org/">Gastroenterology</a> (Dept. Of Medicine)</li>
+	<li><a href="http://depts.washington.edu/gim/">General Internal Medicine</a> (Dept. Of Medicine)</li>
+	<li><a href="http://www.gs.washington.edu/">Genome Sciences</a></li>
+	<li><a href="http://depts.washington.edu/geront/">Gerontology and Geriatric Medicine</a> (Dept. Of Medicine)</li>
+	<li><a href="https://depts.washington.edu/healthms"><span><span>Health Metrics Sciences</span></span></a></li>
+	<li><a href="http://depts.washington.edu/hemeweb/">Hematology</a> (Dept. Of Medicine)</li>
+</ul></div>
+</div>
+
+<div class="col-md-4">
+<div class="content">
+<ul><li><a href="http://globalhealth.washington.edu/">Global Health</a></li>
+	<li><a href="http://immunology.washington.edu./">Immunology</a></li>
+	<li><a href="http://depts.washington.edu/labweb/">Laboratory Medicine</a></li>
+	<li><a href="http://www.washington.edu/medicine/som/depts/medex/">MEDEX Northwest</a></li>
+	<li><a href="http://depts.washington.edu/medgen/">Medical Genetics</a> (Dept. Of Medicine)</li>
+	<li><a href="https://endocrinology.uw.edu/">Metabolism, Endocrinology and Nutrition</a> (Dept. Of Medicine)</li>
+	<li><a href="http://depts.washington.edu/micro/">Microbiology</a></li>
+	<li><a href="http://depts.washington.edu/nephron/">Nephrology</a> (Dept. Of Medicine)</li>
+	<li><a href="http://neurosurgery.washington.edu/">Neurological Surgery</a></li>
+	<li><a href="http://depts.washington.edu/neurolog/">Neurology</a></li>
+	<li><a href="http://depts.washington.edu/obgyn/">Obstetrics and Gynecology</a></li>
+	<li><a href="http://depts.washington.edu/oncology/">Oncology</a> (Dept. Of Medicine)</li>
+	<li><a href="http://ophthalmology.washington.edu/">Ophthalmology</a></li>
+	<li><a href="http://www.orthop.washington.edu/">Orthopaedics and Sports Medicine</a></li>
+	<li><a href="http://otolaryngology.uw.edu/">Otolaryngology / Head and Neck Surgery</a></li>
+	<li><a href="http://www.pathology.washington.edu/">Pathology</a></li>
+	<li><a href="http://www.washington.edu/medicine/pediatrics/">Pediatrics</a></li>
+	<li><a href="http://depts.washington.edu/phcol/">Pharmacology</a></li>
+	<li><a href="http://depts.washington.edu/pbiopage/">Physiology and Biophysics</a></li>
+	<li><a href="http://www.uwpsychiatry.org/">Psychiatry and Behavioral Sciences</a></li>
+	<li><a href="http://depts.washington.edu/pulmcc/">Pulmonary and Critical Care Medicine</a> (Dept. Of Medicine)</li>
+</ul></div>
+</div>
+
+<div class="col-md-4">
+<div class="content">
+<ul><li><a href="http://www.washington.edu/medicine/depts/radonc/index.html">Radiation Oncology</a></li>
+	<li><a href="http://www.rad.washington.edu/">Radiology</a></li>
+	<li><a href="http://rehab.washington.edu/">Rehabilitation Medicine</a></li>
+	<li><a href="http://depts.washington.edu/rheum/">Rheumatology</a> (Dept. Of Medicine)</li>
+	<li><a href="http://uwsurgery.org/">Department of Surgery</a></li>
+	<li><a href="http://www.uwsurgery.org/divisions/cardiothoracic-surgery/">Cardiothoracic</a></li>
+	<li><a href="http://www.uwsurgery.org/divisions/general-surgery/">General Surgery</a></li>
+	<li><a href="http://www.uwsurgery.org/divisions/trauma-and-burn/">HMC Trauma and Burn</a></li>
+	<li><a href="http://www.uwsurgery.org/divisions/pediatric-surgery/">Pediatric Surgery</a></li>
+	<li><a href="http://uwsurgery.org/divisions/plastic-surgery">Plastic Surgery</a></li>
+	<li><a href="http://uwsurgery.org/divisions/transplant-surgery">Transplantation</a></li>
+	<li><a href="http://uwsurgery.org/divisions/vascular-surgery">Vascular Surgery</a></li>
+	<li><a href="http://uwsurgery.org/divisions/va-health-care">VA Puget Sound Health Care Surgery</a></li>
+	<li><a href="http://depts.washington.edu/uroweb/">Urology</a></li>
+	<li><strong>Other Health Science Schools</strong>
+	<ul><li><a href="http://www.dental.washington.edu/">School of Dentistry</a></li>
+		<li><a href="http://nursing.uw.edu/">School of Nursing</a></li>
+		<li><a href="http://sop.washington.edu/">School of Pharmacy</a></li>
+		<li><a href="http://sph.washington.edu/">School of Public Health</a></li>
+		<li><a href="http://depts.washington.edu/sswweb/">School of Social Work</a></li>
+	</ul></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<p><a aria-controls="viewMoreCollapse1" aria-expanded="true" class="view-more-link" data-target="#viewMoreCollapse1" data-toggle="collapse" role="button">View Less</a></p>
+
+                      </div>
+      
+      </div>
+</div>
+          </div>
+  
+
+  </div>
+</section>
+
+              
+<section class="uwm-section paragraph--view-mode--default paragraph--id--17616">
+
+    
+    
+  <div class="container-xl">
+
+              
+  <h2 class="field field--name-field-uwm-section-heading field--type-text">Message from the UW School of Medicine Academic Affairs Deans</h2>
+
+    
+        
+      <div class="field field--name-field-uwm-component field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>The University of Washington School of Medicine is committed to providing support to all students—especially to those from marginalized groups—and to maintaining privacy of student records including immigration status. Furthermore, the school continues to be committed to accepting students covered under the Deferred Action for Childhood Arrivals (DACA), and supporting them once they matriculate.</p>
+
+<p>We also affirm UW President Ana Mari Cauce’s statement that we are “…proud to be the home to students, staff and scholars from around the world. We stand with them and will provide them with support as needed. We are fully committed to providing a safe, secure and welcoming environment that protects the privacy and human rights of all members of our community including DACA students. The UW Police Department does not and will not detain, question or arrest individuals solely because they lack documentation. Nor do they or will they inquire about immigration status when they detain, question or otherwise interact with people.”</p>
+
+<p>Please contact any one of us if you would like to discuss this or other related issues further.</p>
+
+                      </div>
+      
+      </div>
+</div>
+              <div class="field__item">
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <div class="bs_grid container">
+<div class="row row-1">
+<div class="col-md-6">
+<div class="content">
+<p><em>Suzanne Allen, MD, MPH, Vice Dean for Academic, Rural and Regional Affairs</em></p>
+
+<p><em>Raye Maestas, MD, Associate Dean for Student Affairs</em></p>
+
+<p><em>Sara Kim, PhD, Associate Dean for Educational Quality Improvement</em></p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="content">
+<p><em>Michael Ryan, MD, Associate Dean for Curriculum</em></p>
+
+<p><em>LeeAnna Muzquiz, MD, Associate Dean for Admissions</em></p>
+
+<p><em>Marj Wenrich, PhD, MPH, Associate Dean for Education Strategies</em></p>
+</div>
+</div>
+</div>
+</div>
+
+<p> </p>
+
+                      </div>
+      
+      </div>
+</div>
+          </div>
+  
+
+  </div>
+</section>
+
+              
+<section class="uwm-section paragraph--view-mode--default paragraph--id--17631 uwm-section--background-gray">
+
+    
+    
+  <div class="container-xl">
+
+              
+  <h2 class="field field--name-field-uwm-section-heading field--type-text">Meet our leaders</h2>
+
+    
+        
+      <div class="field field--name-field-uwm-component field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+
+
+<div  class="paragraph paragraph--type--uwm-accordion paragraph--view-mode--default paragraph--id--17636">
+
+
+
+
+<div class="uwm-accordion uwm-acc-t-both" id="accordion-17636" role="tablist">
+
+        
+                        <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17636-1">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators 
+            w-100"
+                id="button-accordion-17636-1"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17636-1"
+                aria-expanded="true"
+                aria-controls="collapse-accordion-17636-1"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Dean of the UW School of Medicine &amp; Chief Executive Officer, UW Medicine
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17636-1" class="collapse show" role="tabpanel" data-parent="#accordion-17636" aria-labelledby="heading-accordion-17636-1">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+
+  
+
+
+<div  class="paragraph paragraph--type--uwm-grid paragraph--view-mode--default paragraph--id--17646 uwm-grid container-xl">
+  <div class="uwm-grid__items row">
+          <div class="uwm-grid__item col-sm-6 col-lg-6">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/paul-ramsey.jpg?h=1f98bee8&amp;itok=0baFqT5q" width="140" height="174" alt="Ramsey-Paul" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong><a href="https://www.uwmedicine.org/bios/paul-ramsey">Paul G. Ramsey, M.D.</a></strong></h4>
+
+<p>Executive Vice President for Medical Affairs and Dean of the School of Medicine, University of Washington; CEO, UW Medicine</p></div>
+      
+      </div>
+
+      </div>
+      </div>
+</div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17636-2">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17636-2"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17636-2"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17636-2"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Vice Deans
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17636-2" class="collapse " role="tabpanel" data-parent="#accordion-17636" aria-labelledby="heading-accordion-17636-2">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+
+  
+
+
+<div  class="paragraph paragraph--type--uwm-grid paragraph--view-mode--default paragraph--id--17661 uwm-grid container-xl">
+  <div class="uwm-grid__items row">
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/suzanne-allen.jpg?h=1f98bee8&amp;itok=r0DsG5gE" width="140" height="174" alt="Suzanne Allen" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Suzanne M. Allen, M.D., M.P.H.</strong></h4>
+
+<p>Vice Dean for Academic, Rural and Regional Affairs</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/mark-green.jpg?h=1f98bee8&amp;itok=PbrBl7HX" width="140" height="174" alt="mark-green" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Mark Green, J.D.</strong></h4>
+
+<p>Vice Dean for Administration and Finance</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/byron-joyner.jpg?h=1f98bee8&amp;itok=3aZbiNmc" width="140" height="174" alt="Byron Joyner" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Byron Joyner, M.D</strong></h4>
+
+<p>Vice Dean for Graduate Medical Education and Designated Institutional Official</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/john-slattery.jpg?h=1f98bee8&amp;itok=lJycAz9-" width="140" height="174" alt="john-slattery" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>John T. Slattery, Ph.D.</strong></h4>
+
+<p>Vice Dean for Research and Graduate Education</p></div>
+      
+      </div>
+
+      </div>
+      </div>
+</div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17636-3">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17636-3"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17636-3"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17636-3"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Associate Deans
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17636-3" class="collapse " role="tabpanel" data-parent="#accordion-17636" aria-labelledby="heading-accordion-17636-3">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+
+  
+
+
+<div  class="paragraph paragraph--type--uwm-grid paragraph--view-mode--default paragraph--id--17691 uwm-grid container-xl">
+  <div class="uwm-grid__items row">
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/jennifer-best.jpg?h=1f98bee8&amp;itok=SLVY09Id" width="140" height="174" alt="Jennifer Best" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Jennifer Best, M.D.</strong></h4>
+
+<p>Associate Dean for Graduate Medical Education</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/mary-lenora-disis.jpg?h=1f98bee8&amp;itok=Jm0Yxqmt" width="140" height="174" alt="mary-lenora-disis" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Mary Lenora "Nora" Disis, M.D.</strong></h4>
+
+<p>Associate Dean for Translational Science</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-11/Nicole%20Gibran.png?h=6b9bf2e9&amp;itok=lhTxecUC" width="140" height="174" alt="Nicole Gibran" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Nicole Gibran, M.D., F.A.C.S.</strong></h4>
+
+<p>Associate Dean for Education Strategies</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-08/Sharona-Gordon.png?h=f6c623fd&amp;itok=4g2_Vr-3" width="140" height="174" alt="Sharona Gordon, Ph.D. " typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Sharona Gordon, Ph.D.​</strong></h4>
+
+<p>Associate Dean for Research and Graduate Education</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/marshall-horwitz.jpg?h=1f98bee8&amp;itok=QJ6lhY3C" width="140" height="174" alt="marshall-horwitz" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Marshall S. Horwitz, M.D, Ph.D.</strong></h4>
+
+<p>Associate Dean for Physician-Scientist</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/paul-james.jpg?h=1f98bee8&amp;itok=058mJw3X" width="140" height="174" alt="paul-james" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Paul James, M.D.</strong></h4>
+
+<p>Associate Dean for Primary Care</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Mary Fran Joseph, M.B.A.</strong></h4>
+
+<p>Associate Dean for Administration and Finance</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/sara-kim.jpg?h=1f98bee8&amp;itok=iRid01-t" width="140" height="174" alt="sara-kim" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Sara Kim, Ph.D.</strong></h4>
+
+<p>Associate Dean for Educational Quality Improvement</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/patricia-kritek.jpg?h=1f98bee8&amp;itok=qOmNMG2j" width="140" height="174" alt="patricia-kritek" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Patricia Kritek​, M.D., Ed.M.​</strong></h4>
+
+<p>Associate Dean for Faculty Development</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/raye-maestas.jpg?h=1f98bee8&amp;itok=zn-FzFZY" width="140" height="174" alt="raye-maestas" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Raye Maestas, M.D.​</strong></h4>
+
+<p>A​ssociate Dean for Student Affairs</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/lee-anna-muzquiz.jpg?h=1f98bee8&amp;itok=4X3PPdQq" width="140" height="174" alt="lee-anna-muzquiz" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>LeeAnna Muzquiz, M.D.</strong></h4>
+
+<p>​Associate Dean for Admissions</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/daryl-potyk.jpg?h=1f98bee8&amp;itok=0Ysk6Puw" width="140" height="174" alt="darryl-potyk" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Darryl Potyk, M.D.</strong></h4>
+
+<p>Associate Dean for Eastern Washington</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/michael-ryan.jpg?h=1f98bee8&amp;itok=42wNgPXt" width="140" height="174" alt="michael-ryan" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Michael Ryan, M.D.</strong></h4>
+
+<p>Associate Dean for Curriculum</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/marjorie-wenrich.jpg?h=1f98bee8&amp;itok=RlkejmZx" width="140" height="174" alt="marjorie-wenrich" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Marjorie Wenrich, Ph.D., M.P.H.</strong></h4>
+
+<p>Associate Dean for Education Strategies</p></div>
+      
+      </div>
+
+      </div>
+      </div>
+</div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17636-4">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17636-4"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17636-4"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17636-4"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Associate Deans (Seattle clinical training sites)
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17636-4" class="collapse " role="tabpanel" data-parent="#accordion-17636" aria-labelledby="heading-accordion-17636-4">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+
+  
+
+
+<div  class="paragraph paragraph--type--uwm-grid paragraph--view-mode--default paragraph--id--17776 uwm-grid container-xl">
+  <div class="uwm-grid__items row">
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/richard-goss.jpg?h=1f98bee8&amp;itok=tMvRpDT2" width="140" height="174" alt="richard-goss" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>J. Richard Goss, M.D.</strong></h4>
+
+<p>Associate Dean and Medical Director, Harborview Medical Center</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-03/Catherine-Kaminetzky.jpg?h=f6c623fd&amp;itok=mBL7He33" width="140" height="174" alt="Catherine Kaminetzky, M.D." typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Catherine Kaminetzky, M.D.</strong></h4>
+
+<p>Chief of Staff, VA Puget Sound Health Care System</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/thomas-staiger-md.jpg?h=1f98bee8&amp;itok=fV6nIGwG" width="140" height="174" alt="thomas-staiger-md" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Thomas Staiger, M.D.</strong></h4>
+
+<p>Associate Dean and Medical Director, UW Medical Center</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-02/Leslie-Walker-Harding.png?h=96892319&amp;itok=YV-MckF7" width="140" height="174" alt="Leslie Walker-Harding" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Leslie Walker-Harding</strong></h4>
+
+<p>Associate Dean and Chief Academic Officer, Seattle Children's</p></div>
+      
+      </div>
+
+      </div>
+      </div>
+</div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17636-5">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17636-5"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17636-5"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17636-5"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Assistant Deans
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17636-5" class="collapse " role="tabpanel" data-parent="#accordion-17636" aria-labelledby="heading-accordion-17636-5">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+
+  
+
+
+<div  class="paragraph paragraph--type--uwm-grid paragraph--view-mode--default paragraph--id--17806 uwm-grid container-xl">
+  <div class="uwm-grid__items row">
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/cindy-hamra.jpg?h=1f98bee8&amp;itok=dxZrOKDX" width="140" height="174" alt="Cindy Hamra" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Cindy A. Hamra, J.D., M.A.</strong></h4>
+
+<p>Assistant Dean for Operations and Administration, Graduate Medical Education</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/jim-hendricks.jpg?h=1f98bee8&amp;itok=CzPabWzU" width="140" height="174" alt="jim-hendricks" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>James B. Hendricks, Ph.D.</strong></h4>
+
+<p>Assistant Dean for Research, President, Seattle Children's Research Institute</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/molly-jackson.png?h=1f98bee8&amp;itok=W0u1oRv8" width="140" height="174" alt="molly-jackson" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Molly Jackson, M.D.​</strong></h4>
+
+<p>Assistant Dean for Professionalism<br />
+Assistant Dean for the Colleges</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/john-mccarthy.jpg?h=1f98bee8&amp;itok=q99DydBD" width="140" height="174" alt="john-mccarthy" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>John McCarthy, M.D.</strong></h4>
+
+<p>Assistant Dean for Rural Programs</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/mark-whipple.jpg?h=1f98bee8&amp;itok=jeJ29d9i" width="140" height="174" alt="mark-whipple" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Mark Whipple, M.D.</strong></h4>
+
+<p>Assistant Dean for Curriculum</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-07/Edith%20Wang.jpg?h=7bfda016&amp;itok=uV8fy4uD" width="140" height="174" alt="Edith Wang" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Edith Wang, Ph.D</strong></h4>
+
+<p>Assistant Dean for Basic Science</p></div>
+      
+      </div>
+
+      </div>
+      </div>
+</div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17636-6">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17636-6"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17636-6"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17636-6"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Assistant Deans at Regional Sites (first-year regional campuses)
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17636-6" class="collapse " role="tabpanel" data-parent="#accordion-17636" aria-labelledby="heading-accordion-17636-6">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+
+  
+
+
+<div  class="paragraph paragraph--type--uwm-grid paragraph--view-mode--default paragraph--id--17841 uwm-grid container-xl">
+  <div class="uwm-grid__items row">
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/william-sayres-1.jpg?h=1f98bee8&amp;itok=1WR3Blmp" width="140" height="174" alt="William Sayres" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>William Sayres Jr, M.D.</strong></h4>
+
+<p>UW Spokane</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/tim-robinson.jpg?h=1f98bee8&amp;itok=XGFQZw98" width="140" height="174" alt="Tim Robinson" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Tim Robinson, Ph.D.</strong></h4>
+
+<p>University of Wyoming</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-10/Young_Kathy_0.jpg?h=b204cd5f&amp;itok=Nve0CSe9" width="140" height="174" alt="Kathy Young" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Kathy Young, M.D.</strong></h4>
+
+<p>University of Alaska</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/martin-teintze.jpg?h=1f98bee8&amp;itok=iOzWtpx3" width="140" height="174" alt="Martin Teintze" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Martin Teintze, Ph.D.</strong></h4>
+
+<p>Montana State University</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/jeff-seegmiller.jpg?h=1f98bee8&amp;itok=VY8lCAHo" width="140" height="174" alt="Jeffrey Seegmiller" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Jeffrey Seegmiller, Ed.D.</strong></h4>
+
+<p>University of Idaho</p></div>
+      
+      </div>
+
+      </div>
+      </div>
+</div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17636-7">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17636-7"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17636-7"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17636-7"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Assistant Deans at Regional Sites (clinical programs)
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17636-7" class="collapse " role="tabpanel" data-parent="#accordion-17636" aria-labelledby="heading-accordion-17636-7">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+
+  
+
+
+<div  class="paragraph paragraph--type--uwm-grid paragraph--view-mode--default paragraph--id--17876 uwm-grid container-xl">
+  <div class="uwm-grid__items row">
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-10/Sawyer_Devin.jpg?h=ecfc7927&amp;itok=sVEw0V-s" width="140" height="174" alt="Devin Sawyer" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Devin Sawyer, M.D.</strong></h4>
+
+<p>Western Washington</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/geoff-jones.jpg?h=1f98bee8&amp;itok=yANzWNqD" width="140" height="174" alt="Geoffry Jones" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Geoffry Jones, M.D.</strong></h4>
+
+<p>Eastern and Central Washington</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/judy-swanson.jpg?h=1f98bee8&amp;itok=NrW3opwG" width="140" height="174" alt="Judy Swanson" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Judy Swanson, M.D.</strong></h4>
+
+<p>Spokane, Washington</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/larry-kirven.jpg?h=1f98bee8&amp;itok=w7VqZ-z_" width="140" height="174" alt="Lawrence E. Kirven" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Lawrence E. Kirven, M.D.</strong></h4>
+
+<p>Wyoming</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/barbara-doty.jpg?h=1f98bee8&amp;itok=Fr1T7vTm" width="140" height="174" alt="Barbara Doty" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Barbara Doty, M.D.</strong></h4>
+
+<p>Alaska</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/jay-erickson.jpg?h=1f98bee8&amp;itok=8dPeZBC0" width="140" height="174" alt="Jay S. Erickson" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Jay S. Erickson, M.D.</strong></h4>
+
+<p>Montana</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/mary-barinaga.jpg?h=1f98bee8&amp;itok=tX6DL5PG" width="140" height="174" alt="Mary Barinaga" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Mary Barinaga, M.D.</strong></h4>
+
+<p>Idaho</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/frank-batcha.jpg?h=1f98bee8&amp;itok=9e7UZkne" width="140" height="174" alt="Frank Batcha" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Frank Batcha, M.D.</strong></h4>
+
+<p>Idaho</p></div>
+      
+      </div>
+
+      </div>
+      </div>
+</div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17636-8">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17636-8"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17636-8"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17636-8"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Chief Diversity Officer
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17636-8" class="collapse " role="tabpanel" data-parent="#accordion-17636" aria-labelledby="heading-accordion-17636-8">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+
+  
+
+
+<div  class="paragraph paragraph--type--uwm-grid paragraph--view-mode--default paragraph--id--17941 uwm-grid container-xl">
+  <div class="uwm-grid__items row">
+          <div class="uwm-grid__item col-sm-6 col-lg-6">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/leo-morales.jpg?h=1f98bee8&amp;itok=cXfq_u6d" width="140" height="174" alt="leo-morales" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><h4><strong>Leo Morales, M.D, Ph.D.</strong></h4>
+
+<p>Chief Diversity Officer</p></div>
+      
+      </div>
+
+      </div>
+      </div>
+</div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-17636-9">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-17636-9"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-17636-9"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-17636-9"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Department Chairs
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-17636-9" class="collapse " role="tabpanel" data-parent="#accordion-17636" aria-labelledby="heading-accordion-17636-9">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+
+  
+
+
+<div  class="paragraph paragraph--type--uwm-grid paragraph--view-mode--default paragraph--id--17956 uwm-grid container-xl">
+  <div class="uwm-grid__items row">
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/michael-crowder.jpg?h=1f98bee8&amp;itok=VzzMtBnX" width="140" height="174" alt="michael-crowder" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Anesthesiology and Pain Medicine</strong><br />
+C. Michael Crowder, M.D., Ph.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/trisha-davis.jpg?h=1f98bee8&amp;itok=0ijlGC2B" width="140" height="174" alt="trisha-davis" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Biochemistry</strong><br />
+Trisha N. Davis, Ph.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/cecilia-giachelli.jpg?h=1f98bee8&amp;itok=tD3vrBao" width="140" height="174" alt="cecilia-giachelli" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Bioengineering</strong><br />
+Cecilia Giachelli, Ph.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/denise-dudzinski.jpg?h=1f98bee8&amp;itok=C3USNYeu" width="140" height="174" alt="denise-dudzinski" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Bioethics and Humanities</strong><br />
+Denise Dudzinski, Ph.D, MTS</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/rachel-wong.jpg?h=1f98bee8&amp;itok=GYNK9lHA" width="140" height="174" alt="rachel-wong" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Biological Structure</strong><br />
+Rachel Wong, Ph.D</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/peter-tarczy-hornoch.jpg?h=1f98bee8&amp;itok=iUqjkYYV" width="140" height="174" alt="peter-tarczy-hornoch" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Biomedical Informatics and Medical Education</strong><br />
+Peter Tarczy-Hornoch, M.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/thea-brabb.jpg?h=1f98bee8&amp;itok=gu6Zdkk_" width="140" height="174" alt="thea-brabb" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Comparative Medicine</strong><br />
+Thea Brabb, D.V.M.,Ph.D., Dipl. ACLAM</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/susan-stern.jpg?h=1f98bee8&amp;itok=ba8hx4Qv" width="140" height="174" alt="susan-stern" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Emergency Medicine</strong><br />
+Susan A. Stern, M.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/paul-james.jpg?h=1f98bee8&amp;itok=058mJw3X" width="140" height="174" alt="paul-james" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Family Medicine</strong><br />
+Paul James, M.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/Stanley-Fields.png?h=1f98bee8&amp;itok=ad8Ol9w2" width="140" height="174" alt="Stanley-Fields" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Genome Sciences</strong><br />
+Stanley Fields​, Ph.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/judith-wasserheit.jpg?h=1f98bee8&amp;itok=hktcHBjL" width="140" height="174" alt="judith-wasserheit" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Global Health</strong><br />
+Judith Wasserheit, M.D., Ph.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-02/murray-christopher.jpg?h=0bf09d97&amp;itok=BuwjyY00" width="140" height="174" alt="Christopher Murray" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Health Metrics Sciences</strong><br />
+Christopher J.L. Murray, M.D., D.Phil.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/joan-goverman.jpg?h=1f98bee8&amp;itok=5cTQhBVF" width="140" height="174" alt="joan-goverman" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Immunology</strong><br />
+Joan Goverman, Ph.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/geoffrey-baird.jpg?h=1f98bee8&amp;itok=Kc12lPXh" width="140" height="174" alt="geoffrey-baird" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Laboratory Medicine </strong>(Interim)<br />
+Geoffrey Baird, M.D., Ph.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-09/Barbara%20Jung.png?h=f3e42b6d&amp;itok=IGaEBJid" width="140" height="174" alt="Barbara Jung" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Medicine </strong><br />
+Barbara Jung, M.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-03/david-sherman.png?h=fb26f9c1&amp;itok=bx0wfvmT" width="140" height="174" alt="David Sherman, Ph.D." typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Microbiology</strong><br />
+David Sherman, Ph.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/richard-ellenbogen.jpg?h=1f98bee8&amp;itok=lqNpOwPf" width="140" height="174" alt="richard-ellenbogen" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Neurological Surgery</strong><br />
+Richard G. Ellenbogen, M.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-07/nicholas-poolos.jpg?h=f6c623fd&amp;itok=D1f6RI1G" width="140" height="174" alt="Nicholas Pete Poolos M.D., Ph.D. " typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Neurology (interim)</strong><br />
+Nicholas Poolos M.D., Ph.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/barbara-goff.jpg?h=1f98bee8&amp;itok=zV_-7Fzg" width="140" height="174" alt="barbara-goff" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Obstetrics and Gynecology</strong><br />
+Barbara Goff, M.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/russell-van-gelder.jpg?h=1f98bee8&amp;itok=mXtx3Cxk" width="140" height="174" alt="russell-van-gelder" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Ophthalmology</strong><br />
+Russell Van Gelder, M.D., Ph.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-01/howard-chansky.jpg?h=d9019196&amp;itok=ap2WemgE" width="140" height="174" alt="Howard Chanksy" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Orthopaedics and Sports Medicine</strong><br />
+Howard Chansky, M.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/neal-futran.jpg?h=1f98bee8&amp;itok=vQGK0fk4" width="140" height="174" alt="neal-futran" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Otolaryngology / Head and Neck Surgery</strong><br />
+Neal D. Futran, M.D., D.M.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/charles-alpers.jpg?h=1f98bee8&amp;itok=MUfywKe2" width="140" height="174" alt="charles-alpers" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Pathology</strong> (Interim)<br />
+Charles Alpers, M.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-02/Leslie-Walker-Harding.png?h=96892319&amp;itok=YV-MckF7" width="140" height="174" alt="Leslie Walker-Harding" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Pediatrics</strong><br />
+Leslie Walker-Harding, M.D., F.A.A.P., F.S.A.H.M.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/john-scott.jpg?h=1f98bee8&amp;itok=DRQsUR3L" width="140" height="174" alt="john-scott" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Pharmacology</strong><br />
+John D. Scott, FRS</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/stanley-froehner.jpg?h=1f98bee8&amp;itok=PZXbC4J2" width="140" height="174" alt="stanley-froehner" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Physiology and Biophysics</strong><br />
+Stanley C. Froehner, Ph.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/jurgen-unutzer.jpg?h=1f98bee8&amp;itok=D7LHXyCl" width="140" height="174" alt="jurgen-unutzer" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Psychiatry and Behavioral Sciences</strong><br />
+Jürgen Unützer, M.D., MPH, M.A.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-12/Ramesh-Rengan.png?h=e65b4b05&amp;itok=jJ-cXdUX" width="140" height="174" alt="Ramesh-Rengan" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Radiation Oncology</strong> (Interim)<br />
+Ramesh Rengan, M.D., Ph.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2019-03/dushyant-sahani.png?h=ba23562e&amp;itok=11Wp6H_P" width="140" height="174" alt="Dushyant Sahani, M.D." typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Radiology</strong><br />
+Dushyant Sahani, M.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/peter-esselman.jpg?h=1f98bee8&amp;itok=g1xK21LK" width="140" height="174" alt="peter-esselman" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Rehabilitation Medicine</strong><br />
+Peter C. Esselman, M.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/douglas-wood.jpg?h=1f98bee8&amp;itok=sx1kmcX4" width="140" height="174" alt="douglas-wood" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Surgery</strong><br />
+Douglas E. Wood, M.D.</p></div>
+      
+      </div>
+
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+
+  <div class="paragraph paragraph--type--headshot-card paragraph--view-mode--default">
+          
+            <div class="field field--name-field-uwm-image field--type-image field--label-hidden field__item">  <img src="/sites/stevie/files/styles/uwm_headshot/public/2018-11/hunter-wessells.jpg?h=1f98bee8&amp;itok=xS7icI6G" width="140" height="174" alt="hunter-wessells" typeof="foaf:Image" class="image-style-uwm-headshot img-fluid" />
+
+
+</div>
+      
+            <div class="clearfix text-formatted field field--name-uwm-text field--type-text-long field--label-hidden field__item"><p><strong>Urology</strong><br />
+Hunter Wessells, M.D.</p></div>
+      
+      </div>
+
+      </div>
+      </div>
+</div>
+
+              </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+          </div>
+  
+
+  </div>
+</section>
+
+              
+<section class="uwm-section paragraph--view-mode--default paragraph--id--18121">
+
+    
+    
+  <div class="container-xl">
+
+              
+  <h2 class="field field--name-field-uwm-section-heading field--type-text">Support next-generation medical education.</h2>
+
+    
+        
+      <div class="field field--name-field-uwm-component field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>Our programs empower future medical professionals dedicated to elevating health in rural and underserved communities in our region and around the world. The UW School of Medicine offers a number of ways to invest in tomorrow’s leaders. From donating to our scholarship fund to supporting the continuation of the WWAMI program or giving the gift of medical research, explore giving opportunities.</p>
+
+<div class="bs_grid container">
+<div class="row row-1">
+<div class="col-md-3">
+<div class="content">
+<p><a class="btn btn-cta" href="http://www.acceleratemed.org/priorities/supporting-tomorrows-medical-leaders/">MAKE A GIFT</a></p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="content">
+<p><a class="btn btn-cta" href="/school-of-medicine/about/willed-body-program">Willed Body Program</a></p>
+</div>
+</div>
+</div>
+</div>
+
+                      </div>
+      
+      </div>
+</div>
+          </div>
+  
+
+  </div>
+</section>
+
+          </div>
+  
+  
+  
+</article>
+
+
+
+            </div>
+
+  </div>
+
+  
+
+    
+
+
+
+<footer class="uwm-footer container-fluid">
+
+    <div class="row blocks-row">
+        <div class="col-xs-12"></div>
+    </div>
+
+<div class="row navigation-row">
+ <div class="col-12 d-none d-sm-inline-block foot-third">
+                    <div class="service-icons">
+        <a href="https://www.facebook.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__facebook" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.linkedin.com/company/uw-medicine">
+            <i class="uwmed-icon uwmed-icon__linkedin" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://twitter.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__twitter" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.instagram.com/UWMedicine">
+            <i class="uwmed-icon uwmed-icon__instagram" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.youtube.com/user/UWMedicineHealth">
+            <i class="uwmed-icon uwmed-icon__youtube" aria-hidden="true"></i>
+        </a>
+    </div>
+
+            </div></div>
+    <div class="row navigation-row">
+            <div class="col-xs-12 col-md-6 foot-first">
+                                
+              <ul class="menu nav">
+                    
+        <li>
+                    <a href="/about" data-drupal-link-system-path="node/20851">            <i class="uw-s hidden-xs"></i> About UW Medicine
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="http://providerresource.uwmedicine.org/">            <i class="uw-s hidden-xs"></i> Provider Resource
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://newsroom.uw.edu">            <i class="uw-s hidden-xs"></i> Media Inquiries
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/factbook">            <i class="uw-s hidden-xs"></i> Fact Book
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/about/contact-us" data-drupal-link-system-path="node/21466">            <i class="uw-s hidden-xs"></i> Contact Us
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/about/career-opportunities" data-drupal-link-system-path="node/21461">            <i class="uw-s hidden-xs"></i> Careers
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/volunteering" data-drupal-link-system-path="node/22171">            <i class="uw-s hidden-xs"></i> Volunteer
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="http://www.acceleratemed.org/give/?source=MEDXCL%2CMDNOVT%2CUWMEDS%2CHCMISS%2CADISUN%2CNWMEDI%2CVALLEY%2CMEDNEI%2CAIRFUN">            <i class="uw-s hidden-xs"></i> Donate
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://www.uw.edu">            <i class="uw-s hidden-xs"></i> UW.edu
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/forms/website-feedback" data-drupal-link-system-path="webform/website_feedback">            <i class="uw-s hidden-xs"></i> Feedback
+          </a>
+
+                  </li>
+        </ul>
+  
+
+</div>
+
+            <div class="col-xs-12 col-md-6 d-none d-md-inline-block foot-second">
+                                
+              <ul class="menu nav">
+                    
+        <li>
+                    <a href="/harborview">            <i class="uw-s hidden-xs"></i> Harborview Medical Center 
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/northwest-hospital">            <i class="uw-s hidden-xs"></i> Northwest Hospital &amp; Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/valley-medical-center">            <i class="uw-s hidden-xs"></i> Valley Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/uw-medical-center">            <i class="uw-s hidden-xs"></i> UW Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/neighborhood-clinics">            <i class="uw-s hidden-xs"></i> UW Neighborhood Clinics
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/uw-physicians">            <i class="uw-s hidden-xs"></i> UW Physicians
+          </a>
+
+                  </li>
+                
+        <li class="active">
+                    <a href="/school-of-medicine/about" data-drupal-link-system-path="node/20916" class="is-active">            <i class="uw-s hidden-xs"></i> UW School of Medicine
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/airlift-nw">            <i class="uw-s hidden-xs"></i> Airlift Northwest
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://rightasrain.uwmedicine.org">            <i class="uw-s hidden-xs"></i> Right as Rain
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://newsroom.uw.edu">            <i class="uw-s hidden-xs"></i> UW Medicine Newsroom
+          </a>
+
+                  </li>
+        </ul>
+  
+
+</div>
+
+            <div class="col-xs-12 col-md-3 d-inline-block d-sm-none foot-third">
+                    <div class="service-icons">
+        <a href="https://www.facebook.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__facebook" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.linkedin.com/company/uw-medicine">
+            <i class="uwmed-icon uwmed-icon__linkedin" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://twitter.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__twitter" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.instagram.com/UWMedicine">
+            <i class="uwmed-icon uwmed-icon__instagram" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.youtube.com/user/UWMedicineHealth">
+            <i class="uwmed-icon uwmed-icon__youtube" aria-hidden="true"></i>
+        </a>
+    </div>
+
+            </div>
+
+    </div>
+<div class="row navigation-row">
+      <div class="col-12 foot-fourth">
+                <a class="logo" href="/" title="Home" rel="home">
+                    <img src="/themes/custom/uwmbase/dist/images/uw-medicine-logo-gray.svg"
+                         alt="UW Medicine" width="178" height="24">
+                </a>
+            </div>
+            </div>
+    <div class="row enterprise-row">
+        <div class="col-sm-4 first copyright">
+            Copyright &copy; 2019 University of Washington | All rights reserved
+        </div>
+
+        <div class="col-sm-8 second navigation">
+            
+              <ul class="list-inline">
+                    <li class="list-inline-item">
+        <a href="https://www.washington.edu/online/privacy/">Online Privacy Statement</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="/about/policies-and-notices" data-drupal-link-system-path="node/21821">Policies and Notices</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="/about/compliance/disclaimer" data-drupal-link-system-path="node/22091">Copyright And Healthcare Disclaimer</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="https://www.washington.edu/online/terms/">Website Terms And Conditions Of Use</a>
+              </li>
+        </ul>
+  
+
+
+        </div>
+    </div>
+
+</footer>
+
+
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/20916","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajax":[],"user":{"uid":0,"permissionsHash":"ca9aaf4e9f3d0580f94a983623e5ac1f747ff03fba5aa27bb8771bf5d9d50bc6"}}</script>
+<script src="/sites/stevie/files/js/js_yCFYs_LGt3NMrX7wq3rY13whYWABqIUCVmCDbRkY0AM.js"></script>
+<script src="//use.fontawesome.com/releases/v5.8.1/js/all.js" defer crossorigin="anonymous" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"></script>
+<script src="/sites/stevie/files/js/js_JdikXsINDZmBcoeNjvZQPWUasQUWoh0KllI62wO5PV4.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js" integrity="sha256-7QS1cHsH75h3IFgrFKsdhmKHHpWqF82sb/9vNLqcqs0=" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b55cc6ce81","applicationID":"55451763","transactionName":"YwMEbEsFWhBZBUIMV1pJJ1tNDVsNFyJEEEhVCjp7VhZRP3UDWBBkcAMAWUwIQC5dCEMpUVoNMkpcAXkCVg9GEFRVEglKSkkKBF0IUxdZQAMvVl0BTCJWAmUKSkA=","queueTime":0,"applicationTime":1279,"atts":"T0QHGgMfSR4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

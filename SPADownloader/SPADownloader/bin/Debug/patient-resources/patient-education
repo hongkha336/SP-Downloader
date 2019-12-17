@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " site-uuid="86b376c5-ohhh-eeee-ahhh-oooo443540e3" site-env="prod" site-file="/mnt/www/html/uwmed/docroot/modules/custom/uwmcs_utils/uwmcs_utils.module">
+  <head>
+      <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b55cc6ce81",applicationID:"55451763"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="title" content="Patient Education | UW Medicine" />
+<link rel="canonical" href="https://www.uwmedicine.org/patient-resources/patient-education" />
+<meta name="twitter:card" content="summary" />
+<meta property="og:site_name" content="UW Medicine" />
+<meta name="twitter:title" content="Patient Education" />
+<meta name="twitter:site" content="@uwmedicine" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.uwmedicine.org//patient-resources/patient-education" />
+<meta property="og:title" content="Patient Education | UW Medicine" />
+<meta name="twitter:url" content="https://www.uwmedicine.org//patient-resources/patient-education" />
+<link rel="apple-touch-icon" sizes="180x180" href="/sites/stevie/files/favicons/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/sites/stevie/files/favicons/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/sites/stevie/files/favicons/favicon-16x16.png"/>
+<link rel="manifest" href="/sites/stevie/files/favicons/site.webmanifest"/>
+<link rel="mask-icon" href="/sites/stevie/files/favicons/safari-pinned-tab.svg" color="#5bbad5"/>
+<meta name="msapplication-TileColor" content="#da532c"/>
+<meta name="theme-color" content="#ffffff"/>
+<meta name="favicon-generator" content="Drupal responsive_favicons + realfavicongenerator.net" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "https://www.uwmedicine.org#webpage",
+            "author": {
+                "@type": "Organization",
+                "@id": "https://www.uwmedicine.org#organization",
+                "name": "UW Medicine",
+                "url": "https://www.uwmedicine.org"
+            },
+            "isAccessibleForFree": "True"
+        },
+        {
+            "@type": "MedicalOrganization",
+            "@id": "https://www.uwmedicine.org#organization",
+            "name": "UW Medicine",
+            "url": "https://www.uwmedicine.org",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1 (206) 520-5000",
+                "contactType": "Customer service"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.uwmedicine.org#website",
+            "name": "UW Medicine",
+            "url": "https://www.uwmedicine.org",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "query": "https://www.uwmedicine.org/search?s={search_term_string}",
+                "query-input": "required name=search_term_string",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://www.uwmedicine.org/search?s={search_term_string}"
+                }
+            }
+        }
+    ]
+}</script>
+<link rel="revision" href="/patient-resources/patient-education" />
+<script src="/sites/stevie/files/google_tag/google_tag.script.js?q2h8dj"></script>
+
+        <title>Patient Education | UW Medicine</title>
+    
+  <link rel="stylesheet" href="/sites/stevie/files/css/css_PXKyJUac5CjOsyl7xA6aCmq51JomRky41Sc9wSdnkNM.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/modules/custom/uwmcs_utils/assets/uwm_page.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/sites/stevie/files/css/css_v52pnKvzGMwJsCsbQob1gLXKl-3n3S7iFQHISwvruAA.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/sites/stevie/files/css/css_liv-epiUK7XXyIjSKwewBA-YrTfmz_VKFhr7XjPwj98.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Encode+Sans:300,400,500,600,700|Open+Sans:300,300i,400,400i,600,600i,700,700i" media="all" />
+
+  
+<!--[if lte IE 8]>
+<script src="/sites/stevie/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  </head>
+  <body  class="path-node-21386 user-role-anonymous is-path-node is-page-node-type-uwm-basic-page">
+      
+<a href="#main-content" class="skip-link visually-hidden visually-hidden--focusable">
+      Skip to main content
+  </a>
+  
+
+<header class="uwm-header">
+    <nav class="navbar navbar-expand-md flex-md-column">
+    <div class="purple container-fluid">
+
+                        <a class="navbar-brand" href="/" title="Home" rel="home">
+                <img src="/themes/custom/uwmbase/dist/images/uw-medicine-logo.svg"
+                     height="21" width="158" alt="UW Medicine">
+            </a>
+
+                          <button type="button" class="navbar-toggler ml-auto text-white"
+                        data-toggle="collapse"
+                        data-target=".search-collapse">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+
+                <button type="button" class="navbar-toggler text-white"
+                        data-toggle="collapse"
+                        data-target="#mainNavigationMobile"
+                        aria-controls="mainNavigationMobile" aria-expanded="false" aria-label="Toggle main navigation">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+
+
+                    
+
+        <div id="quickLinksNavigation" class="uwm-quick-links ml-auto d-none d-md-block">
+            <ul class="navbar-nav">
+            <li><a href="/patient-care/ecare">eCare Patient Portal</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="http://providerresource.uwmedicine.org/">For Providers</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/research">Research</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/school-of-medicine">School of Medicine</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/about/contact-us">Contact Us</a></li>
+                </ul>
+
+    </div>
+        <div class="d-none d-lg-block">
+            <form class="form-inline header-search-form"
+                  action="/search" accept-charset="UTF-8" method="get">
+
+                <div class="input-group header-search">
+
+                    <input name="s" type="text" class="form-control" value=""
+                           aria-label="Search terms" autocomplete="off">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+
+                </div>
+
+            </form>
+
+        </div>
+        <button type="button" class="navbar-toggler d-none d-md-inline-block d-lg-none text-white"
+            data-toggle="collapse"
+            data-target=".search-collapse">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <div class="search-collapse collapse">
+
+    <form class="form-inline header-search-form"
+          action="/search" accept-charset="UTF-8" method="get">
+        <div class="input-group">
+            <i class="fa fa-search uw-fa" aria-hidden="true"></i>
+            <input name="s" title="Search" type="text"
+                    class="form-control"
+                    aria-label="Search terms" value="" autocomplete="off">
+            <button type="button" class="navbar-toggler uw-fa"
+                    data-toggle="collapse"
+                    data-target=".search-collapse">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </form>
+    </div>
+
+    <div class="white container-fluid p-md-0 pl-lg-3">
+            
+            
+            
+
+    <div id="mainNavigation" class="collapse navbar-collapse uwm-main-navigation">
+        <ul class="navbar-nav mr-auto">
+                             <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find care"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find care
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find care">
+                                    <a class="dropdown-item" href="/services/urgent-care">Urgent care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/primary-care">Primary care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/services/virtual-clinic">Virtual clinic <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/emergency-medicine">Emergency rooms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties">Medical specialties <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/providers">Find a provider <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                    <i class="uw-b"></i>
+                                    <li class="nav-item"><a class="nav-link" href="/patient-care/making-an-appointment">Make an appointment <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        
+                    <i class="uw-b"></i>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find health &amp; patient resources"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find health &amp; patient resources
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find health &amp; patient resources">
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/">Conditions and symptoms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/Wellness/">Prevention and wellness <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">Patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/patient-education">Patient education <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                    <i class="uw-b"></i>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-I want to..."
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">I want to...
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-I want to...">
+                                    <a class="dropdown-item" href="https://www.uwmedicine.org/patient-resources/make-an-appointment">Make an appointment <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-care/ecare">Sign up or sign in for eCare <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/billing-and-insurance">Pay my bill  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/access-medical-records-images">Access medical records and images  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/interpreter-services">Find an interpreter  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/pharmacy-locations">Find a pharmacy <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">View all patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/provider-resource/refer-patient">Refer a patient <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                        </ul>
+    </div>
+
+    <div id="mainNavigationMobile" class="collapse navbar-collapse uwm-main-navigation-mobile d-md-none">
+        <ul class="navbar-nav mr-auto">
+                             <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find care"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find care
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find care">
+                                    <a class="dropdown-item" href="/services/urgent-care">Urgent care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/primary-care">Primary care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/services/virtual-clinic">Virtual clinic <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/emergency-medicine">Emergency rooms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties">Medical specialties <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/providers">Find a provider <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                                    <li class="nav-item"><a class="nav-link" href="/patient-care/making-an-appointment">Make an appointment <i class="fa fa-angle-right"
+                        aria-hidden="true"></i></a></li>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find health &amp; patient resources"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find health &amp; patient resources
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find health &amp; patient resources">
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/">Conditions and symptoms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/Wellness/">Prevention and wellness <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">Patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/patient-education">Patient education <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-I want to..."
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">I want to...
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-I want to...">
+                                    <a class="dropdown-item" href="https://www.uwmedicine.org/patient-resources/make-an-appointment">Make an appointment <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-care/ecare">Sign up or sign in for eCare <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/billing-and-insurance">Pay my bill  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/access-medical-records-images">Access medical records and images  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/interpreter-services">Find an interpreter  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/pharmacy-locations">Find a pharmacy <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">View all patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/provider-resource/refer-patient">Refer a patient <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                        </ul>
+
+        
+
+        <div class="make-a-gift-navigation">
+                    <div class="wrapper">
+
+                        <div class="gift-btn btn btn--border btn--primary btn--animated">
+                            <div class="uw-ac"></div>
+                            <a href="http://www.acceleratemed.org/give/?source=MEDXCL,MDNOVT,UWMEDS,HCMISS,ADISUN,NWMEDI,VALLEY,MEDNEI,AIRFUN">Make a Gift
+                                &nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+        
+
+        <div class="uwm-quick-links">
+            <ul class="navbar-nav">
+            <li><a href="/patient-care/ecare">eCare Patient Portal</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="http://providerresource.uwmedicine.org/">For Providers</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/research">Research</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/school-of-medicine">School of Medicine</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/about/contact-us">Contact Us</a></li>
+                </ul>
+
+        </div>
+    </div>
+
+
+                        <div id="makeAGift" class="uwm-make-a-gift-button ml-auto d-none d-md-block">
+            
+
+    
+        <ul class="navbar-nav">
+                    <li> 
+            <a href="http://www.acceleratemed.org/give/?source=MEDXCL%2CMDNOVT%2CUWMEDS%2CHCMISS%2CADISUN%2CNWMEDI%2CVALLEY%2CMEDNEI%2CAIRFUN">
+            <i class="u-a" aria-hidden="true"></i>
+            Make a Gift
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+                </ul>
+
+
+
+        </div>
+        
+        </div>
+    <div class="row shadow"></div>
+
+
+    
+    </nav>
+</header>
+
+
+  <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRG725G" height="0" width="0" title="Google Tag Manager"></iframe></noscript>
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+
+
+    <div id="main-container" role="main"  class="main-container uwm-accent-color__purple
+">
+                                            
+
+
+
+                    
+                                                    <section class="content-header container-xl">
+                    
+
+<div id="block-uwmbase-breadcrumbs" data-block-plugin-id="system_breadcrumb_block" class="block block-system block-system-breadcrumb-block">
+  
+    
+        
+<nav class="breadcrumb " role="navigation" aria-labelledby="system-breadcrumb">
+  <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+  <ol class="breadcrumb__list">
+          <li class="breadcrumb__item">
+                  <a class="breadcrumb__text breadcrumb__text--link" href="/">Home</a>
+                          <i class="breadcrumb__arrow fa fa-angle-right" aria-hidden="true"></i>
+              </li>
+          <li class="breadcrumb__item">
+                  <a class="breadcrumb__text breadcrumb__text--link" href="/patient-resources">Patient Resources</a>
+                          <i class="breadcrumb__arrow fa fa-angle-right" aria-hidden="true"></i>
+              </li>
+          <li class="breadcrumb__item">
+                  <span class="breadcrumb__text">Patient Education</span>
+                      </li>
+      </ol>
+</nav>
+
+  </div>
+
+
+                    
+
+<div id="block-uwmbase-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Patient Education</span>
+</h1>
+
+
+  </div>
+
+
+                </section>
+                            
+                            <a id="main-content"></a>
+            
+
+  
+    
+
+  <article class=""  role="article" about="/patient-resources/patient-education" class="node node-uwm_basic_page view-mode-full">
+
+        
+      
+      <div class="field field--name-field-uwm-sections field--type-entity-reference-revisions field--label-hidden field__items">
+              
+<section class="uwm-section paragraph--view-mode--default paragraph--id--25351">
+
+    
+    
+  <div class="container-xl">
+
+              <div class="h2-placeholder"></div>
+    
+        
+      <div class="field field--name-field-uwm-component field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>Your health and well-being depend on the choices you make every day. Take the best possible care of yourself and your family with information about the health topics that matter to you.</p>
+
+<p>Visit our online health library to:</p>
+
+<ul><li>Get tips about back care, fitness, nutrition, stress management and more.</li>
+	<li>Learn about your conditions, treatments and the services or procedures you may need.</li>
+	<li>Find ways to keep your family healthy at any age.</li>
+	<li>Use tools like the symptom checker, interactive quizzes and health-related calculators.</li>
+	<li>Listen to audio podcasts and watch videos.</li>
+</ul>
+
+                      </div>
+      
+      </div>
+</div>
+              <div class="field__item">
+
+
+  
+
+
+<div  class="paragraph paragraph--type--uwm-grid paragraph--view-mode--default paragraph--id--25361 uwm-grid">
+  <div class="uwm-grid__items row">
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+  
+  
+  
+  
+
+    
+    
+
+  
+        <a href="http://healthlibrary.uwmedicine.org/" class="uwm-cta cta-to-healthlibraryuwmedicineorg cta-from-patient-resources-patient-education btn cta-parent-default cta-parent-paragraph cta-parent-uwm-grid cta-parent-field-uwm-component btn-cta btn-cta-link" data-context-title="Patient Education">    <span class="btn__text">Go to health library</span>
+          <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+      </a>
+  
+      
+  
+        
+      </div>
+          <div class="uwm-grid__item col-sm-6 col-lg-3">
+        
+  
+  
+  
+  
+
+    
+    
+
+  
+        <a href="https://healthonline.washington.edu/" class="uwm-cta cta-to-healthonlinewashingtonedu cta-from-patient-resources-patient-education btn cta-parent-default cta-parent-paragraph cta-parent-uwm-grid cta-parent-field-uwm-component btn-cta btn-cta-link" data-context-title="Patient Education">    <span class="btn__text">Health Online</span>
+          <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+      </a>
+  
+      
+  
+        
+      </div>
+      </div>
+</div>
+</div>
+          </div>
+  
+
+  </div>
+</section>
+
+              
+<section class="uwm-section paragraph--view-mode--default paragraph--id--25371">
+
+    
+    
+  <div class="container-xl">
+
+              
+  <h2 class="field field--name-field-uwm-section-heading field--type-text">Educational handouts by medical service</h2>
+
+    
+        
+      <div class="field field--name-field-uwm-component field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+
+
+<div  class="paragraph paragraph--type--uwm-accordion paragraph--view-mode--default paragraph--id--25376">
+
+
+
+
+<div class="uwm-accordion uwm-acc-t-both" id="accordion-25376" role="tablist">
+
+        
+                        <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-1">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-1"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-1"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-1"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Allergy &amp; Immunology
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-1" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-1">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Search/90,P01690">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-2">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-2"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-2"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-2"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Anesthesiology &amp; Pain Medicine
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-2" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-2">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Search/SearchResults.pg?SearchPhrase=Types%20of%20Anesthesia%20and%20Your%20Anesthesiologist&amp;SearchType=text&amp;SearchOperator=And">Topic index</a> (Anesthesiology)</p>
+
+<p><a href="http://healthlibrary.uwmedicine.org/Search/SearchResults.pg?SearchPhrase=pain&amp;SearchType=text&amp;SearchOperator=And">Topic index</a> (Pain medicine)</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-3">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-3"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-3"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-3"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Cancer Care
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-3" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-3">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="https://www.seattlecca.org/scca-patient-education-documents">Topic index</a> (Seattle Cancer Care Alliance)</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-4">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-4"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-4"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-4"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Center for Women &amp; Children
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-4" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-4">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <h3>Breast Care</h3>
+
+<p><a href="http://healthlibrary.uwmedicine.org/Conditions/Cancer/Specific/Breast/">Topic index</a> | <a href="https://rightasrain.uwmedicine.org/well/health/healthy-breast-care ">Article: healthy breast care</a></p>
+
+<hr /><h3>Children's Care</h3>
+
+<p><a href="http://healthlibrary.uwmedicine.org/YourFamily/Children/">Topic index</a></p>
+
+<hr /><h3>Fertility Care</h3>
+
+<ul><li><a href="/patient-resources/patient-education/about-your-hysterosalpingogram.pdf">About your hysterosalpingogram</a></li>
+	<li><a href="/patient-resources/patient-education/after-your-egg-retrieval.pdf">After your egg retrieval</a></li>
+	<li><a href="/patient-resources/patient-education/after-your-egg-retrieval-without-embryo-transfer.pdf">After your egg retrieval without embryo transfer</a></li>
+	<li><a href="/patient-resources/patient-education/assisted-hatching-brochure.pdf">Assisted hatching brochure</a></li>
+	<li><a href="/patient-resources/patient-education/controlled-ovarian-hyperstimulation-intrauterine-insemination">Controlled ovarian hyperstimulation intrauterine insemination</a></li>
+	<li><a href="/patient-resources/patient-education/embryo-cryopreservation.pdf">Embryo cryopreservation</a></li>
+	<li><a href="/patient-resources/patient-education/embryo-transfer.pdf">Embryo transfer</a></li>
+	<li><a href="/patient-resources/patient-education/fertility-preservation-women-cancer.pdf">Fertility preservation for women with cancer</a></li>
+	<li><a href="/patient-resources/patient-education/frozen-embryo-transfer-cycle.pdf">Frozen embryo transfer cycle</a></li>
+	<li><a href="/patient-resources/patient-education/ivf-patient-education-brochure.pdf">IVF patient education brochure</a></li>
+	<li><a href="/patient-resources/patient-education/ovarian-hyperstimulation-syndrome-ohss.pdf">Ovarian hyperstimulation syndrome (OHSS)</a></li>
+	<li><a href="/patient-resources/patient-education/ovulation-induction-intrauterine-insemination.pdf">Ovulation induction intrauterine insemination</a></li>
+	<li><a href="/patient-resources/patient-education/ovulation-induction-sequential-intrauterine-insemination.pdf">Ovulation induction sequential intrauterine insemination</a></li>
+	<li><a href="/patient-resources/patient-education/unstimulated-cycle-intrauterine-insemination.pdf">Unstimulated cycle intrauterine insemination</a></li>
+</ul><hr /><h3>Gynecology Care</h3>
+
+<ul><li><a href="/patient-resources/patient-education/basal-body-temperature-chart.pdf">Basal body temperature chart</a></li>
+	<li><a href="/patient-resources/patient-education/bladder-retraining.pdf">Bladder retraining</a></li>
+	<li><a href="/patient-resources/patient-education/boric-acid-recurrent-vaginal-yeast-infections.pdf">Boric acid for recurrent vaginal yeast infections</a></li>
+	<li><a href="/patient-resources/patient-education/care-after-your-de.pdf">Care after your DE</a></li>
+	<li><a href="/patient-resources/patient-education/dietary-bladder-irritants.pdf">Dietary bladder irritants</a></li>
+	<li><a href="/patient-resources/patient-education/facts-women-termination-pregnancy.pdf">Facts for women about pregnancy termination</a></li>
+	<li><a href="/patient-resources/patient-education/implanon-aftercare-instructions.pdf">Implanon aftercare instructions</a></li>
+	<li><a href="/patient-resources/patient-education/iud-aftercare-instructions.pdf">IUD aftercare instructions</a></li>
+	<li><a href="/patient-resources/patient-education/kegel-exercises.pdf">Kegel exercises</a></li>
+	<li><a href="/patient-resources/patient-education/medical-abortion-follow-.pdf">Medical abortion follow-up</a></li>
+	<li><a href="/patient-resources/patient-education/menstrual-record-chart.pdf">Menstrual record chart</a></li>
+	<li><a href="/patient-resources/patient-education/miscarriage.pdf">Miscarriage</a></li>
+	<li><a href="/patient-resources/patient-education/vitamin-d-supplementation.pdf">Vitamin D supplementation</a></li>
+	<li><a href="/patient-resources/patient-education/voiding-diary.pdf">Bladder voiding diary</a></li>
+	<li><a href="/patient-resources/patient-education/vulvar-skin-care.pdf">Vulvar skin care</a></li>
+	<li><a href="/patient-resources/patient-education/first-trimester-surgical-abortion.pdf">What to expect after first trimester surgical abortion</a></li>
+</ul><hr /><h3>Maternity Care</h3>
+
+<h4>Growing together:</h4>
+
+<ul><li><a href="/patient-resources/patient-education/growing-together-2-months-english.pdf">Growing together: 2 Months (English)</a> | <a href="/patient-resources/patient-education/growing-together-2-months-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/growing-together-3-months-english.pdf">Growing together: 3 Months (English)</a> | <a href="/patient-resources/patient-education/growing-together-3-months-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/growing-together-14-16-weeks-english.pdf">Growing together: 14-16 Weeks (English)</a> | <a href="/patient-resources/patient-education/growing-together-14-16-weeks-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/growing-together-18-20-weeks-english.pdf">Growing together: 18-20 Weeks (English)</a> | <a href="/patient-resources/patient-education/growing-together-18-20-weeks-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/growing-together-24-weeks-english.pdf">Growing together: 24 Weeks (English)</a> | <a href="/patient-resources/patient-education/growing-together-24-weeks-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/growing-together-26-weeks-english.pdf">Growing together: 26 Weeks (English)</a> | <a href="/patient-resources/patient-education/growing-together-26-weeks-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/growing-together-28-weeks-english.pdf">Growing together: 28 Weeks (English)</a> | <a href="/patient-resources/patient-education/growing-together-28-weeks-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/growing-together-30-weeks-english.pdf">Growing together: 30 Weeks (English)</a> | <a href="/patient-resources/patient-education/growing-together-30-weeks-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/growing-together-32-weeks-english.pdf">Growing together: 32 Weeks (English)</a> | <a href="/patient-resources/patient-education/growing-together-32-weeks-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/growing-together-34-weeks-english.pdf">Growing together: 34 Weeks (English)</a> | <a href="/patient-resources/patient-education/growing-together-34-weeks-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/growing-together-36-weeks-english.pdf">Growing together: 36 Weeks (English)</a> | <a href="/patient-resources/patient-education/growing-together-36-weeks-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/growing-together-38-40-weeks-english.pdf">Growing together: 38-40 Weeks (English)</a> | <a href="/patient-resources/patient-education/growing-together-38-40-weeks-spanish.pdf">(Spanish)</a></li>
+</ul><h4>Nutrition in pregnancy:</h4>
+
+<ul><li><a href="/patient-resources/patient-education/nutrition-food-safety-pregnancy-english.pdf">Nutrition and food safety during pregnancy (English)</a> | <a href="/patient-resources/patient-education/nutrition-food-safety-pregnancy-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/nutrition-food-safety-pregnancy-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/nutrition-guidelines-during-pregnancy.pdf">Nutrition guidelines during pregnancy</a></li>
+	<li><a href="/patient-resources/patient-education/nutrition-guidelines-during-pregnancy-diabetes.pdf">Nutrition guidelines during pregnancy for patients with diabetes</a></li>
+</ul><h4>Prenatal care:</h4>
+
+<ul><li><a href="/patient-resources/patient-education/common-symptoms-during-pregnancy-english.pdf">Common symptoms during pregnancy (English)</a> | <a href="/patient-resources/patient-education/common-symptoms-during-pregnancy-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/common-terms-pregnancy-birth-english.pdf">Common terms for pregnancy and birth (English)</a> | <a href="/patient-resources/patient-education/common-terms-pregnancy-birth-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/healthy-choices-during-pregnancy-english.pdf">Healthy choices during pregnancy (English)</a> | <a href="/patient-resources/patient-education/healthy-choices-during-pregnancy-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/planning-ahead-pregnancy-english.pdf">Planning ahead for your pregnancy (English)</a> | <a href="/patient-resources/patient-education/planning-ahead-pregnancy-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/taking-care-your-teeth-gums.pdf">Taking care of your teeth and gums</a></li>
+	<li><a href="/patient-resources/patient-education/warning-signs-during-pregnancy-amharic.pdf">Warning signs during pregnancy (Amharic)</a> | <a href="/patient-resources/patient-education/warning-signs-during-pregnancy-english.pdf">(English)</a></li>
+	<li><a href="/patient-resources/patient-education/warning-signs-during-pregnancy-somali.pdf">Warning signs during pregnancy (Somali)</a></li>
+	<li><a href="/patient-resources/patient-education/warning-signs-during-pregnancy-spanish.pdf">Warning signs during pregnancy (Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/your-healthcare-team-english.pdf">Your healthcare team (English)</a> | <a href="/patient-resources/patient-education/your-healthcare-team-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/your-personal-safety-english.pdf">Your personal safety (English)</a> | <a href="/patient-resources/patient-education/your-personal-safety-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/your-prenatal-care-english.pdf">Your prenatal care (English)</a> | <a href="/patient-resources/patient-education/your-prenatal-care-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/your-prenatal-care-spanish.pdf">(Spanish)</a></li>
+</ul><h4>Prenatal diagnosis and testing:</h4>
+
+<ul><li><a href="/patient-resources/patient-education/common-tests-during-pregnancy-english.pdf">Common tests during pregnancy (English)</a> | <a href="/patient-resources/patient-education/common-tests-during-pregnancy-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/common-tests-during-pregnancy-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/guide-prenatal-testing-chinese.pdf">Guide to prenatal testing (Chinese)</a> | <a href="/patient-resources/patient-education/guide-prenatal-testing-english.pdf">(English)</a> | <a href="/patient-resources/patient-education/guide-prenatal-testing-japanese.pdf">(Japanese)</a> | <a href="/patient-resources/patient-education/guide-prenatal-testing-korean.pdf">(Korean)</a> | <a href="/patient-resources/patient-education/guide-prenatal-testing-russian.pdf">(Russian)</a> | <a href="/patient-resources/patient-education/guide-prenatal-testing-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/guide-prenatal-testing-spanish.pdf">(Spanish)</a> | <a href="/patient-resources/patient-education/guide-prenatal-testing-vietnamese.pdf">(Vietnamese)</a></li>
+</ul><h4>Preterm labor and birth:</h4>
+
+<ul><li><a href="/patient-resources/patient-education/bed-rest-guidelines-english.pdf">Bed rest guidelines (English)</a> | <a href="/patient-resources/patient-education/bed-rest-guidelines-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/bed-rest-guidelines-spanish.pdf">(Spanish)</a> | <a href="/patient-resources/patient-education/bed-rest-guidelines-vietnamese.pdf">(Vietnamese)</a></li>
+	<li><a href="/patient-resources/patient-education/coping-grief-after-losing-preterm-baby.pdf">Coping with grief after losing a preterm baby</a></li>
+	<li><a href="/patient-resources/patient-education/coping-stress-after-preterm-birth.pdf">Coping with stress after a preterm birth</a></li>
+	<li><a href="/patient-resources/patient-education/if-your-baby-born-early-english.pdf">If your baby is born early (English)</a> | <a href="/patient-resources/patient-education/if-your-baby-born-early-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/recognizing-preterm-labor-english.pdf">Recognizing preterm labor (English)</a> | <a href="/patient-resources/patient-education/recognizing-preterm-labor-spanish.pdf">(Spanish)</a></li>
+</ul><h4>Twins, triplets and more:</h4>
+
+<ul><li><a href="/patient-resources/patient-education/birth-multiples.pdf">Multiple births</a></li>
+	<li><a href="/patient-resources/patient-education/congratulations-your-pregnancy-multiples.pdf">Congratulations on your pregnancy with multiples</a></li>
+	<li><a href="/patient-resources/patient-education/going-home-two-or-more.pdf">Going home with two or more babies</a></li>
+	<li><a href="/patient-resources/patient-education/multifetal-reduction.pdf">Multifetal reduction</a></li>
+	<li><a href="/patient-resources/patient-education/will-my-babies-be-identical.pdf">Will my babies be identical?</a></li>
+</ul><h4>Special health concerns during pregnancy:</h4>
+
+<ul><li><a href="/patient-resources/patient-education/diabetes-pregnancy-what-you-should-know.pdf">Diabetes and pregnancy: What should you know?</a></li>
+	<li><a href="/patient-resources/patient-education/obstetrical-hypertension-consult-program-english.pdf">Obstetrical hypertension consult program (English)</a> | <a href="/patient-resources/patient-education/obstetrical-hypertension-consult-program-spanish.pdf">(Spanish)</a></li>
+</ul><h4>Labor and birth:</h4>
+
+<ul><li><a href="/patient-resources/patient-education/birth-choices-english.pdf">Birth choices (English)</a> | <a href="/patient-resources/patient-education/birth-choices-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/comfort-measures-labor-english.pdf">Comfort measures for labor (English)</a> | <a href="/patient-resources/patient-education/comfort-measures-labor-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/getting-ready-give-birth-english.pdf">Getting ready to give birth (English)</a> | <a href="/patient-resources/patient-education/getting-ready-give-birth-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/my-birth-plan-english.pdf">My birth plan (English)</a> | <a href="/patient-resources/patient-education/my-birth-plan-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/packing-hospital-birth-english.pdf">Packing for a hospital birth (English)</a> | <a href="/patient-resources/patient-education/packing-hospital-birth-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/packing-hospital-birth-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/pain-relief-during-labor-english.pdf">Pain relief during labor (English)</a> | <a href="/patient-resources/patient-education/pain-relief-during-labor-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/preparing-cesarean-birth-english.pdf">Preparing for Cesarean birth (English)</a> | <a href="/patient-resources/patient-education/preparing-cesarean-birth-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/preparing-your-c-section-chinese.pdf">Preparing for your C-section (Chinese)</a> | <a href="/patient-resources/patient-education/preparing-your-c-section-english.pdf">(English)</a> | <a href="/patient-resources/patient-education/preparing-your-c-section-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/stages-labor-birth-english.pdf">Stages of labor during birth (English)</a> | <a href="/patient-resources/patient-education/stages-labor-birth-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/time-birth-labor-english.pdf">It's time! When your labor begins (English)</a> | <a href="/patient-resources/patient-education/time-birth-labor-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/trial-labor-after-having-cesarean-delivery.pdf">Trial labor after having Cesarean delivery</a></li>
+</ul><h4>Breastfeeding and lactation:</h4>
+
+<ul><li><a href="/patient-resources/patient-education/benefits-breastfeeding-english.pdf">Benefits of breastfeeding (English)</a> | <a href="/patient-resources/patient-education/benefits-breastfeeding-korean.pdf">(Korean)</a> | <a href="/patient-resources/patient-education/benefits-breastfeeding-russian.pdf">(Russian)</a> | <a href="/patient-resources/patient-education/benefits-breastfeeding-spanish.pdf">(Spanish)</a> | <a href="/patient-resources/patient-education/benefits-breastfeeding-vietnamese.pdf">(Vietnamese)</a></li>
+	<li><a href="/patient-resources/patient-education/breast-pumping-record.pdf">Breast pumping record</a></li>
+	<li><a href="/patient-resources/patient-education/breastfeeding-mother-having-surgery-english.pdf">Breastfeeding mothers having surgery (English)</a> | <a href="/patient-resources/patient-education/breastfeeding-mother-having-surgery-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/breastfeeding-resources-english.pdf">Breastfeeding resources (English)</a> | <a href="/patient-resources/patient-education/breastfeeding-resources-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/breastfeeding-support-english.pdf">Breastfeeding support (English)</a> | <a href="/patient-resources/patient-education/breastfeeding-support-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/comfort-measures-postpartum-engorgement-english.pdf">Comfort measures for postpartum engorgement (English)</a> | <a href="/patient-resources/patient-education/comfort-measures-postpartum-engorgement-russian.pdf">(Russian)</a> | <a href="/patient-resources/patient-education/comfort-measures-postpartum-engorgement-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/comfort-measures-postpartum-engorgement-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/common-concerns-breastfeeding-english.pdf">Common concerns about breastfeeding (English)</a> | <a href="/patient-resources/patient-education/common-concerns-breastfeeding-korean.pdf">(Korean)</a> | <a href="/patient-resources/patient-education/common-concerns-breastfeeding-russian.pdf">(Russian)</a> | <a href="/patient-resources/patient-education/common-concerns-breastfeeding-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/common-concerns-breastfeeding-spanish.pdf">(Spanish)</a> | <a href="/patient-resources/patient-education/common-concerns-breastfeeding-vietnamese.pdf">(Vietnamese)</a></li>
+	<li><a href="/patient-resources/patient-education/herbs-foods-increase-your-breast-milk-supply.pdf">Herbs and foods to increase your breast milk supply</a></li>
+	<li><a href="/patient-resources/patient-education/how-breastfeeding-going-english.pdf">How is breastfeeding going? (English)</a> | <a href="/patient-resources/patient-education/how-breastfeeding-going-russian.pdf">(Russian)</a> | <a href="/patient-resources/patient-education/how-breastfeeding-going-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/how-breastfeeding-going-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/safe-take-while-breastfeeding-english.pdf">Is it safe to take ... while breastfeeding? (English)</a> | <a href="/patient-resources/patient-education/safe-take-while-breastfeeding-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/position-latch-breastfeeding-english.pdf">Position latch breastfeeding (English)</a> | <a href="/patient-resources/patient-education/position-latch-breastfeeding-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/pumping-storing-breast-milk-english.pdf">Pumping and storing breastmilk (English)</a> | <a href="/patient-resources/patient-education/pumping-storing-breast-milk-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/sore-nipples-breastfeeding-english.pdf">Sore nipples during breastfeeding (English)</a> | <a href="/patient-resources/patient-education/sore-nipples-breastfeeding-spanish.pdf">(Spanish)</a></li>
+</ul><h4>Caring for your baby:</h4>
+
+<ul><li><a href="/patient-resources/patient-education/car-seat-safety-english.pdf">Car seat safety (English)</a> | <a href="/patient-resources/patient-education/car-seat-safety-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/car-seat-safety-spanish.pdf">(Spanish)</a> | <a href="/patient-resources/patient-education/car-seat-safety-vietnamese.pdf">(Vietnamese)</a></li>
+	<li><a href="/patient-resources/patient-education/caring-your-baby-english.pdf">Caring for your baby (English)</a> | <a href="/patient-resources/patient-education/caring-your-baby-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/caring-your-baby-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/circumcisions-uw-clinics-english.pdf">Circumcisions at UW Neighborhood Clinics (English)</a> | <a href="/patient-resources/patient-education/circumcisions-uw-clinics-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/infant-safety-hospital-english.pdf">Infant safety at the hospital (English)</a> | <a href="/patient-resources/patient-education/infant-safety-hospital-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/jaundice-your-newborn-english.pdf">Jaundice and your newborn (English)</a> | <a href="/patient-resources/patient-education/jaundice-your-newborn-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/keeping-your-baby-safe-english.pdf">Keeping your baby safe (English)</a> | <a href="/patient-resources/patient-education/keeping-your-baby-safe-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/newborn-screening.pdf">Newborn screening</a></li>
+	<li><a href="/patient-resources/patient-education/newborn-warning-signs-chinese.pdf">Newborn warning signs (Chinese)</a> | <a href="/patient-resources/patient-education/newborn-warning-signs-english.pdf">(English)</a> | <a href="/patient-resources/patient-education/newborn-warning-signs-russian.pdf">(Russian)</a> | <a href="/patient-resources/patient-education/newborn-warning-signs-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/newborn-warning-signs-spanish.pdf">(Spanish)</a> | <a href="/patient-resources/patient-education/newborn-warning-signs-vietnamese.pdf">(Vietnamese)</a></li>
+	<li><a href="/patient-resources/patient-education/safe-home-baby-english.pdf">Safe home for your baby (English)</a> | <a href="/patient-resources/patient-education/safe-home-baby-spanish.pdf">(Spanish)</a></li>
+</ul><h4><strong>Caring for yourself after delivery:</strong></h4>
+
+<ul><li><a href="/patient-resources/patient-education/after-your-cesarean-birth-english.pdf">After your Cesarean birth (English)</a> | <a href="/patient-resources/patient-education/after-your-cesarean-birth-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/after-your-cesarean-birth-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/baby-blues-more-english.pdf">Baby blues and more (English)</a> | <a href="/patient-resources/patient-education/baby-blues-more-spanish.pdf">(Spanish</a></li>
+	<li><a href="/patient-resources/patient-education/constipation-after-birth-english.pdf">Constipation after birth (English)</a> | <a href="/patient-resources/patient-education/baby-blues-more-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/taking-care-yourself-after-birth-english.pdf">Taking care of yourself after birth (English)</a> | <a href="/patient-resources/patient-education/taking-care-yourself-after-birth-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/taking-care-yourself-after-birth-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/warning-signs-new-mothers-chinese.pdf">Warning signs for new mothers (Chinese)</a> | <a href="/patient-resources/patient-education/warning-signs-new-mothers-english.pdf">(English)</a> | <a href="/patient-resources/patient-education/warning-signs-new-mothers-russian.pdf">(Russian)</a> | <a href="/patient-resources/patient-education/warning-signs-new-mothers-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/warning-signs-new-mothers-spanish.pdf">(Spanish)</a> | <a href="/patient-resources/patient-education/warning-signs-new-mothers-vietnamese.pdf">(Vietnamese)</a></li>
+	<li><a href="/patient-resources/patient-education/your-family-planning-english.pdf">Your family planning (English)</a> | <a href="/patient-resources/patient-education/your-family-planning-spanish.pdf">(Spanish)</a></li>
+</ul><h4>Miscarriage, loss and grief:</h4>
+
+<ul><li><a href="/patient-resources/patient-education/caring-yourself-after-loss-your-baby-english.pdf">Caring for yourself after the loss of your baby (English)</a> | <a href="/patient-resources/patient-education/caring-yourself-after-loss-your-baby-somali.pdf">(Somali)</a> | <a href="/patient-resources/patient-education/caring-yourself-after-loss-your-baby-spanish.pdf">(Spanish)</a> | <a href="/patient-resources/patient-education/caring-yourself-after-loss-your-baby-vietnamese.pdf">(Vietnamese)</a></li>
+	<li><a href="/patient-resources/patient-education/coping-grief-after-losing-preterm-baby-english.pdf">Coping with grief after losing a preterm baby (English)</a> | <a href="/patient-resources/patient-education/coping-grief-after-losing-preterm-baby-spanish.pdf">(Spanish)</a></li>
+	<li><a href="/patient-resources/patient-education/miscarriage.pdf">Miscarriage</a></li>
+</ul><hr /><h3>Pelvic Care</h3>
+
+<ul><li><a href="/patient-resources/patient-education/bladder-retraining.pdf">Bladder retraining</a></li>
+	<li><a href="/patient-resources/patient-education/dietary-bladder-irritants.pdf">Dietary bladder irritants</a></li>
+	<li><a href="/patient-resources/patient-education/kegel-exercises.pdf">Kegel exercises</a></li>
+	<li><a href="/patient-resources/patient-education/voiding-diary.pdf">Bladder voiding diary</a></li>
+</ul>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-5">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-5"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-5"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-5"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Heart Institute
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-5" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-5">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Cardiovascular/">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-6">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-6"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-6"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-6"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Dermatology
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-6" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-6">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Dermatology/">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-7">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-7"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-7"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-7"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Diabetes &amp; Endocrinology
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-7" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-7">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Diabetes/">Topic index</a> (Diabetes)</p>
+
+<p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Endocrinology/">Topic index</a> (Endocrinology)</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-8">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-8"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-8"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-8"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Digestive Health
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-8" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-8">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Digestive/">Topic index</a> (Digestive disorders)</p>
+
+<p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Liver/">Topic index</a> (Liver, biliary, pancreatic disorders)</p>
+
+<p><a href="http://healthlibrary.uwmedicine.org/Conditions/Bariatric/">Topic index</a> (Bariatrics and weight loss management)</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-9">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-9"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-9"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-9"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Ear, Nose &amp; Throat Care
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-9" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-9">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Otolaryngology/">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-10">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-10"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-10"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-10"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Emergency Medicine, Trauma and Burn Care
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-10" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-10">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Search/90,P02626">Topic index</a> (Trauma)</p>
+
+<p><a href="http://healthlibrary.uwmedicine.org/Search/85,P01146">Topic index</a> (Burn)</p>
+
+<p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/NonTraumatic/">Topic index</a> (Non-traumatic injuries)</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-11">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-11"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-11"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-11"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Eye Institute
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-11" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-11">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Search/SearchResults.pg?SearchPhrase=Common%20Eye%20Disorders&amp;SearchType=text&amp;SearchOperator=And">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-12">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-12"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-12"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-12"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Hematology
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-12" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-12">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Hematology/">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-13">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-13"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-13"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-13"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Palliative Care
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-13" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-13">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Search/SearchResults.pg?SearchPhrase=palliative%20care&amp;SearchType=text&amp;SearchOperator=And">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-14">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-14"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-14"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-14"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Infectious Diseases
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-14" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-14">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Infectious/">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-15">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-15"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-15"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-15"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Laboratory Medicine &amp; Pathology
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-15" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-15">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Search/SearchResults.pg?SearchPhrase=lab%20testing&amp;SearchType=text&amp;SearchOperator=And">Topic index</a> (Laboratory medicine)</p>
+
+<p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Pathology/">Topic index</a> (Pathology)</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-16">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-16"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-16"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-16"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Lung Care
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-16" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-16">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Respiratory/">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-17">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-17"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-17"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-17"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Medical Genetics
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-17" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-17">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Search/90,P02129">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-18">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-18"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-18"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-18"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Men&#039;s Health
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-18" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-18">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Men/">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-19">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-19"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-19"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-19"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Mental Health Care
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-19" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-19">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/MentalHealth/">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-20">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-20"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-20"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-20"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Neurosciences
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-20" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-20">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/NervousSystem/">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-21">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-21"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-21"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-21"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Kidney Care
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-21" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-21">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Kidney/">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-22">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-22"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-22"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-22"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Orthopedic Surgery &amp; Sports Medicine
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-22" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-22">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Orthopedic/">Topic index</a> (Orthopedic surgery)</p>
+
+<p><a href="http://healthlibrary.uwmedicine.org/Search/SearchResults.pg?SearchPhrase=sports%20medicine&amp;SearchType=text&amp;SearchOperator=And">Topic index</a> (Sports medicine)</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-23">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-23"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-23"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-23"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Primary Care
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-23" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-23">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <ul><li><a href="http://healthlibrary.uwmedicine.org/Search/SearchResults.pg?SearchPhrase=wellness&amp;SearchType=text&amp;SearchOperator=And">Topic index</a></li>
+	<li><a href="https://www.cdc.gov/vaccines/schedules/downloads/adult/adult-combined-schedule.pdf">Immunization schedule for adults</a></li>
+	<li><a href="https://www.cdc.gov/vaccines/schedules/downloads/child/0-18yrs-child-combined-schedule.pdf">Immunization schedule for children</a></li>
+</ul><h3>Health maintenance exams, screenings and vaccines for adults:</h3>
+
+<p>The below guidelines are for patients of average risk. Have a preventive health visit every two years or as requested by your primary care provider. Talk to your provider if you have a family history of cancer, diabetes, heart disease or stroke; might need any vaccinations; have low energy or weight concerns; or smoke cigarettes or are exposed to others who smoke. We recommend the following:</p>
+
+<p><strong>​Men and women:</strong></p>
+
+<ul><li>Blood pressure check at each routine visit</li>
+	<li>Body mass index (BMI) check at each routine visit ​</li>
+	<li>​Cholesterol (blood lipid profile) screening every five years beginning at age 45 for women, age 35 for men</li>
+	<li>Colon cancer screenings beginning at age 50</li>
+	<li>Eye exams every two years</li>
+	<li>Hepatitis C: One-time screening recommended for those born between 1945-1965​</li>
+	<li>HIV: One-time between the ages of 15-65 and all pregnant women</li>
+</ul><p><strong>Women only:</strong></p>
+
+<ul><li>Mammograms: Talk to your primary care provider about your risk between the ages of 40-49, then every two years from ages 50-74</li>
+	<li>Pap tests every three years from ages 21-65​</li>
+</ul><h3>Health maintenance exams, screenings and vaccines for children:</h3>
+
+<p>Well-child visits are a key component to keeping children healthy and monitoring their development. During a well-child exam, your child’s physician will complete a physical exam and ask you about things at home, such as nutrition and sleep. These visits may also include other screening tests and immunizations. We recommend well-child visits at the following ages:</p>
+
+<ul><li><a href="/sites/contentrepo/files/2018-12/PatientEducation_WellChildVisit_Newborn.pdf">Newborn</a>—2-3 days after hospital discharge</li>
+	<li><a href="/sites/contentrepo/files/2018-12/PatientEducation_WellChildVisit_2wks.pdf">2 weeks </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/patienteducation_wellchildvisit_2mos.pdf">2 months</a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/PatientEducation_WellChildVisit_4mos.pdf">4 months </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/PatientEducation_WellChildVisit_6mos.pdf">6 months </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/patienteducation_wellchildvisit_9mos.pdf">9 months </a></li>
+	<li><a href="/patient-resources/patient-education/patienteducationwellchildvisit12mos.pdf">12 months </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/PatientEducation_WellChildVisit_15mos.pdf">15 months </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/patienteducation_wellchildvisit_18mos.pdf">18 months</a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/patienteducation_wellchildvisit_2yrs.pdf">2 years </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/patienteducation_wellchildvisit_3yrs.pdf">3 years </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/patienteducation_wellchildvisit_4yrs.pdf">4 years </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/PatientEducation_WellChildVisit_5yrs.pdf">5 years </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/patienteducation_wellchildvisit_6to8yrs.pdf">6-8 years </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/patienteducation_wellchildvisit_9to12yrs.pdf">9-12 years </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/patienteducation_wellchildvisit_13to15yrs_female.pdf">13-15 years (female)</a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/patienteducation_wellchildvisit_13to15yrs_male.pdf">13-15 years (male) </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/patienteducation_wellchildvisit_16to18yrs_female.pdf">16-18 years (female) </a></li>
+	<li><a href="/sites/contentrepo/files/2018-12/PatientEducation_WellChildVisit_16to18yrs_Male.pdf">16-18 years (male)</a></li>
+</ul>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-24">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-24"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-24"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-24"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Radiology
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-24" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-24">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Radiology/">Topic index</a></p>
+
+<p><a href="https://www.uwmedicine.org/services/radiology?scroll=approach/desktop-collapse-5">Patient resources</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-25">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-25"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-25"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-25"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Rehabilitation Medicine
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-25" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-25">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/PhysicalMed/">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-26">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-26"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-26"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-26"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Rheumatology
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-26" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-26">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Search/SearchResults.pg?SearchPhrase=About%20Arthritis%20and%20Other%20Rheumatic%20Diseases&amp;SearchType=text&amp;SearchOperator=And">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-27">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-27"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-27"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-27"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Sleep Medicine
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-27" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-27">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Search/SearchResults.pg?SearchPhrase=Overview%20of%20Sleep%20Problems&amp;SearchType=text&amp;SearchOperator=And">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-28">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-28"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-28"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-28"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Spine Care
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-28" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-28">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Search/SearchResults.pg?SearchPhrase=spinal&amp;SearchType=text&amp;SearchOperator=And">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-29">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-29"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-29"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-29"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Surgery
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-29" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-29">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Surgical/">Topic index</a> (Surgery)</p>
+
+<p><a href="http://healthlibrary.uwmedicine.org/Search/SearchResults.pg?SearchPhrase=plastic%20surgery&amp;SearchType=text&amp;SearchOperator=And">Topic index</a> (Plastic surgery)</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-30">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-30"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-30"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-30"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Transplant
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-30" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-30">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Search/90,P03076">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25376-31">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25376-31"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25376-31"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25376-31"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Vascular Care
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25376-31" class="collapse " role="tabpanel" data-parent="#accordion-25376" aria-labelledby="heading-accordion-25376-31">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://healthlibrary.uwmedicine.org/Library/DiseasesConditions/Adult/Cardiovascular/85,P08260">Topic index</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+          </div>
+  
+
+  </div>
+</section>
+
+          </div>
+  
+  
+  
+</article>
+
+
+
+            </div>
+
+  </div>
+
+  
+
+    
+
+
+
+<footer class="uwm-footer container-fluid">
+
+    <div class="row blocks-row">
+        <div class="col-xs-12"></div>
+    </div>
+
+<div class="row navigation-row">
+ <div class="col-12 d-none d-sm-inline-block foot-third">
+                    <div class="service-icons">
+        <a href="https://www.facebook.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__facebook" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.linkedin.com/company/uw-medicine">
+            <i class="uwmed-icon uwmed-icon__linkedin" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://twitter.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__twitter" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.instagram.com/UWMedicine">
+            <i class="uwmed-icon uwmed-icon__instagram" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.youtube.com/user/UWMedicineHealth">
+            <i class="uwmed-icon uwmed-icon__youtube" aria-hidden="true"></i>
+        </a>
+    </div>
+
+            </div></div>
+    <div class="row navigation-row">
+            <div class="col-xs-12 col-md-6 foot-first">
+                                
+              <ul class="menu nav">
+                    
+        <li>
+                    <a href="/about" data-drupal-link-system-path="node/20851">            <i class="uw-s hidden-xs"></i> About UW Medicine
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="http://providerresource.uwmedicine.org/">            <i class="uw-s hidden-xs"></i> Provider Resource
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://newsroom.uw.edu">            <i class="uw-s hidden-xs"></i> Media Inquiries
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/factbook">            <i class="uw-s hidden-xs"></i> Fact Book
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/about/contact-us" data-drupal-link-system-path="node/21466">            <i class="uw-s hidden-xs"></i> Contact Us
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/about/career-opportunities" data-drupal-link-system-path="node/21461">            <i class="uw-s hidden-xs"></i> Careers
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/volunteering" data-drupal-link-system-path="node/22171">            <i class="uw-s hidden-xs"></i> Volunteer
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="http://www.acceleratemed.org/give/?source=MEDXCL%2CMDNOVT%2CUWMEDS%2CHCMISS%2CADISUN%2CNWMEDI%2CVALLEY%2CMEDNEI%2CAIRFUN">            <i class="uw-s hidden-xs"></i> Donate
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://www.uw.edu">            <i class="uw-s hidden-xs"></i> UW.edu
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/forms/website-feedback" data-drupal-link-system-path="webform/website_feedback">            <i class="uw-s hidden-xs"></i> Feedback
+          </a>
+
+                  </li>
+        </ul>
+  
+
+</div>
+
+            <div class="col-xs-12 col-md-6 d-none d-md-inline-block foot-second">
+                                
+              <ul class="menu nav">
+                    
+        <li>
+                    <a href="/harborview">            <i class="uw-s hidden-xs"></i> Harborview Medical Center 
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/northwest-hospital">            <i class="uw-s hidden-xs"></i> Northwest Hospital &amp; Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/valley-medical-center">            <i class="uw-s hidden-xs"></i> Valley Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/uw-medical-center">            <i class="uw-s hidden-xs"></i> UW Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/neighborhood-clinics">            <i class="uw-s hidden-xs"></i> UW Neighborhood Clinics
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/uw-physicians">            <i class="uw-s hidden-xs"></i> UW Physicians
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/school-of-medicine/about" data-drupal-link-system-path="node/20916">            <i class="uw-s hidden-xs"></i> UW School of Medicine
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/airlift-nw">            <i class="uw-s hidden-xs"></i> Airlift Northwest
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://rightasrain.uwmedicine.org">            <i class="uw-s hidden-xs"></i> Right as Rain
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://newsroom.uw.edu">            <i class="uw-s hidden-xs"></i> UW Medicine Newsroom
+          </a>
+
+                  </li>
+        </ul>
+  
+
+</div>
+
+            <div class="col-xs-12 col-md-3 d-inline-block d-sm-none foot-third">
+                    <div class="service-icons">
+        <a href="https://www.facebook.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__facebook" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.linkedin.com/company/uw-medicine">
+            <i class="uwmed-icon uwmed-icon__linkedin" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://twitter.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__twitter" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.instagram.com/UWMedicine">
+            <i class="uwmed-icon uwmed-icon__instagram" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.youtube.com/user/UWMedicineHealth">
+            <i class="uwmed-icon uwmed-icon__youtube" aria-hidden="true"></i>
+        </a>
+    </div>
+
+            </div>
+
+    </div>
+<div class="row navigation-row">
+      <div class="col-12 foot-fourth">
+                <a class="logo" href="/" title="Home" rel="home">
+                    <img src="/themes/custom/uwmbase/dist/images/uw-medicine-logo-gray.svg"
+                         alt="UW Medicine" width="178" height="24">
+                </a>
+            </div>
+            </div>
+    <div class="row enterprise-row">
+        <div class="col-sm-4 first copyright">
+            Copyright &copy; 2019 University of Washington | All rights reserved
+        </div>
+
+        <div class="col-sm-8 second navigation">
+            
+              <ul class="list-inline">
+                    <li class="list-inline-item">
+        <a href="https://www.washington.edu/online/privacy/">Online Privacy Statement</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="/about/policies-and-notices" data-drupal-link-system-path="node/21821">Policies and Notices</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="/about/compliance/disclaimer" data-drupal-link-system-path="node/22091">Copyright And Healthcare Disclaimer</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="https://www.washington.edu/online/terms/">Website Terms And Conditions Of Use</a>
+              </li>
+        </ul>
+  
+
+
+        </div>
+    </div>
+
+</footer>
+
+
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/21386","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajax":[],"user":{"uid":0,"permissionsHash":"ca9aaf4e9f3d0580f94a983623e5ac1f747ff03fba5aa27bb8771bf5d9d50bc6"}}</script>
+<script src="/sites/stevie/files/js/js_yCFYs_LGt3NMrX7wq3rY13whYWABqIUCVmCDbRkY0AM.js"></script>
+<script src="//use.fontawesome.com/releases/v5.8.1/js/all.js" defer crossorigin="anonymous" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"></script>
+<script src="/sites/stevie/files/js/js_JdikXsINDZmBcoeNjvZQPWUasQUWoh0KllI62wO5PV4.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js" integrity="sha256-7QS1cHsH75h3IFgrFKsdhmKHHpWqF82sb/9vNLqcqs0=" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b55cc6ce81","applicationID":"55451763","transactionName":"YwMEbEsFWhBZBUIMV1pJJ1tNDVsNFyJEEEhVCjp7VhZRP3UDWBBkcAMAWUwIQC5dCEMpUVoNMkpcAXkCVg9GEFRVEglKSkkKBF0IUxdZQAMvVl0BTCJWAmUKSkA=","queueTime":0,"applicationTime":858,"atts":"T0QHGgMfSR4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

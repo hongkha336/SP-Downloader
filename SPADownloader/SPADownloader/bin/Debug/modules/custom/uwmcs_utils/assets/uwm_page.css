@@ -1,0 +1,70 @@
+/*@import url('/themes/custom/uwmed/dist/adminimal_theme/assets/styles.css');*/
+
+body.adminimal {
+}
+
+body.adminimal .field {
+    margin-bottom: 1.5em;
+}
+
+body.adminimal .field .paragraph {
+    margin: 1em 0 2em 2em;
+}
+
+body.adminimal .field .paragraph .field {
+    margin-bottom: .5em;
+}
+
+body.adminimal .field.field--type-entity-reference {
+    float: left;
+    width: 100%;
+}
+
+body.adminimal .field.field--type-entity-reference .field_res__item {
+    float: left;
+    margin-right: 1em;
+}
+
+body.adminimal .field.field--type-entity-reference .field_res__item:after {
+    content: " / ";
+    color: lightgray;
+}
+
+body.adminimal div.region.region-content {
+    position: relative;
+    padding-bottom: 300px;
+}
+
+body.adminimal div.block-system.block-system-branding-block {
+    margin: 2em 0;
+    float: left;
+    clear: both;
+    border: 1px solid lightgray;
+    padding: 1em;
+    border-radius: 1em;
+    position: absolute;
+    bottom: 0;
+}
+
+body.adminimal div.block-system.block-system-branding-block img {
+    float: left;
+    margin-right: 1em;
+}
+
+body.adminimal nav.breadcrumb ol {
+    margin: 1em 30% 1em 0;
+    padding: 1em 0;
+}
+
+body.adminimal .views-exposed-form {
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 1em;
+    border: 1px solid lightblue;
+}
+
+body.adminimal .messages {
+    margin: 1rem 0 2rem 0;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}

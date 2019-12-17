@@ -1,0 +1,1101 @@
+<!-- THIS PAGE WAS DOWNLOAD BY SP DOWNLOADER -->
+  <!-- hongkha336@gmail.com -->
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " site-uuid="86b376c5-ohhh-eeee-ahhh-oooo443540e3" site-env="prod" site-file="/mnt/www/html/uwmed/docroot/modules/custom/uwmcs_utils/uwmcs_utils.module">
+  <head>
+      <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b55cc6ce81",applicationID:"55451763"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="title" content="UW Medicine: Seattle&#039;s Nationally-Ranked Healthcare System" />
+<meta property="og:site_name" content="UW Medicine" />
+<meta name="twitter:card" content="summary" />
+<link rel="shortlink" href="https://www.uwmedicine.org/" />
+<link rel="canonical" href="https://www.uwmedicine.org/" />
+<meta name="description" content="UW Medicine is a premier healthcare system that integrates comprehensive patient care and nationally ranked research for over 300 medical clinics. Find a doctor or book an appointment online." />
+<meta property="og:type" content="website" />
+<meta name="twitter:title" content="UW Medicine: Seattle&#039;s Nationally-Ranked Healthcare System" />
+<meta name="twitter:site" content="@uwmedicine" />
+<meta property="og:url" content="https://www.uwmedicine.org/" />
+<meta property="og:title" content="UW Medicine: Seattle&#039;s Nationally-Ranked Healthcare System" />
+<meta property="og:description" content="Your home for world-class care, anywhere in the Puget Sound region." />
+<meta name="twitter:url" content="https://www.uwmedicine.org/" />
+<meta property="og:image" content="https://www.uwmedicine.org/sites/stevie/files/styles/hero_lg/public/2019-06/grandmother-and-granddaughter-pnw_6.11.jpg" />
+<meta property="og:image:secure_url" content="https://www.uwmedicine.org/sites/stevie/files/styles/hero_lg/public/2019-06/grandmother-and-granddaughter-pnw_6.11.jpg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/sites/stevie/files/favicons/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/sites/stevie/files/favicons/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/sites/stevie/files/favicons/favicon-16x16.png"/>
+<link rel="manifest" href="/sites/stevie/files/favicons/site.webmanifest"/>
+<link rel="mask-icon" href="/sites/stevie/files/favicons/safari-pinned-tab.svg" color="#5bbad5"/>
+<meta name="msapplication-TileColor" content="#da532c"/>
+<meta name="theme-color" content="#ffffff"/>
+<meta name="favicon-generator" content="Drupal responsive_favicons + realfavicongenerator.net" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="revision" href="/node/48106" />
+<script src="/sites/stevie/files/google_tag/google_tag.script.js?q2h8dj"></script>
+
+        <title>UW Medicine: Seattle&#039;s Nationally-Ranked Healthcare System</title>
+    
+  <link rel="stylesheet" href="/sites/stevie/files/css/css_ladMLfbG_O-ZkA3DnCqeMTYKJQG6VqOBoW-MFCulM2M.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/modules/custom/uwmcs_utils/assets/uwm_page.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/sites/stevie/files/css/css_YaXoetKBjaf8m-3hFXRNNGJKVnIYdDexQyIhr6KimdU.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Encode+Sans:300,400,500,600,700|Open+Sans:300,300i,400,400i,600,600i,700,700i" media="all" />
+
+  
+<!--[if lte IE 8]>
+<script src="/sites/stevie/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  </head>
+  <body  class="path-node-48106 user-role-anonymous is-path-frontpage is-page-node-type-uwm-homepage">
+      
+<a href="#main-content" class="skip-link visually-hidden visually-hidden--focusable">
+      Skip to main content
+  </a>
+  
+
+<header class="uwm-header">
+    <nav class="navbar navbar-expand-md flex-md-column">
+    <div class="purple container-fluid">
+
+                        <a class="navbar-brand" href="/" title="Home" rel="home">
+                <img src="/themes/custom/uwmbase/dist/images/uw-medicine-logo.svg"
+                     height="21" width="158" alt="UW Medicine">
+            </a>
+
+                          <button type="button" class="navbar-toggler ml-auto text-white"
+                        data-toggle="collapse"
+                        data-target=".search-collapse">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+
+                <button type="button" class="navbar-toggler text-white"
+                        data-toggle="collapse"
+                        data-target="#mainNavigationMobile"
+                        aria-controls="mainNavigationMobile" aria-expanded="false" aria-label="Toggle main navigation">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+
+
+                    
+
+        <div id="quickLinksNavigation" class="uwm-quick-links ml-auto d-none d-md-block">
+            <ul class="navbar-nav">
+            <li><a href="/patient-care/ecare">eCare Patient Portal</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="http://providerresource.uwmedicine.org/">For Providers</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/research">Research</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/school-of-medicine">School of Medicine</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/about/contact-us">Contact Us</a></li>
+                </ul>
+
+    </div>
+        <div class="d-none d-lg-block">
+            <form class="form-inline header-search-form"
+                  action="/search" accept-charset="UTF-8" method="get">
+
+                <div class="input-group header-search">
+
+                    <input name="s" type="text" class="form-control" value=""
+                           aria-label="Search terms" autocomplete="off">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+
+                </div>
+
+            </form>
+
+        </div>
+        <button type="button" class="navbar-toggler d-none d-md-inline-block d-lg-none text-white"
+            data-toggle="collapse"
+            data-target=".search-collapse">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <div class="search-collapse collapse">
+
+    <form class="form-inline header-search-form"
+          action="/search" accept-charset="UTF-8" method="get">
+        <div class="input-group">
+            <i class="fa fa-search uw-fa" aria-hidden="true"></i>
+            <input name="s" title="Search" type="text"
+                    class="form-control"
+                    aria-label="Search terms" value="" autocomplete="off">
+            <button type="button" class="navbar-toggler uw-fa"
+                    data-toggle="collapse"
+                    data-target=".search-collapse">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </form>
+    </div>
+
+    <div class="white container-fluid p-md-0 pl-lg-3">
+            
+            
+            
+
+    <div id="mainNavigation" class="collapse navbar-collapse uwm-main-navigation">
+        <ul class="navbar-nav mr-auto">
+                             <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find care"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find care
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find care">
+                                    <a class="dropdown-item" href="/services/urgent-care">Urgent care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/primary-care">Primary care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/services/virtual-clinic">Virtual clinic <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/emergency-medicine">Emergency rooms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties">Medical specialties <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/providers">Find a provider <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                    <i class="uw-b"></i>
+                                    <li class="nav-item"><a class="nav-link" href="/patient-care/making-an-appointment">Make an appointment <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        
+                    <i class="uw-b"></i>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find health &amp; patient resources"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find health &amp; patient resources
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find health &amp; patient resources">
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/">Conditions and symptoms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/Wellness/">Prevention and wellness <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">Patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/patient-education">Patient education <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                    <i class="uw-b"></i>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-I want to..."
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">I want to...
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-I want to...">
+                                    <a class="dropdown-item" href="https://www.uwmedicine.org/patient-resources/make-an-appointment">Make an appointment <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-care/ecare">Sign up or sign in for eCare <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/billing-and-insurance">Pay my bill  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/access-medical-records-images">Access medical records and images  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/interpreter-services">Find an interpreter  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/pharmacy-locations">Find a pharmacy <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">View all patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/provider-resource/refer-patient">Refer a patient <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                        </ul>
+    </div>
+
+    <div id="mainNavigationMobile" class="collapse navbar-collapse uwm-main-navigation-mobile d-md-none">
+        <ul class="navbar-nav mr-auto">
+                             <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find care"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find care
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find care">
+                                    <a class="dropdown-item" href="/services/urgent-care">Urgent care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/primary-care">Primary care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/services/virtual-clinic">Virtual clinic <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/emergency-medicine">Emergency rooms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties">Medical specialties <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/providers">Find a provider <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                                    <li class="nav-item"><a class="nav-link" href="/patient-care/making-an-appointment">Make an appointment <i class="fa fa-angle-right"
+                        aria-hidden="true"></i></a></li>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find health &amp; patient resources"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find health &amp; patient resources
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find health &amp; patient resources">
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/">Conditions and symptoms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/Wellness/">Prevention and wellness <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">Patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/patient-education">Patient education <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-I want to..."
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">I want to...
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-I want to...">
+                                    <a class="dropdown-item" href="https://www.uwmedicine.org/patient-resources/make-an-appointment">Make an appointment <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-care/ecare">Sign up or sign in for eCare <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/billing-and-insurance">Pay my bill  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/access-medical-records-images">Access medical records and images  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/interpreter-services">Find an interpreter  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/pharmacy-locations">Find a pharmacy <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">View all patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/provider-resource/refer-patient">Refer a patient <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                        </ul>
+
+        
+
+        <div class="make-a-gift-navigation">
+                    <div class="wrapper">
+
+                        <div class="gift-btn btn btn--border btn--primary btn--animated">
+                            <div class="uw-ac"></div>
+                            <a href="http://www.acceleratemed.org/give/?source=MEDXCL,MDNOVT,UWMEDS,HCMISS,ADISUN,NWMEDI,VALLEY,MEDNEI,AIRFUN">Make a Gift
+                                &nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+        
+
+        <div class="uwm-quick-links">
+            <ul class="navbar-nav">
+            <li><a href="/patient-care/ecare">eCare Patient Portal</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="http://providerresource.uwmedicine.org/">For Providers</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/research">Research</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/school-of-medicine">School of Medicine</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/about/contact-us">Contact Us</a></li>
+                </ul>
+
+        </div>
+    </div>
+
+
+                        <div id="makeAGift" class="uwm-make-a-gift-button ml-auto d-none d-md-block">
+            
+
+    
+        <ul class="navbar-nav">
+                    <li> 
+            <a href="http://www.acceleratemed.org/give/?source=MEDXCL%2CMDNOVT%2CUWMEDS%2CHCMISS%2CADISUN%2CNWMEDI%2CVALLEY%2CMEDNEI%2CAIRFUN">
+            <i class="u-a" aria-hidden="true"></i>
+            Make a Gift
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+                </ul>
+
+
+
+        </div>
+        
+        </div>
+    <div class="row shadow"></div>
+
+
+    
+    </nav>
+</header>
+
+
+  <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRG725G" height="0" width="0" title="Google Tag Manager"></iframe></noscript>
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+
+
+  <div id="main-container" role="main"  class="main-container">
+
+      <section class="content-topper">
+    <div class="wrap container-xl">
+
+            
+            
+            
+            
+            
+                              </div>
+  </section>
+
+      <section class="content-columns">
+
+    
+        <section class="content-main">
+                                      <a id="main-content"></a>
+              
+
+  
+    
+
+  <article role="article" about="/node/48106" class="node node-uwm_homepage view-mode-full homepage">
+
+    
+    <!-- Node field: field_uwm_homepage_markup -->
+    <!-- Hero -->
+<section class="hero hero--background-image"><div class="hero__background-image">
+
+    <picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="/sites/stevie/files/styles/hero_xl_mid/public/2019-11/UWM_Hero_W19_lo2.jpg 1x" media="(min-width: 1600px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/hero_xl/public/2019-11/UWM_Hero_W19_lo2.jpg 1x" media="(min-width: 1200px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/hero_lg/public/2019-11/UWM_Hero_W19_lo2.jpg 1x" media="(min-width: 992px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/hero_md/public/2019-11/UWM_Hero_W19_lo2.jpg 1x" media="(min-width: 768px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/hero_sm/public/2019-11/UWM_Hero_W19_lo2.jpg 1x" media="(min-width: 576px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/hero_xs/public/2019-11/UWM_Hero_W19_lo2.jpg 1x" type="image/jpeg"><!--[if IE 9]></video><![endif]--><img src="/sites/stevie/files/styles/hero_xl/public/2019-11/UWM_Hero_W19_lo2.jpg" alt="" typeof="foaf:Image" class="img-fluid" /></source></source></source></source></source></source></picture><!-- Translucent overlay for mobile --><div class="hero__overlay-mobile"></div>
+
+    <!-- Gradient overlay for sm+ -->
+    <div class="hero__overlay-gradient-horizontal"></div>
+
+  </div>
+
+  <div class="hero__content container-xl">
+
+    <h1 class="hero__heading">
+      A Higher Degree<br />
+      of Healthcare
+    </h1>
+
+    <div class="hero__ctas">
+
+      <a class="hero__btn-cta" href="/patient-resources/make-an-appointment">Make an appointment</a>
+
+      <a class="hero__btn-cta" href="/services/urgent-care">Find urgent care</a>
+
+      <a class="hero__btn-cta" href="/search/providers">Find a provider</a>
+
+      <a class="hero__btn-cta" href="/search/locations">Find a location</a>
+
+    </div>
+
+  </div>
+
+</section><!-- /Hero --><div class="field field--name-body">
+
+  <!------------------------------
+  <style type="text/css">
+    /*****************
+      @media (min-width: 768px) {
+        .patient-confidentiality-alert .ghost-button-white {
+          padding-left: 30px;
+        }
+      }
+      @media (max-width: 1199px) {
+        .patient-confidentiality-alert {
+          margin: 0 15px;
+        }
+      }
+    **********************/
+  </style>
+
+  <div class="container-xl patient-confidentiality-alert">
+    <div class="row" style="padding-top: 30px;">
+      <div class="col-xs-12">
+        <p style="font-weight:600;font-size:16px;padding-bottom: 16px;">A note to our patients:</p>
+      </div>
+    </div>
+
+    <div class="row" style="padding-bottom: 14px;">
+      <div class="col-sm-10" style="padding-bottom:16px;">
+      <p>UW Medicine take patient confidentiality very seriously and we sincerely regret that a data exposure occurred in December 2018. Patients affected by this exposure are being notified by mail.</p>
+    </div>
+
+    <div class="col-sm-2" style="padding-bottom:16px;">
+        <p class="ghost-button-white"><a class="btn btn-default" href="https://ide.myidcare.com/uwmedicine">Learn more</a></p>
+      </div>
+    </div>
+  </div>
+  -->
+
+  <!-- Alert bar -->
+    <div style="padding-top: 5px;">
+      </div>
+ <!--BEGIN comment out the alert-->
+ <div class="home-alert gradient-purple-horizontal uwm-accent-color__white">
+    <div class="container-xl">
+      <div class="row">
+        <div class="home-alert__text col-sm-9">
+          <p>To our valued patients and friends: We are excited to announce that on January 1, 2020, Northwest Hospital will become UW Medical Center – Northwest, a second campus of the University of Washington Medical Center, Washington's #1 hospital.</p>
+        </div>
+
+        <div class="home-alert__cta col-sm-3">
+          <a class="btn btn-cta" href="https://www.uwmedicine.org/nwh-uwmc-integration-qa">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!--END comment out the alert-->
+</div>
+
+
+<!-- Sections -->
+<div class="homepage-sections">
+
+  <!-- Sections field -->
+  <div class="field field--name-field-homepage-sections">
+
+    <!-- Patient Care -->
+    <section class="homepage-section homepage-section--1 fade-in-animation"><div class="homepage-section__image">
+
+        <picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="/sites/stevie/files/styles/home_section_xl_mid/public/2019-06/lucy-hwang.jpg 1x" media="(min-width: 1600px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_xl/public/2019-06/lucy-hwang.jpg 1x" media="(min-width: 1200px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_lg/public/2019-06/lucy-hwang.jpg 1x" media="(min-width: 992px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_md/public/2019-06/lucy-hwang.jpg 1x" media="(min-width: 768px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_sm/public/2019-06/lucy-hwang.jpg 1x" media="(min-width: 576px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_xs/public/2019-06/lucy-hwang.jpg 1x" type="image/jpeg"><!--[if IE 9]></video><![endif]--><img src="/sites/stevie/files/styles/home_section_lg/public/2019-06/lucy-hwang.jpg" alt="" typeof="foaf:Image" class="img-fluid" /></source></source></source></source></source></source></picture></div>
+
+      <div class="homepage-section__inner container-xl uwm-accent-color__teal">
+        <div class="homepage-section__title">
+          <h2 class="uwm-accent-heading uwm-accent-heading__title">
+            Patient Care
+          </h2>
+        </div>
+
+        <div class="homepage-section__story-link">
+
+          <!-- This should probably use the Modal paragraph type. For now -
+               @see paragraph--uwm-modal--uwm-featured-story.html.twig -->
+
+          <!-- Modal trigger element -->
+          <!-- TODO: consolidate button markup with uwm-modal-video -->
+          <!-- TODO: update the target ID to use paragraph entity ID -->
+          <div class="story-play-button" data-toggle="modal" data-target="#modal-section-1">
+            <span class="story-play-button__text">A day in the life: Lucy Hwang, M.D.</span>
+
+            <span class="story-play-button__icons fa-stack fa-2x">
+                <!-- "Regular" circle (outline) -->
+                <i class="story-play-button__circle-outline fa-circle far fa-stack-2x animated" style="animation-play-state: running;"></i>
+              <!-- Solid circle (filled) -->
+                <i class="story-play-button__circle-filled fa-circle fas fa-stack-2x"></i>
+                <i class="story-play-button__play-triangle fa-play fas fa-stack-1x"></i>
+              </span>
+          </div>
+
+        </div>
+
+        <div class="homepage-section__content">
+
+          <div class="field field--name-field-heading">
+            <p class="h2 homepage-section__heading">
+              300 clinics across 44 zip codes treating every medical condition under the sun? Yes, please.
+            </p>
+          </div>
+
+          <div class="field field--name-field-subheading">
+            <h3 class="homepage-section__subheading h5">
+              Common Resources
+            </h3>
+          </div>
+
+          <ul class="links-with-icon__list list-unstyled"><li class="links-with-icon__item">
+              <div class="wrapper">
+                <a class="btn" href="/patient-resources/billing-and-insurance" target="">
+                  <?xml version="1.0" encoding="UTF-8"??><svg class="uwm-icon-svg" width="18px" height="18px" viewbox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch --><title>icon_accepting_patients</title><desc>Created with Sketch.</desc><defs></defs><g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_accepting_patients"><g id="Group-13" fill="currentColor"><path d="M17.4773118,6.70526471 C17.3963118,6.39132353 17.0754882,6.20179412 16.7626059,6.28491176 C16.4491941,6.36644118 16.2612529,6.68620588 16.3427824,6.99961765 C16.5047824,7.62485294 16.5868412,8.27126471 16.5868412,8.92191176 C16.5868412,13.1185588 13.1726647,16.5332647 8.97601765,16.5332647 C4.77937059,16.5332647 1.36413529,13.1185588 1.36413529,8.92191176 C1.36413529,4.72526471 4.77937059,1.31108824 8.97601765,1.31108824 C10.3074882,1.31108824 11.6172529,1.65944118 12.7634294,2.31908824 C13.0445471,2.4795 13.4024294,2.38367647 13.5644294,2.10308824 C13.7259,1.82197059 13.6290176,1.46355882 13.3484294,1.30208824 C12.0243706,0.540794118 10.5123706,0.138441176 8.97601765,0.138441176 C4.1319,0.138441176 0.192017647,4.07885294 0.192017647,8.92191176 C0.192017647,13.7655 4.1319,17.7059118 8.97601765,17.7059118 C13.8190765,17.7059118 17.7594882,13.7655 17.7594882,8.92191176 C17.7594882,8.17226471 17.6647235,7.42579412 17.4773118,6.70526471" id="Fill-35"></path><path d="M8.91471176,11.5157647 C8.86335882,11.5422353 8.7453,11.5014706 8.68282941,11.4257647 L5.91347647,7.55682353 C5.72500588,7.29423529 5.35759412,7.23335294 5.09500588,7.42129412 C4.83188824,7.61029412 4.77100588,7.97611765 4.95947647,8.23976471 L7.75212353,12.1383529 C8.03853529,12.4882941 8.46100588,12.6884118 8.91259412,12.6884118 L8.92318235,12.6884118 C9.37794706,12.6847059 9.80147647,12.4787647 10.0953,12.1087059 L17.1333,2.69047059 C17.3275941,2.43105882 17.2741235,2.06364706 17.0147118,1.86988235 C16.7547706,1.67505882 16.3878882,1.73011765 16.1941235,1.98847059 L9.16671176,11.3934706 C9.08306471,11.4988235 8.97294706,11.5152353 8.91471176,11.5157647" id="Fill-37"></path></g></g></g></svg><span>Billing and insurance</span>
+                  <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="links-with-icon__item">
+              <div class="wrapper">
+                <a class="btn" href="/patient-resources/ecare" target="">
+                  <?xml version="1.0" encoding="UTF-8"??><svg class="uwm-icon-svg" width="18px" height="18px" viewbox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch --><title>icon_heart</title><desc>Created with Sketch.</desc><defs></defs><g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_heart" transform="translate(-3.000000, -3.000000)"><path fill="currentColor" d="M19.8684954,5.008556 C18.9455598,3.74702177 17.4765538,3.00099126 15.913455,3 C14.4204787,3.03198297 13.0001334,3.65053608 11.959764,4.7218122 C11.0337401,3.65500891 9.69976319,3.02956169 8.28741922,3 C6.72479607,3.00142114 5.25638284,3.74740513 4.33372819,5.008556 C0.801719228,9.50132538 5.18114046,13.9030114 7.15798598,15.9115674 L7.7227026,16.4857297 C8.78554824,17.7882844 9.91679844,19.0334929 11.111677,20.2160979 C11.3943727,20.7902602 11.3943727,20.7902602 11.6763936,20.7902602 C11.8911425,20.7596945 12.0897209,20.6588632 12.2411102,20.5035164 C12.2411102,20.5035164 13.3705435,19.0691227 15.3446902,17.0625908 C17.0395148,15.6281971 20.7105101,12.1845727 20.9932058,8.74162297 C21.0577673,7.40507479 20.6606504,6.0869899 19.8684954,5.008556 Z M11.6770683,19.9286794 C11.6770683,19.9286794 9.7002228,17.634729 8.28809391,16.1983112 C7.72465029,15.356293 7.06082127,14.5859794 6.31124839,13.9043608 L6.87596501,13.9043608 C7.15866067,13.9043608 7.15866067,13.9043608 7.15866067,13.617617 L8.57078956,10.1766914 L9.98291846,15.6281971 C9.98050573,15.7042546 10.0093788,15.7779759 10.0628027,15.8321648 C10.1162267,15.8863538 10.18953,15.916272 10.2656141,15.9149409 C10.5483098,15.9149409 10.5483098,15.9149409 10.5483098,15.6281971 L11.9604387,11.3243413 L12.5251553,12.758735 C12.5227426,12.8347925 12.5516156,12.9085137 12.6050396,12.9627027 C12.6584635,13.0168917 12.7317668,13.0468099 12.8078509,13.0454788 L17.8916499,13.0454788 C17.0428882,14.1904299 11.6770683,19.9286794 11.6770683,19.9286794 Z M18.7370381,12.1818739 L13.3712182,12.1818739 L12.5238059,10.1733179 C12.5262186,10.0972604 12.4973456,10.0235392 12.4439216,9.96935018 C12.3904977,9.91516122 12.3171943,9.88524296 12.2411102,9.88657411 C11.9584146,9.88657411 11.9584146,9.88657411 11.9584146,10.1733179 L10.2649394,13.9030114 L9.13483149,8.73824952 C8.98344212,8.58290275 8.78486379,8.48207146 8.57011487,8.45150571 L8.28741922,8.73824952 L6.59326936,13.04278 L5.74585708,13.04278 C4.05103253,10.7488296 2.9215993,8.16476191 5.18114046,5.5827183 C6.3110235,4.4348435 7.44068163,3.8609061 8.57011487,3.8609061 C10.2649394,3.8609061 11.6736949,5.8694621 11.6736949,5.8694621 C11.6736949,5.8694621 13.6505404,3.8609061 15.9100815,3.8609061 C17.0395148,3.8609061 17.8869271,4.1476499 19.0136615,5.5827183 C20.7145583,7.58790085 20.149167,10.1733179 18.7370381,12.1818739 Z" id="Path_1342" fill-rule="nonzero"></path></g></g></svg><span>eCare patient portal</span>
+                  <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="links-with-icon__item">
+              <div class="wrapper">
+                <a class="btn" href="/patient-resources" target="">
+                  <?xml version="1.0" encoding="UTF-8"??><svg class="uwm-icon-svg" width="15px" height="18px" viewbox="0 0 15 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch --><title>icon_patient_resources</title><desc>Created with Sketch.</desc><defs></defs><g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_patient_resources" transform="translate(-4.000000, -3.000000)"><g id="Group-4" transform="translate(4.000000, 3.000000)" fill="currentColor"><path d="M13.9755319,15.8545552 C13.9755319,16.5463138 13.397234,17.1086586 12.6861702,17.1086586 L2.17276596,17.1086586 C1.46170213,17.1086586 0.883404255,16.5463138 0.883404255,15.8545552 L0.883404255,2.05321034 C0.883404255,1.36145172 1.46170213,0.799106897 2.17276596,0.799106897 L9.66351064,0.799106897 C9.72159574,0.799106897 9.77840426,0.81027931 9.83585106,0.815865517 L9.83585106,2.81355517 C9.83585106,3.88424483 10.731383,4.75476207 11.8321277,4.75476207 L13.9452128,4.75476207 C13.9643617,4.8546931 13.9755319,4.95617586 13.9755319,5.05952069 L13.9755319,15.8545552 Z M13.9969149,3.41965862 L11.3948936,0.822072414 C10.9423404,0.37052069 10.311383,0.111693103 9.66351064,0.111693103 L2.17276596,0.111693103 C1.07202128,0.111693103 0.176489362,0.98252069 0.176489362,2.05321034 L0.176489362,15.8545552 C0.176489362,16.9252448 1.07202128,17.7960724 2.17276596,17.7960724 L12.6861702,17.7960724 C13.7865957,17.7960724 14.6821277,16.9252448 14.6821277,15.8545552 L14.6821277,5.05952069 C14.6821277,4.44286552 14.438617,3.86034828 13.9969149,3.41965862 Z" id="Fill-109"></path><path d="M11.9618617,13.2160345 C11.8469681,13.3572414 11.6749468,13.4382414 11.4898404,13.4382414 L3.36909574,13.4382414 C3.18398936,13.4382414 3.01164894,13.356931 2.89675532,13.2157241 C2.77994681,13.0723448 2.7381383,12.8873793 2.7818617,12.7083103 C3.14281915,11.2236207 4.26654255,9.98565517 5.73079787,9.44224138 C6.22228723,9.74762069 6.80409574,9.927 7.42930851,9.927 C8.05484043,9.927 8.63664894,9.74762069 9.1281383,9.44224138 C10.5927128,9.98596552 11.7151596,11.2202069 12.0770745,12.7073793 C12.1207979,12.8864483 12.0786702,13.0723448 11.9618617,13.2160345 M7.42930851,4.45593103 C8.78569149,4.45593103 9.88930851,5.5287931 9.88930851,6.84744828 C9.88930851,7.61989655 9.50920213,8.30606897 8.92356383,8.74365517 C8.87664894,8.76413793 8.83515957,8.79362069 8.80132979,8.83210345 C8.40909574,9.08937931 7.93707447,9.23958621 7.42930851,9.23958621 C6.07324468,9.23958621 4.96994681,8.16641379 4.96994681,6.84744828 C4.96994681,5.5287931 6.07324468,4.45593103 7.42930851,4.45593103 M9.73867021,8.94817241 C10.2687766,8.39731034 10.5962234,7.65993103 10.5962234,6.84744828 C10.5962234,5.15017241 9.17569149,3.76882759 7.42930851,3.76882759 C5.68356383,3.76882759 4.26303191,5.15017241 4.26303191,6.84744828 C4.26303191,7.65993103 4.59015957,8.39762069 5.12026596,8.94817241 C3.61643617,9.63186207 2.47835106,10.9688276 2.09409574,12.5500345 C2.00026596,12.9348621 2.09090426,13.3327241 2.34239362,13.6421379 C2.59228723,13.949069 2.96632979,14.1253448 3.36909574,14.1253448 L11.4898404,14.1253448 C11.8922872,14.1253448 12.2666489,13.949069 12.5159043,13.6424483 C12.7680319,13.3330345 12.8586702,12.9345517 12.7648404,12.5491034 C12.3793085,10.9657241 11.2428191,9.63124138 9.73867021,8.94817241" id="Fill-111"></path><path d="M6.14735106,6.84760345 C6.14735106,6.1605 6.7227766,5.60094828 7.42937234,5.60094828 C7.62469149,5.60094828 7.78298936,5.44732759 7.78298936,5.25739655 C7.78298936,5.06746552 7.62469149,4.91384483 7.42937234,4.91384483 C6.3327766,4.91384483 5.44043617,5.78094828 5.44043617,6.84760345 C5.44043617,7.03753448 5.59873404,7.19115517 5.79405319,7.19115517 C5.98937234,7.19115517 6.14735106,7.03753448 6.14735106,6.84760345" id="Fill-113"></path></g></g></g></svg><span>Patient and family resources</span>
+                  <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="links-with-icon__item">
+              <div class="wrapper">
+                <a class="btn btn-default " href="/services" target="">
+                  <?xml version="1.0" encoding="UTF-8"??><svg class="uwm-icon-svg" width="18px" height="17px" viewbox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch --><title>icon_medical_services</title><desc>Created with Sketch.</desc><defs></defs><g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_medical_services" transform="translate(-3.000000, -4.000000)"><g id="Group-5" transform="translate(3.000000, 4.000000)" fill="currentColor"><path d="M17.1436821,14.2658442 C17.1436821,15.3626712 16.2661821,16.2554981 15.1874679,16.2554981 L2.811825,16.2554981 C1.73311071,16.2554981 0.855610714,15.3626712 0.855610714,14.2658442 L0.855610714,6.38438269 C0.855610714,5.28722885 1.73311071,4.39472885 2.811825,4.39472885 L4.48871786,4.39472885 C4.51861071,4.40290192 4.54753929,4.41336346 4.580325,4.41336346 C4.61246786,4.41336346 4.64171786,4.40290192 4.67161071,4.39472885 L13.3273607,4.39472885 C13.3572536,4.40290192 13.3865036,4.41336346 13.4186464,4.41336346 C13.4511107,4.41336346 13.4803607,4.40290192 13.5099321,4.39472885 L15.1874679,4.39472885 C16.2661821,4.39472885 17.1436821,5.28722885 17.1436821,6.38438269 L17.1436821,14.2658442 Z M4.93614643,2.74899808 C4.93614643,1.80320962 5.69278929,1.03363269 6.62300357,1.03363269 L11.3762893,1.03363269 C12.3061821,1.03363269 13.062825,1.80320962 13.062825,2.74899808 L13.062825,3.67059423 L4.93614643,3.67059423 L4.93614643,2.74899808 Z M15.1874679,3.67059423 L13.7747893,3.67059423 L13.7747893,2.74899808 C13.7747893,1.40403654 12.6989679,0.309825 11.3762893,0.309825 L6.62300357,0.309825 C5.300325,0.309825 4.22418214,1.40403654 4.22418214,2.74899808 L4.22418214,3.67059423 L2.811825,3.67059423 C1.340325,3.67059423 0.143646429,4.88772885 0.143646429,6.38438269 L0.143646429,14.2658442 C0.143646429,15.7624981 1.340325,16.9796327 2.811825,16.9796327 L15.1874679,16.9796327 C16.6589679,16.9796327 17.8556464,15.7624981 17.8556464,14.2658442 L17.8556464,6.38438269 C17.8556464,4.88772885 16.6589679,3.67059423 15.1874679,3.67059423 Z" id="Fill-83"></path><path d="M9.3555,11.1444481 L9.3555,9.51571731 C9.65378571,9.66283269 9.86175,9.97079423 9.86175,10.3300827 C9.86175,10.6890442 9.65378571,10.9973327 9.3555,11.1444481 Z M8.15014286,12.7287173 C8.15014286,12.4008135 8.35682143,12.1235827 8.64385714,12.0179865 L8.64385714,13.4394481 C8.35682143,13.333525 8.15014286,13.0566212 8.15014286,12.7287173 Z M11.6701071,7.22496731 C11.3869286,6.98664038 11.0201786,6.98729423 10.7360357,7.22431346 L9.3555,8.37933269 L9.3555,7.62283269 C9.66407143,7.48356346 9.88007143,7.17037115 9.88007143,6.80487115 C9.88007143,6.31023654 9.486,5.90910192 8.99967857,5.90910192 C8.51303571,5.90910192 8.11896429,6.31023654 8.11896429,6.80487115 C8.11896429,7.17037115 8.33496429,7.48356346 8.64385714,7.62283269 L8.64385714,8.37965962 L7.263,7.22464038 C6.97917857,6.98598654 6.61275,6.98664038 6.32892857,7.22496731 L4.90371429,8.42085192 C4.689,8.60098654 4.65814286,8.92660192 4.73914286,9.15512115 C4.815,9.37089038 4.98792857,9.50460192 5.19042857,9.50460192 L6.80207143,9.50460192 C6.99846429,9.50460192 7.15789286,9.342775 7.15789286,9.14269808 C7.15789286,8.94294808 6.99846429,8.78079423 6.80207143,8.78079423 L5.59832143,8.78079423 L6.81075,7.78367885 L8.172,8.92267885 C7.69210714,9.20481346 7.36489286,9.72658269 7.36489286,10.3300827 C7.36489286,10.5298327 7.52432143,10.6919865 7.72103571,10.6919865 C7.91775,10.6919865 8.07685714,10.5298327 8.07685714,10.3300827 C8.07685714,9.94660192 8.31246429,9.62000577 8.64385714,9.487275 L8.64385714,11.272275 C7.9605,11.3945442 7.4385,11.999025 7.4385,12.7287173 C7.4385,13.4577558 7.9605,14.0615827 8.64385714,14.1838519 L8.64385714,14.7412558 C8.64385714,14.9410058 8.80296429,15.1028327 8.99967857,15.1028327 C9.19639286,15.1028327 9.3555,14.9410058 9.3555,14.7412558 L9.3555,14.1661981 C9.6165,14.1004865 9.93664286,13.949775 10.2166071,13.6133712 C10.34325,13.4606981 10.3246071,13.2325058 10.1748214,13.1027173 C10.0240714,12.9739096 9.79971429,12.9931981 9.67275,13.1452173 C9.56957143,13.269775 9.459,13.3466019 9.3555,13.3985827 L9.3555,11.9084673 C10.053,11.731275 10.5733929,11.0934481 10.5733929,10.3300827 C10.5733929,9.74390962 10.2654643,9.23325577 9.80807143,8.94556346 L11.2172143,7.78367885 L12.4058571,8.78079423 L11.1969643,8.78079423 C11.00025,8.78079423 10.8411429,8.94294808 10.8411429,9.14269808 C10.8411429,9.342775 11.00025,9.50460192 11.1969643,9.50460192 L12.80925,9.50460192 C13.0114286,9.50460192 13.1840357,9.37121731 13.2602143,9.155775 C13.3408929,8.92725577 13.3106786,8.60131346 13.0959643,8.42085192 L11.6701071,7.22496731 Z" id="Fill-85"></path></g></g></g></svg><span>Available medical services</span>
+                  <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+          </ul><a class="homepage-section__link btn btn-cta" href="/patient-resources">
+            Patient Care Home
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- Modal itself -->
+      <!-- Note: This is placed directly within the section container to
+           ease z-index/stacking issues. It must stack in the same context
+           as .modal-backdrop, which is directly under the body. -->
+      <div class="uwm-modal-video">
+        <div class="modal" id="modal-section-1" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+
+                <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+                  <iframe width="854" height="480" src="https://www.youtube.com/embed/m2dt3yYsafo?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Patient Care --><!-- Medical Research --><section class="homepage-section homepage-section--2 fade-in-animation"><div class="homepage-section__image">
+
+        <picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="/sites/stevie/files/styles/home_section_xl_mid/public/2019-06/uwm-research2.jpg 1x" media="(min-width: 1600px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_xl/public/2019-06/uwm-research2.jpg 1x" media="(min-width: 1200px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_lg/public/2019-06/uwm-research2.jpg 1x" media="(min-width: 992px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_md/public/2019-06/uwm-research2.jpg 1x" media="(min-width: 768px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_sm/public/2019-06/uwm-research2.jpg 1x" media="(min-width: 576px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_xs/public/2019-06/uwm-research2.jpg 1x" type="image/jpeg"><!--[if IE 9]></video><![endif]--><img src="/sites/stevie/files/styles/home_section_lg/public/2019-06/uwm-research2.jpg" alt="" typeof="foaf:Image" class="img-fluid" /></source></source></source></source></source></source></picture></div>
+
+      <div class="homepage-section__inner container-xl uwm-accent-color__orange">
+
+        <div class="homepage-section__title">
+          <h2 class="uwm-accent-heading uwm-accent-heading__title">
+            Medical Research
+          </h2>
+        </div>
+
+        <div class="homepage-section__content">
+
+          <div class="field field--name-field-heading">
+            <p class="h2 homepage-section__heading">
+              Five Nobel laureates strong and #2 nationally for research funding. We're fast-tracking cures.
+            </p>
+          </div>
+
+          <div class="field field--name-field-subheading">
+            <h3 class="homepage-section__subheading h5">
+              Common Resources
+            </h3>
+          </div>
+
+          <ul class="links-with-icon__list list-unstyled"><li class="links-with-icon__item">
+              <div class="wrapper">
+                <a class="btn" href="https://newsroom.uw.edu/" target="">
+                  <?xml version="1.0" encoding="UTF-8"??><svg class="uwm-icon-svg" width="24px" height="16px" viewbox="0 0 24 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch --><title>icon_media</title><desc>Created with Sketch.</desc><defs></defs><g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_media"><g id="Group-19" fill="currentColor"><path d="M22.74024,12.5124235 C22.74024,13.7194824 21.73848,14.7016 20.5068,14.7016 L3.318,14.7016 C2.08632,14.7016 1.08456,13.7194824 1.08456,12.5124235 L1.08456,3.38677647 C1.08456,2.17924706 2.08632,1.19712941 3.318,1.19712941 L20.5068,1.19712941 C21.73848,1.19712941 22.74024,2.17924706 22.74024,3.38677647 L22.74024,12.5124235 Z M20.5068,0.155247059 L3.318,0.155247059 C1.50024,0.155247059 0.02136,1.60465882 0.02136,3.38677647 L0.02136,12.5124235 C0.02136,14.2940706 1.50024,15.7439529 3.318,15.7439529 L20.5068,15.7439529 C22.32456,15.7439529 23.80344,14.2940706 23.80344,12.5124235 L23.80344,3.38677647 C23.80344,1.60465882 22.32456,0.155247059 20.5068,0.155247059 Z" id="Fill-119"></path><polygon id="Fill-121" points="10.841952 9.78814118 14.300832 7.94955294 10.841952 6.11143529"></polygon><path d="M11.912352,11.1167059 C10.131552,11.1167059 8.682432,9.69552941 8.682432,7.94964706 C8.682432,6.20376471 10.131552,4.78258824 11.912352,4.78258824 C13.693152,4.78258824 15.142272,6.20376471 15.142272,7.94964706 C15.142272,9.69552941 13.693152,11.1167059 11.912352,11.1167059 M11.912352,3.74070588 C9.544992,3.74070588 7.619712,5.62870588 7.619712,7.94964706 C7.619712,10.2701176 9.544992,12.1590588 11.912352,12.1590588 C14.279712,12.1590588 16.205472,10.2701176 16.205472,7.94964706 C16.205472,5.62870588 14.279712,3.74070588 11.912352,3.74070588" id="Fill-123"></path></g></g></g></svg><span>Latest research in the news</span>
+                  <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="links-with-icon__item">
+              <div class="wrapper">
+                <a class="btn" href="/school-of-medicine/phd-program" target="">
+                  <?xml version="1.0" encoding="UTF-8"??><svg class="uwm-icon-svg" width="24px" height="24px" viewbox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch --><title>icon_medical_research</title><desc>Created with Sketch.</desc><defs></defs><g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_medical_research"><path d="M19.7065549,18.7531108 C19.3381914,19.1018442 18.8565568,19.2932806 18.3504061,19.2932806 L13.0604949,19.2932806 C13.796291,18.5036054 13.8633226,17.2570353 13.1985924,16.3339927 L12.2247721,14.9805373 L19.1392689,14.9805373 L19.8970985,16.0337566 C20.5068999,16.8808627 20.4231104,18.075745 19.7065549,18.7531108 Z M4.14187712,18.8635058 C3.58017706,18.3217408 3.53052401,17.3821071 4.02922678,16.7235658 L4.27935399,16.3936571 L12.2167035,16.3936571 C12.2688392,16.3936571 12.3169406,16.3799375 12.3616283,16.3582413 L12.6465126,16.7541956 C13.1219405,17.4146513 13.0573916,18.3456703 12.5000362,18.8724395 C12.2129795,19.1442792 11.8374784,19.2932806 11.4433573,19.2932806 L5.20817625,19.2932806 C4.80846925,19.2932806 4.42986478,19.1407696 4.14187712,18.8635058 Z M7.10926719,12.6571374 L7.10926719,8.40054878 L9.69432882,8.40054878 L9.69432882,12.6523515 L11.8781318,15.6872567 L4.81436554,15.6872567 L7.10926719,12.6571374 Z M12.9298453,11.0056793 L12.9298453,5.725544 C12.9298453,5.71852466 12.9264317,5.71310063 12.9261214,5.70640036 L16.2786328,5.70640036 C16.2783225,5.71310063 16.2749089,5.71852466 16.2749089,5.725544 L16.2749089,11.0005743 L18.6306355,14.2738179 L11.7161387,14.2738179 L11.101372,13.4196924 L12.9298453,11.0056793 Z M20.4494886,15.6132346 L16.9622932,10.76766 L16.9622932,5.725544 C16.9622932,5.71852466 16.9588796,5.71310063 16.9585692,5.70640036 L17.5373375,5.70640036 C17.7272604,5.70640036 17.8808745,5.54846532 17.8808745,5.35320018 C17.8808745,5.15793504 17.7272604,5 17.5373375,5 L11.4805971,5 C11.2903639,5 11.1367498,5.15793504 11.1367498,5.35320018 C11.1367498,5.54846532 11.2903639,5.70640036 11.4805971,5.70640036 L12.246185,5.70640036 C12.2458746,5.71310063 12.242461,5.71852466 12.242461,5.725544 L12.242461,10.762555 L10.6771488,12.8300683 L10.3814028,12.4187991 L10.3814028,8.40054878 L10.7835925,8.40054878 C10.9735154,8.40054878 11.1271295,8.24229468 11.1271295,8.04702955 C11.1271295,7.85176441 10.9735154,7.69382937 10.7835925,7.69382937 L5.86794108,7.69382937 C5.67801819,7.69382937 5.52440408,7.85176441 5.52440408,8.04702955 C5.52440408,8.24229468 5.67801819,8.40054878 5.86794108,8.40054878 L6.42188286,8.40054878 L6.42188286,12.4143322 L3.4870776,16.2893242 C2.77207376,17.2331057 2.85307029,18.5903899 3.67203519,19.3787888 C4.08756911,19.7798481 4.63344226,20 5.20817625,20 L11.4433573,20 C11.5209402,20 11.5982127,19.9952141 11.6745543,19.9872376 C11.6956568,19.9913854 11.7148974,20 11.7369309,20 L18.3504061,20 C19.0297218,20 19.6761424,19.742199 20.1717419,19.2734988 C21.1592168,18.3392891 21.2786944,16.7656818 20.4494886,15.6132346 Z" id="Fill-97" fill="currentColor"></path></g></g></svg><span>Departments</span>
+                  <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="links-with-icon__item">
+              <div class="wrapper">
+                <a class="btn" href="https://www.iths.org/participate/" target="">
+                  <?xml version="1.0" encoding="UTF-8"??><svg class="uwm-icon-svg" width="18px" height="15px" viewbox="0 0 18 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch --><title>icon_provider_interests</title><desc>Created with Sketch.</desc><defs></defs><g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_provider_interests"><g id="Group-22" fill="currentColor" transform="translate(0.1, 0.1)"><path d="M13.257591,14.7938839 L1.67929254,14.7938839 C1.17018806,14.7938839 0.696546269,14.5651339 0.380337313,14.1668304 C0.0619791045,13.7653125 -0.0530059701,13.2483482 0.0654716418,12.7487946 C0.658934328,10.2459375 2.54463582,8.16950893 4.98618806,7.32950893 C5.1398597,7.27727679 5.30696418,7.35790179 5.35988955,7.51111607 C5.41281493,7.6640625 5.33141194,7.8309375 5.17800896,7.88370536 C2.92505373,8.65861607 1.18523284,10.5745982 0.637710448,12.8835268 C0.560874627,13.2079018 0.635292537,13.5429911 0.841620896,13.8033482 C1.04553134,14.0602232 1.35099403,14.2075446 1.67929254,14.2075446 L13.257591,14.2075446 C13.5861582,14.2075446 13.8908149,14.0602232 14.0947254,13.8036161 C14.3013224,13.5429911 14.3754716,13.2068304 14.2986358,12.8819196 C13.7508448,10.5751339 12.0859791,8.7178125 9.84484478,7.91397321 C9.69224776,7.8590625 9.61299403,7.69111607 9.6678,7.53897321 C9.72287463,7.3865625 9.89051642,7.3078125 10.0441881,7.36245536 C12.4725761,8.23352679 14.2768746,10.2464732 14.8703373,12.7469196 C14.9893522,13.2475446 14.8749045,13.7650446 14.5557403,14.1670982 C14.2398,14.5651339 13.7669642,14.7938839 13.257591,14.7938839" id="Fill-215"></path><path d="M7.46833433,8.65671429 C5.09448358,8.65671429 3.16364776,6.731625 3.16364776,4.36510714 C3.16364776,1.99832143 5.09448358,0.0729642857 7.46833433,0.0729642857 C8.33099104,0.0729642857 9.16328955,0.326357143 9.87522985,0.806089286 C10.0098269,0.896625 10.0452896,1.07903571 9.95448358,1.21296429 C9.86367761,1.34689286 9.68072239,1.38278571 9.54612537,1.29198214 C8.93143881,0.877875 8.21278209,0.659303571 7.46833433,0.659303571 C5.4190209,0.659303571 3.75146866,2.321625 3.75146866,4.36510714 C3.75146866,6.40805357 5.4190209,8.07064286 7.46833433,8.07064286 C8.60260299,8.07064286 9.66057313,7.56385714 10.3706328,6.68019643 C10.4721851,6.55430357 10.6567522,6.53367857 10.7835582,6.63492857 C10.9106328,6.73617857 10.9310507,6.92073214 10.8292299,7.04689286 C10.0068716,8.07010714 8.78206567,8.65671429 7.46833433,8.65671429" id="Fill-217"></path><path d="M4.82034627,4.65792857 C4.65807761,4.65792857 4.52643582,4.52694643 4.52643582,4.36489286 C4.52643582,2.74757143 5.84607761,1.43185714 7.46822687,1.43185714 C7.63076418,1.43185714 7.76213731,1.56310714 7.76213731,1.72489286 C7.76213731,1.88667857 7.63076418,2.01819643 7.46822687,2.01819643 C6.17034627,2.01819643 5.11452537,3.070875 5.11452537,4.36489286 C5.11452537,4.52694643 4.98288358,4.65792857 4.82034627,4.65792857" id="Fill-219"></path><path d="M4.99663881,10.4286429 C4.83437015,10.4286429 4.70272836,10.2976607 4.70272836,10.1356071 L4.70272836,7.98203571 C4.70272836,7.82025 4.83437015,7.689 4.99663881,7.689 C5.15890746,7.689 5.29081791,7.82025 5.29081791,7.98203571 L5.29081791,10.1356071 C5.29081791,10.2976607 5.15890746,10.4286429 4.99663881,10.4286429" id="Fill-221"></path><path d="M9.87235522,11.9345625 C9.71008657,11.9345625 9.57844478,11.8033125 9.57844478,11.6412589 L9.57844478,7.9820625 C9.57844478,7.82027679 9.71008657,7.68902679 9.87235522,7.68902679 C10.0348925,7.68902679 10.1665343,7.82027679 10.1665343,7.9820625 L10.1665343,11.6412589 C10.1665343,11.8033125 10.0348925,11.9345625 9.87235522,11.9345625" id="Fill-223"></path><path d="M10.599609,11.975625 C10.599609,12.3760714 10.273997,12.7009821 9.87235522,12.7009821 C9.47071343,12.7009821 9.14483284,12.3760714 9.14483284,11.975625 C9.14483284,11.5751786 9.47071343,11.2505357 9.87235522,11.2505357 C10.273997,11.2505357 10.599609,11.5751786 10.599609,11.975625" id="Fill-225"></path><path d="M5.99203881,13.2516161 L5.61538209,13.2516161 C5.45284478,13.2516161 5.32147164,13.1203661 5.32147164,12.9585804 C5.32147164,12.7967946 5.45284478,12.6655446 5.61538209,12.6655446 L5.99203881,12.6655446 C6.02212836,12.6655446 6.04657612,12.6411696 6.04657612,12.6109018 L6.04657612,11.6613482 C6.04657612,11.0838482 5.57535224,10.6142946 4.99666567,10.6142946 C4.4179791,10.6142946 3.94675522,11.0838482 3.94675522,11.6613482 L3.94675522,12.6109018 C3.94675522,12.6411696 3.97147164,12.6655446 4.00156119,12.6655446 L4.37794925,12.6655446 C4.54048657,12.6655446 4.67212836,12.7967946 4.67212836,12.9585804 C4.67212836,13.1203661 4.54048657,13.2516161 4.37794925,13.2516161 L4.00156119,13.2516161 C3.64693433,13.2516161 3.35866567,12.9644732 3.35866567,12.6109018 L3.35866567,11.6613482 C3.35866567,10.7608125 4.09371045,10.0282232 4.99666567,10.0282232 C5.89988955,10.0282232 6.63466567,10.7608125 6.63466567,11.6613482 L6.63466567,12.6109018 C6.63466567,12.9644732 6.34612836,13.2516161 5.99203881,13.2516161" id="Fill-227"></path><path d="M10.2514567,2.07091071 L10.2544119,2.07091071 L10.2514567,2.07091071 Z M11.5168299,1.89198214 C11.1305015,1.89198214 10.7492776,2.0235 10.4462328,2.29055357 C10.099397,2.59617857 9.90032239,3.01457143 9.88688955,3.46939286 C9.8729194,3.92448214 10.0448597,4.35358929 10.3707403,4.67796429 L13.2335463,7.52796429 C13.3998448,7.69376786 13.6714567,7.69403571 13.8380239,7.52823214 L16.6516657,4.73341071 C16.9810388,4.406625 17.1672179,3.94992857 17.1621134,3.48064286 C17.1572776,3.03760714 16.9853373,2.63260714 16.6782627,2.34010714 C16.0238149,1.71680357 15.0093672,1.72805357 14.3678149,2.36501786 L13.539009,3.18814286 L12.7518448,2.406 C12.4085015,2.06528571 11.9598448,1.89198214 11.5168299,1.89198214 Z M13.5360537,8.23832143 C13.275994,8.23832143 13.0156657,8.13975 12.8176657,7.94260714 L9.95512836,5.092875 C9.51318806,4.65305357 9.28026269,4.07019643 9.29906866,3.45144643 C9.31760597,2.8335 9.5868,2.265375 10.0566806,1.85153571 C10.9397552,1.07314286 12.305606,1.13528571 13.1669194,1.99055357 L13.539009,2.36073214 L13.9527403,1.94957143 C14.8229194,1.08653571 16.1981731,1.07180357 17.084203,1.91608929 C17.5070687,2.31867857 17.7437552,2.87207143 17.7499343,3.47421429 C17.7566507,4.10046429 17.507606,4.71064286 17.067009,5.14885714 L14.2533672,7.94341071 C14.0553672,8.14001786 13.7953075,8.23832143 13.5360537,8.23832143 Z" id="Fill-229"></path></g></g></g></svg><span>Participate in a study</span>
+                  <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="links-with-icon__item">
+              <div class="wrapper">
+                <a class="btn" href="/about/awards" target="">
+                  <?xml version="1.0" encoding="UTF-8"??><svg class="uwm-icon-svg" width="18px" height="18px" viewbox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch --><title>icon_5_star_rating</title><desc>Created with Sketch.</desc><defs></defs><g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_5_star_rating"><g id="Group-16" fill="currentColor"><path d="M9.14513143,16.3318114 C5.13061714,16.3318114 1.87570286,13.0774114 1.87570286,9.06238286 C1.87570286,5.04786857 5.13061714,1.79346857 9.14513143,1.79346857 C13.16016,1.79346857 16.41456,5.04786857 16.41456,9.06238286 C16.41456,13.0774114 13.16016,16.3318114 9.14513143,16.3318114 M17.7810171,9.03564 C17.7799886,8.86541143 17.6833029,8.70032571 17.5814743,8.52444 C17.4914743,8.36758286 17.3968457,8.20609714 17.3762743,8.03689714 C17.3546743,7.86306857 17.4066171,7.67946857 17.4575314,7.50306857 C17.5130743,7.31072571 17.5639886,7.12918286 17.5243886,6.96975429 C17.4842743,6.80621143 17.3510743,6.66786857 17.2106743,6.52232571 C17.0846743,6.39169714 16.95456,6.25644 16.8928457,6.09701143 C16.8311314,5.93449714 16.8373029,5.74524 16.8445029,5.56164 C16.8511886,5.36106857 16.85736,5.17129714 16.7807314,5.02575429 C16.7020457,4.87712571 16.5400457,4.77529714 16.3698171,4.66832571 C16.2145029,4.57164 16.0561029,4.47135429 15.9578743,4.32992571 C15.8586171,4.18746857 15.8195314,4.00232571 15.7814743,3.82335429 C15.7398171,3.62638286 15.70176,3.44072571 15.5906743,3.31678286 C15.4790743,3.19232571 15.2995886,3.13164 15.1087886,3.06889714 C14.9354743,3.01129714 14.7559886,2.95112571 14.62536,2.83695429 C14.4967886,2.72329714 14.4139886,2.55255429 14.3358171,2.38798286 C14.2489029,2.20644 14.1666171,2.03569714 14.0287886,1.94055429 C13.8914743,1.84592571 13.7022171,1.83101143 13.5026743,1.81455429 C13.3190743,1.80066857 13.13136,1.78472571 12.9775886,1.70501143 C12.82536,1.62581143 12.7055314,1.48026857 12.5898171,1.33935429 C12.4612457,1.18404 12.3398743,1.03695429 12.1825029,0.977297143 C12.04776,0.926382857 11.84976,0.947982857 11.6440457,0.98244 C11.4578743,1.01175429 11.2567886,1.03901143 11.1061029,1.00198286 C10.9399886,0.961868571 10.7893029,0.848725714 10.6442743,0.741754286 C10.48176,0.620897143 10.32696,0.506725714 10.1598171,0.486668571 C9.99678857,0.468154286 9.82398857,0.541697143 9.64090286,0.619868571 C9.47118857,0.692897143 9.29581714,0.767982857 9.11993143,0.768497143 C8.94250286,0.769011429 8.76713143,0.694954286 8.59741714,0.623468571 C8.41278857,0.545811429 8.24101714,0.472782857 8.07747429,0.492325714 C7.90981714,0.513925714 7.75656,0.629125714 7.59456,0.749982857 C7.44953143,0.859011429 7.29987429,0.97164 7.13478857,1.01329714 C6.98410286,1.05186857 6.78147429,1.02718286 6.59684571,0.99684 C6.39010286,0.96444 6.19210286,0.944382857 6.05736,0.995297143 C5.89998857,1.05649714 5.78016,1.20358286 5.65313143,1.36095429 C5.53741714,1.50289714 5.41964571,1.64792571 5.26741714,1.72815429 C5.11416,1.80941143 4.92541714,1.82586857 4.74284571,1.84181143 C4.54330286,1.85878286 4.35456,1.87524 4.21724571,1.97038286 C4.08096,2.06604 3.99970286,2.23781143 3.91278857,2.41986857 C3.83564571,2.58546857 3.75541714,2.75518286 3.62633143,2.87141143 C3.49673143,2.98712571 3.31776,3.04626857 3.14496,3.10541143 C2.95467429,3.17021143 2.77416,3.23192571 2.66358857,3.35638286 C2.55404571,3.48084 2.51547429,3.66752571 2.47587429,3.86449714 C2.43987429,4.04346857 2.40181714,4.22912571 2.30358857,4.37158286 C2.20587429,4.51404 2.04696,4.61484 1.89318857,4.71358286 C1.72296,4.82055429 1.56198857,4.92341143 1.48433143,5.07204 C1.40873143,5.21912571 1.41644571,5.40838286 1.42467429,5.60895429 C1.43238857,5.79204 1.44010286,5.98129714 1.37838857,6.14535429 C1.31821714,6.30478286 1.18861714,6.44055429 1.06313143,6.57272571 C0.924788571,6.71878286 0.792102857,6.85815429 0.751988571,7.02118286 C0.713931429,7.18164 0.766388571,7.36266857 0.821931429,7.55398286 C0.874388571,7.73038286 0.92736,7.91346857 0.90576,8.08781143 C0.88776,8.25598286 0.795702857,8.41952571 0.704674286,8.57689714 C0.604388571,8.75278286 0.509245714,8.91941143 0.509245714,9.08912571 C0.510274286,9.25986857 0.606445714,9.42495429 0.70776,9.60135429 C0.798788571,9.75769714 0.892902857,9.92021143 0.91296,10.0883829 C0.935074286,10.2622114 0.882617143,10.4452971 0.832217143,10.6222114 C0.777188571,10.81404 0.725245714,10.9960971 0.764845714,11.1550114 C0.805988571,11.3195829 0.93816,11.4563829 1.07907429,11.6029543 C1.20507429,11.7335829 1.33467429,11.86884 1.39638857,12.0287829 C1.45913143,12.1912971 1.45296,12.3805543 1.44524571,12.5641543 C1.43958857,12.7642114 1.43238857,12.9539829 1.51004571,13.10004 C1.58770286,13.2481543 1.74970286,13.3489543 1.91993143,13.45644 C2.07370286,13.55364 2.23416,13.6534114 2.33238857,13.7953543 C2.43113143,13.9378114 2.47021714,14.1229543 2.50878857,14.3019257 C2.54890286,14.4988971 2.58798857,14.68404 2.69907429,14.8090114 C2.81067429,14.9329543 2.99016,14.99364 3.18147429,15.0568971 C3.35478857,15.1139829 3.53376,15.1731257 3.66438857,15.2878114 C3.79398857,15.4024971 3.87576,15.5722114 3.95393143,15.7367829 C4.04084571,15.9183257 4.12313143,16.0906114 4.26147429,16.1842114 C4.39878857,16.2783257 4.58753143,16.2937543 4.78707429,16.3096971 C4.97016,16.3251257 5.15838857,16.3395257 5.31216,16.4202686 C5.46438857,16.4999829 5.58473143,16.6439829 5.69993143,16.7848971 C5.82850286,16.9417543 5.94884571,17.08884 6.10673143,17.1479829 C6.24198857,17.1988971 6.43844571,17.1767829 6.64570286,17.1433543 C6.83187429,17.1130114 7.03296,17.0867829 7.18416,17.1238114 C7.34976,17.1639257 7.49993143,17.2755257 7.64650286,17.3835257 C7.80850286,17.5048971 7.96227429,17.6185543 8.13044571,17.6386114 C8.29450286,17.6566114 8.46524571,17.5840971 8.64884571,17.5048971 C8.81907429,17.4323829 8.99444571,17.3572971 9.17084571,17.3562686 C9.34776,17.3562686 9.52261714,17.4298114 9.69284571,17.5012971 C9.87696,17.5794686 10.0492457,17.6524971 10.2127886,17.6319257 C10.3804457,17.6113543 10.5331886,17.4966686 10.6957029,17.3742686 C10.8397029,17.26524 10.9898743,17.1526114 11.1554743,17.1114686 C11.30616,17.0734114 11.5087886,17.0991257 11.6939314,17.1279257 C11.90016,17.1598114 12.09816,17.1803829 12.2329029,17.1289543 C12.3902743,17.0692971 12.5095886,16.9211829 12.6371314,16.7643257 C12.7523314,16.6223829 12.8711314,16.47684 13.02336,16.3960971 C13.1771314,16.31484 13.36536,16.2994114 13.5474171,16.2829543 C13.7479886,16.2659829 13.9362171,16.2490114 14.0725029,16.1548971 C14.2103314,16.0587257 14.2915886,15.88644 14.3764457,15.7043829 C14.4546171,15.5398114 14.5348457,15.3690686 14.6644457,15.2538686 C14.7930171,15.1381543 14.9725029,15.0779829 15.1458171,15.0193543 C15.3361029,14.95404 15.5161029,14.8943829 15.6266743,14.7688971 C15.7362171,14.6439257 15.7732457,14.4577543 15.8138743,14.2607829 C15.8503886,14.0818114 15.8879314,13.8951257 15.9866743,13.7526686 C16.0838743,13.61124 16.2427886,13.5099257 16.3970743,13.4111829 C16.5667886,13.3031829 16.7272457,13.2013543 16.8054171,13.0522114 C16.8815314,12.90564 16.8738171,12.7153543 16.8661029,12.5163257 C16.8578743,12.3322114 16.8506743,12.1429543 16.9118743,11.9799257 C16.97256,11.8204971 17.1016457,11.6842114 17.2266171,11.5525543 C17.3654743,11.4054686 17.49816,11.26764 17.5382743,11.1030686 C17.5763314,10.94364 17.5238743,10.7620971 17.4678171,10.5702686 C17.4158743,10.3938686 17.3623886,10.2118114 17.38296,10.0369543 C17.4025029,9.86826857 17.4950743,9.70575429 17.5850743,9.54838286 C17.6858743,9.37249714 17.7810171,9.20586857 17.7810171,9.03564" id="Fill-45"></path><path d="M13.0082914,7.52621143 L10.9269771,7.22381143 C10.7588057,7.19964 10.6137771,7.09369714 10.5386914,6.94146857 L9.60783429,5.05558286 C9.41909143,4.67192571 8.87189143,4.67192571 8.68263429,5.05558286 L7.75177714,6.94146857 C7.67669143,7.09369714 7.53166286,7.19964 7.36349143,7.22381143 L5.28217714,7.52621143 C4.85892,7.58792571 4.68972,8.10735429 4.99623429,8.40615429 L6.50257714,9.87392571 C6.62394857,9.99272571 6.67897714,10.1634686 6.65069143,10.3311257 L6.29480571,12.4036971 C6.22280571,12.8254114 6.66509143,13.1463257 7.04309143,12.9478114 L8.90480571,11.9691257 C9.05549143,11.8899257 9.23497714,11.8899257 9.38514857,11.9691257 L11.2468629,12.9478114 C11.6258914,13.1463257 12.0676629,12.8254114 11.9951486,12.4036971 L11.6397771,10.3311257 C11.6109771,10.1634686 11.6670343,9.99272571 11.7884057,9.87392571 L13.2947486,8.40615429 C13.6002343,8.10735429 13.4315486,7.58792571 13.0082914,7.52621143" id="Fill-47"></path></g></g></g></svg><span>Accomplishments and awards</span>
+                  <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+          </ul><a class="homepage-section__link btn btn-cta" href="/research">
+            Research Home
+          </a>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Medical Research --><!-- UW School of Medicine --><section class="homepage-section homepage-section--3 fade-in-animation"><div class="homepage-section__image">
+
+        <picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="/sites/stevie/files/styles/home_section_xl_mid/public/2019-06/wwami-alaska-fairbanks-education.jpg 1x" media="(min-width: 1600px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_xl/public/2019-06/wwami-alaska-fairbanks-education.jpg 1x" media="(min-width: 1200px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_lg/public/2019-06/wwami-alaska-fairbanks-education.jpg 1x" media="(min-width: 992px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_md/public/2019-06/wwami-alaska-fairbanks-education.jpg 1x" media="(min-width: 768px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_sm/public/2019-06/wwami-alaska-fairbanks-education.jpg 1x" media="(min-width: 576px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/home_section_xs/public/2019-06/wwami-alaska-fairbanks-education.jpg 1x" type="image/jpeg"><!--[if IE 9]></video><![endif]--><img src="/sites/stevie/files/styles/home_section_lg/public/2019-06/wwami-alaska-fairbanks-education.jpg" alt="" typeof="foaf:Image" class="img-fluid" /></source></source></source></source></source></source></picture></div>
+
+      <div class="homepage-section__inner container-xl uwm-accent-color__blue">
+
+        <div class="homepage-section__title">
+          <h2 class="uwm-accent-heading uwm-accent-heading__title">
+            UW School of Medicine
+          </h2>
+        </div>
+
+        <div class="homepage-section__content">
+
+          <div class="field field--name-field-heading">
+            <p class="h2 homepage-section__heading">
+              Best in class: For 20-plus years the UW School of Medicine has ranked as one of the top med schools in the U.S.
+            </p>
+          </div>
+
+          <div class="field field--name-field-subheading">
+            <h3 class="homepage-section__subheading h5">
+              Common Resources
+            </h3>
+          </div>
+
+          <ul class="links-with-icon__list list-unstyled"><li class="links-with-icon__item">
+              <div class="wrapper">
+                <a class="btn" href="/school-of-medicine/admissions" target="">
+                  <?xml version="1.0" encoding="UTF-8"??><svg class="uwm-icon-svg" width="18px" height="18px" viewbox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch --><title>icon_accepting_patients</title><desc>Created with Sketch.</desc><defs></defs><g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_accepting_patients"><g id="Group-13" fill="currentColor"><path d="M17.4773118,6.70526471 C17.3963118,6.39132353 17.0754882,6.20179412 16.7626059,6.28491176 C16.4491941,6.36644118 16.2612529,6.68620588 16.3427824,6.99961765 C16.5047824,7.62485294 16.5868412,8.27126471 16.5868412,8.92191176 C16.5868412,13.1185588 13.1726647,16.5332647 8.97601765,16.5332647 C4.77937059,16.5332647 1.36413529,13.1185588 1.36413529,8.92191176 C1.36413529,4.72526471 4.77937059,1.31108824 8.97601765,1.31108824 C10.3074882,1.31108824 11.6172529,1.65944118 12.7634294,2.31908824 C13.0445471,2.4795 13.4024294,2.38367647 13.5644294,2.10308824 C13.7259,1.82197059 13.6290176,1.46355882 13.3484294,1.30208824 C12.0243706,0.540794118 10.5123706,0.138441176 8.97601765,0.138441176 C4.1319,0.138441176 0.192017647,4.07885294 0.192017647,8.92191176 C0.192017647,13.7655 4.1319,17.7059118 8.97601765,17.7059118 C13.8190765,17.7059118 17.7594882,13.7655 17.7594882,8.92191176 C17.7594882,8.17226471 17.6647235,7.42579412 17.4773118,6.70526471" id="Fill-35"></path><path d="M8.91471176,11.5157647 C8.86335882,11.5422353 8.7453,11.5014706 8.68282941,11.4257647 L5.91347647,7.55682353 C5.72500588,7.29423529 5.35759412,7.23335294 5.09500588,7.42129412 C4.83188824,7.61029412 4.77100588,7.97611765 4.95947647,8.23976471 L7.75212353,12.1383529 C8.03853529,12.4882941 8.46100588,12.6884118 8.91259412,12.6884118 L8.92318235,12.6884118 C9.37794706,12.6847059 9.80147647,12.4787647 10.0953,12.1087059 L17.1333,2.69047059 C17.3275941,2.43105882 17.2741235,2.06364706 17.0147118,1.86988235 C16.7547706,1.67505882 16.3878882,1.73011765 16.1941235,1.98847059 L9.16671176,11.3934706 C9.08306471,11.4988235 8.97294706,11.5152353 8.91471176,11.5157647" id="Fill-37"></path></g></g></g></svg><span>Admissions</span>
+                  <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="links-with-icon__item">
+              <div class="wrapper">
+                <a class="btn" href="/school-of-medicine/about" target="">
+                  <?xml version="1.0" encoding="UTF-8"??><svg class="uwm-icon-svg" width="24px" height="24px" viewbox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch --><title>icon_medical_specialists</title><desc>Created with Sketch.</desc><defs></defs><g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_medical_specialists"><path fill="currentColor" d="M21,15.0441341 C21,14.3266569 20.4200341,13.7447131 19.7049954,13.7447131 C18.9890652,13.7447131 18.4090993,14.3266569 18.4090993,15.0441341 C18.4090993,15.5129097 18.6587387,15.9199573 19.0291858,16.1485301 C18.4857742,18.3613479 16.4966828,20.0096668 14.1264455,20.0096668 C11.3385079,20.0096668 9.0708011,17.7342263 9.0708011,14.9372282 L9.0708011,11.6074899 C11.1593025,11.273353 12.7618985,9.45953132 12.7618985,7.27176263 L12.7618985,4.5069705 C12.7618985,3.67587784 12.087872,3 11.259604,3 L10.1701062,3 C9.89728596,3 9.67662253,3.22141597 9.67662253,3.49516662 C9.67662253,3.76891727 9.89728596,3.99033324 10.1701062,3.99033324 L11.259604,3.99033324 C11.5435689,3.99033324 11.7744854,4.22203723 11.7744854,4.5069705 L11.7744854,7.27176263 C11.7744854,9.14954897 10.2521306,10.6770955 8.38072637,10.6770955 C6.50932215,10.6770955 4.98696735,9.14954897 4.98696735,7.27176263 L4.98696735,4.5069705 C4.98696735,4.22203723 5.21832962,3.99033324 5.5018487,3.99033324 L6.59134653,3.99033324 C6.86416678,3.99033324 7.08483021,3.76891727 7.08483021,3.49516662 C7.08483021,3.22141597 6.86416678,3 6.59134653,3 L5.5018487,3 C4.67402648,3 4,3.67587784 4,4.5069705 L4,7.27176263 C4,9.59506473 5.80676544,11.4979002 8.08383375,11.6526677 L8.08383375,14.9372282 C8.08383375,18.2799384 10.7942048,21 14.1264455,21 C16.9883834,21 19.3871509,18.9902587 20.0072374,16.3046395 C20.5765045,16.1673169 21,15.6569419 21,15.0441341" id="Fill-103"></path></g></g></svg><span>Departments and programs</span>
+                  <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="links-with-icon__item">
+              <div class="wrapper">
+                <a class="btn btn-default " href="/school-of-medicine/md-program/wwami" target="">
+                  <?xml version="1.0" encoding="UTF-8"??><svg class="uwm-icon-svg" width="18px" height="16px" viewbox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch --><title>icon_languages</title><desc>Created with Sketch.</desc><defs></defs><g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_languages"><g id="Group-10" fill="currentColor"><path d="M17.0073529,9.84996364 C17.0073529,10.7826909 16.2707647,11.5416 15.3654706,11.5416 L14.4891176,11.5416 C13.4105294,11.5416 12.3573529,11.9314182 11.5251176,12.6390545 L8.64511765,15.0888727 C8.55935294,15.1616 8.47252941,15.1317818 8.439,15.1154182 C8.40511765,15.0994182 8.32747059,15.0492364 8.32747059,14.9346909 L8.32747059,13.6477818 C8.32747059,12.4863273 7.41052941,11.5416 6.28323529,11.5416 L2.72629412,11.5416 C1.821,11.5416 1.08441176,10.7826909 1.08441176,9.84996364 L1.08441176,2.79796364 C1.08441176,1.86523636 1.821,1.10632727 2.72629412,1.10632727 L15.3654706,1.10632727 C16.2707647,1.10632727 17.0073529,1.86523636 17.0073529,2.79796364 L17.0073529,9.84996364 Z M15.3654706,0.301236364 L2.72629412,0.301236364 C1.39005882,0.301236364 0.302647059,1.42123636 0.302647059,2.79796364 L0.302647059,9.84996364 C0.302647059,11.2266909 1.39005882,12.3470545 2.72629412,12.3470545 L6.28323529,12.3470545 C6.97958824,12.3470545 7.54570588,12.9303273 7.54570588,13.6477818 L7.54570588,14.9346909 C7.54570588,15.3277818 7.76029412,15.6761455 8.10547059,15.8441455 C8.24029412,15.9096 8.38252941,15.9412364 8.52405882,15.9412364 C8.745,15.9412364 8.96276471,15.8626909 9.14276471,15.7099636 L12.0227647,13.2601455 C12.7152353,12.6714182 13.5908824,12.3470545 14.4891176,12.3470545 L15.3654706,12.3470545 C16.7017059,12.3470545 17.7891176,11.2266909 17.7891176,9.84996364 L17.7891176,2.79796364 C17.7891176,1.42123636 16.7017059,0.301236364 15.3654706,0.301236364 Z" id="Fill-61"></path><path d="M4.72817647,7.23225455 L5.88335294,4.40752727 L7.03923529,7.23225455 L4.72817647,7.23225455 Z M6.25429412,3.23916364 C6.19005882,3.08207273 6.03970588,2.99189091 5.88335294,2.99589091 C5.72770588,2.99189091 5.57735294,3.08207273 5.51311765,3.23916364 L3.22076471,8.84243636 C3.13711765,9.04752727 3.23064706,9.28389091 3.429,9.37007273 C3.47876471,9.39152727 3.53029412,9.40170909 3.58111765,9.40170909 C3.73358824,9.40170909 3.87864706,9.30934545 3.94147059,9.15552727 L4.39852941,8.03770909 L7.36852941,8.03770909 L7.82594118,9.15552727 C7.88876471,9.30934545 8.03382353,9.40170909 8.18629412,9.40170909 C8.23676471,9.40170909 8.28864706,9.39152727 8.33841176,9.37007273 C8.53676471,9.28389091 8.63029412,9.04752727 8.54629412,8.84243636 L6.25429412,3.23916364 Z" id="Fill-63"></path><path d="M14.5105765,4.77789091 L12.9089294,4.77789091 L12.9089294,3.98552727 C12.9089294,3.76298182 12.7342235,3.58298182 12.5178706,3.58298182 C12.3018706,3.58298182 12.1271647,3.76298182 12.1271647,3.98552727 L12.1271647,4.77789091 L10.5258706,4.77789091 C10.3098706,4.77789091 10.1351647,4.95789091 10.1351647,5.18043636 C10.1351647,5.40298182 10.3098706,5.58298182 10.5258706,5.58298182 L12.0632824,5.58298182 C11.7505765,6.74261818 11.2222235,7.80698182 10.4874,8.74625455 C10.3518706,8.91970909 10.3779882,9.1728 10.5459882,9.31243636 C10.6186941,9.3728 10.7051647,9.40152727 10.7909294,9.40152727 C10.9049294,9.40152727 11.0182235,9.35061818 11.0955176,9.25207273 C11.6986941,8.4808 12.1741059,7.63243636 12.5185765,6.72116364 C12.8492824,7.59498182 13.2999882,8.41098182 13.8671647,9.15534545 L13.9370471,9.24734545 C14.0139882,9.3488 14.1290471,9.40152727 14.2451647,9.40152727 C14.3291647,9.40152727 14.4145765,9.37389091 14.4858706,9.31643636 C14.6556353,9.17934545 14.6856353,8.92625455 14.5529294,8.75098182 L14.4826941,8.65861818 C13.7838706,7.74116364 13.2770471,6.70661818 12.9738706,5.58298182 L14.5105765,5.58298182 C14.7265765,5.58298182 14.9012824,5.40298182 14.9012824,5.18043636 C14.9012824,4.95789091 14.7265765,4.77789091 14.5105765,4.77789091" id="Fill-65"></path></g></g></g></svg><span>WWAMI regional education</span>
+                  <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="links-with-icon__item">
+              <div class="wrapper">
+                <a class="btn" href="/school-of-medicine/about/awards" target="">
+                  <?xml version="1.0" encoding="UTF-8"??><svg class="uwm-icon-svg" width="18px" height="18px" viewbox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch --><title>icon_5_star_rating</title><desc>Created with Sketch.</desc><defs></defs><g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_5_star_rating"><g id="Group-16" fill="currentColor"><path d="M9.14513143,16.3318114 C5.13061714,16.3318114 1.87570286,13.0774114 1.87570286,9.06238286 C1.87570286,5.04786857 5.13061714,1.79346857 9.14513143,1.79346857 C13.16016,1.79346857 16.41456,5.04786857 16.41456,9.06238286 C16.41456,13.0774114 13.16016,16.3318114 9.14513143,16.3318114 M17.7810171,9.03564 C17.7799886,8.86541143 17.6833029,8.70032571 17.5814743,8.52444 C17.4914743,8.36758286 17.3968457,8.20609714 17.3762743,8.03689714 C17.3546743,7.86306857 17.4066171,7.67946857 17.4575314,7.50306857 C17.5130743,7.31072571 17.5639886,7.12918286 17.5243886,6.96975429 C17.4842743,6.80621143 17.3510743,6.66786857 17.2106743,6.52232571 C17.0846743,6.39169714 16.95456,6.25644 16.8928457,6.09701143 C16.8311314,5.93449714 16.8373029,5.74524 16.8445029,5.56164 C16.8511886,5.36106857 16.85736,5.17129714 16.7807314,5.02575429 C16.7020457,4.87712571 16.5400457,4.77529714 16.3698171,4.66832571 C16.2145029,4.57164 16.0561029,4.47135429 15.9578743,4.32992571 C15.8586171,4.18746857 15.8195314,4.00232571 15.7814743,3.82335429 C15.7398171,3.62638286 15.70176,3.44072571 15.5906743,3.31678286 C15.4790743,3.19232571 15.2995886,3.13164 15.1087886,3.06889714 C14.9354743,3.01129714 14.7559886,2.95112571 14.62536,2.83695429 C14.4967886,2.72329714 14.4139886,2.55255429 14.3358171,2.38798286 C14.2489029,2.20644 14.1666171,2.03569714 14.0287886,1.94055429 C13.8914743,1.84592571 13.7022171,1.83101143 13.5026743,1.81455429 C13.3190743,1.80066857 13.13136,1.78472571 12.9775886,1.70501143 C12.82536,1.62581143 12.7055314,1.48026857 12.5898171,1.33935429 C12.4612457,1.18404 12.3398743,1.03695429 12.1825029,0.977297143 C12.04776,0.926382857 11.84976,0.947982857 11.6440457,0.98244 C11.4578743,1.01175429 11.2567886,1.03901143 11.1061029,1.00198286 C10.9399886,0.961868571 10.7893029,0.848725714 10.6442743,0.741754286 C10.48176,0.620897143 10.32696,0.506725714 10.1598171,0.486668571 C9.99678857,0.468154286 9.82398857,0.541697143 9.64090286,0.619868571 C9.47118857,0.692897143 9.29581714,0.767982857 9.11993143,0.768497143 C8.94250286,0.769011429 8.76713143,0.694954286 8.59741714,0.623468571 C8.41278857,0.545811429 8.24101714,0.472782857 8.07747429,0.492325714 C7.90981714,0.513925714 7.75656,0.629125714 7.59456,0.749982857 C7.44953143,0.859011429 7.29987429,0.97164 7.13478857,1.01329714 C6.98410286,1.05186857 6.78147429,1.02718286 6.59684571,0.99684 C6.39010286,0.96444 6.19210286,0.944382857 6.05736,0.995297143 C5.89998857,1.05649714 5.78016,1.20358286 5.65313143,1.36095429 C5.53741714,1.50289714 5.41964571,1.64792571 5.26741714,1.72815429 C5.11416,1.80941143 4.92541714,1.82586857 4.74284571,1.84181143 C4.54330286,1.85878286 4.35456,1.87524 4.21724571,1.97038286 C4.08096,2.06604 3.99970286,2.23781143 3.91278857,2.41986857 C3.83564571,2.58546857 3.75541714,2.75518286 3.62633143,2.87141143 C3.49673143,2.98712571 3.31776,3.04626857 3.14496,3.10541143 C2.95467429,3.17021143 2.77416,3.23192571 2.66358857,3.35638286 C2.55404571,3.48084 2.51547429,3.66752571 2.47587429,3.86449714 C2.43987429,4.04346857 2.40181714,4.22912571 2.30358857,4.37158286 C2.20587429,4.51404 2.04696,4.61484 1.89318857,4.71358286 C1.72296,4.82055429 1.56198857,4.92341143 1.48433143,5.07204 C1.40873143,5.21912571 1.41644571,5.40838286 1.42467429,5.60895429 C1.43238857,5.79204 1.44010286,5.98129714 1.37838857,6.14535429 C1.31821714,6.30478286 1.18861714,6.44055429 1.06313143,6.57272571 C0.924788571,6.71878286 0.792102857,6.85815429 0.751988571,7.02118286 C0.713931429,7.18164 0.766388571,7.36266857 0.821931429,7.55398286 C0.874388571,7.73038286 0.92736,7.91346857 0.90576,8.08781143 C0.88776,8.25598286 0.795702857,8.41952571 0.704674286,8.57689714 C0.604388571,8.75278286 0.509245714,8.91941143 0.509245714,9.08912571 C0.510274286,9.25986857 0.606445714,9.42495429 0.70776,9.60135429 C0.798788571,9.75769714 0.892902857,9.92021143 0.91296,10.0883829 C0.935074286,10.2622114 0.882617143,10.4452971 0.832217143,10.6222114 C0.777188571,10.81404 0.725245714,10.9960971 0.764845714,11.1550114 C0.805988571,11.3195829 0.93816,11.4563829 1.07907429,11.6029543 C1.20507429,11.7335829 1.33467429,11.86884 1.39638857,12.0287829 C1.45913143,12.1912971 1.45296,12.3805543 1.44524571,12.5641543 C1.43958857,12.7642114 1.43238857,12.9539829 1.51004571,13.10004 C1.58770286,13.2481543 1.74970286,13.3489543 1.91993143,13.45644 C2.07370286,13.55364 2.23416,13.6534114 2.33238857,13.7953543 C2.43113143,13.9378114 2.47021714,14.1229543 2.50878857,14.3019257 C2.54890286,14.4988971 2.58798857,14.68404 2.69907429,14.8090114 C2.81067429,14.9329543 2.99016,14.99364 3.18147429,15.0568971 C3.35478857,15.1139829 3.53376,15.1731257 3.66438857,15.2878114 C3.79398857,15.4024971 3.87576,15.5722114 3.95393143,15.7367829 C4.04084571,15.9183257 4.12313143,16.0906114 4.26147429,16.1842114 C4.39878857,16.2783257 4.58753143,16.2937543 4.78707429,16.3096971 C4.97016,16.3251257 5.15838857,16.3395257 5.31216,16.4202686 C5.46438857,16.4999829 5.58473143,16.6439829 5.69993143,16.7848971 C5.82850286,16.9417543 5.94884571,17.08884 6.10673143,17.1479829 C6.24198857,17.1988971 6.43844571,17.1767829 6.64570286,17.1433543 C6.83187429,17.1130114 7.03296,17.0867829 7.18416,17.1238114 C7.34976,17.1639257 7.49993143,17.2755257 7.64650286,17.3835257 C7.80850286,17.5048971 7.96227429,17.6185543 8.13044571,17.6386114 C8.29450286,17.6566114 8.46524571,17.5840971 8.64884571,17.5048971 C8.81907429,17.4323829 8.99444571,17.3572971 9.17084571,17.3562686 C9.34776,17.3562686 9.52261714,17.4298114 9.69284571,17.5012971 C9.87696,17.5794686 10.0492457,17.6524971 10.2127886,17.6319257 C10.3804457,17.6113543 10.5331886,17.4966686 10.6957029,17.3742686 C10.8397029,17.26524 10.9898743,17.1526114 11.1554743,17.1114686 C11.30616,17.0734114 11.5087886,17.0991257 11.6939314,17.1279257 C11.90016,17.1598114 12.09816,17.1803829 12.2329029,17.1289543 C12.3902743,17.0692971 12.5095886,16.9211829 12.6371314,16.7643257 C12.7523314,16.6223829 12.8711314,16.47684 13.02336,16.3960971 C13.1771314,16.31484 13.36536,16.2994114 13.5474171,16.2829543 C13.7479886,16.2659829 13.9362171,16.2490114 14.0725029,16.1548971 C14.2103314,16.0587257 14.2915886,15.88644 14.3764457,15.7043829 C14.4546171,15.5398114 14.5348457,15.3690686 14.6644457,15.2538686 C14.7930171,15.1381543 14.9725029,15.0779829 15.1458171,15.0193543 C15.3361029,14.95404 15.5161029,14.8943829 15.6266743,14.7688971 C15.7362171,14.6439257 15.7732457,14.4577543 15.8138743,14.2607829 C15.8503886,14.0818114 15.8879314,13.8951257 15.9866743,13.7526686 C16.0838743,13.61124 16.2427886,13.5099257 16.3970743,13.4111829 C16.5667886,13.3031829 16.7272457,13.2013543 16.8054171,13.0522114 C16.8815314,12.90564 16.8738171,12.7153543 16.8661029,12.5163257 C16.8578743,12.3322114 16.8506743,12.1429543 16.9118743,11.9799257 C16.97256,11.8204971 17.1016457,11.6842114 17.2266171,11.5525543 C17.3654743,11.4054686 17.49816,11.26764 17.5382743,11.1030686 C17.5763314,10.94364 17.5238743,10.7620971 17.4678171,10.5702686 C17.4158743,10.3938686 17.3623886,10.2118114 17.38296,10.0369543 C17.4025029,9.86826857 17.4950743,9.70575429 17.5850743,9.54838286 C17.6858743,9.37249714 17.7810171,9.20586857 17.7810171,9.03564" id="Fill-45"></path><path d="M13.0082914,7.52621143 L10.9269771,7.22381143 C10.7588057,7.19964 10.6137771,7.09369714 10.5386914,6.94146857 L9.60783429,5.05558286 C9.41909143,4.67192571 8.87189143,4.67192571 8.68263429,5.05558286 L7.75177714,6.94146857 C7.67669143,7.09369714 7.53166286,7.19964 7.36349143,7.22381143 L5.28217714,7.52621143 C4.85892,7.58792571 4.68972,8.10735429 4.99623429,8.40615429 L6.50257714,9.87392571 C6.62394857,9.99272571 6.67897714,10.1634686 6.65069143,10.3311257 L6.29480571,12.4036971 C6.22280571,12.8254114 6.66509143,13.1463257 7.04309143,12.9478114 L8.90480571,11.9691257 C9.05549143,11.8899257 9.23497714,11.8899257 9.38514857,11.9691257 L11.2468629,12.9478114 C11.6258914,13.1463257 12.0676629,12.8254114 11.9951486,12.4036971 L11.6397771,10.3311257 C11.6109771,10.1634686 11.6670343,9.99272571 11.7884057,9.87392571 L13.2947486,8.40615429 C13.6002343,8.10735429 13.4315486,7.58792571 13.0082914,7.52621143" id="Fill-47"></path></g></g></g></svg><span>Award-winning programs</span>
+                  <span class="fa fa-angle-right fa-fw fa-lg" aria-hidden="true"></span>
+                </a>
+              </div>
+            </li>
+
+          </ul><a class="homepage-section__link btn btn-cta" href="/school-of-medicine">
+            School of Medicine Home
+          </a>
+
+        </div>
+
+      </div>
+
+    </section><!-- /UW School of Medicine --></div>
+  <!-- /Sections field -->
+
+</div>
+<!-- /Sections -->
+
+<!-- Content Spotlight -->
+<section class="content-spotlight uwm-accent-color__yellow"><div class="container-xl">
+
+    <h2 class="content-spotlight__title uwm-accent-heading--centered uwm-accent-heading__title">Content Spotlight</h2>
+
+    <h3 class="content-spotlight__header h2">Your daily download from the world of UW Medicine.</h3>
+
+    <div class="content-spotlight__items">
+
+      <!-- Spotlight item 1 -->
+      <article class="content-spotlight__item"><div class="content-spotlight__image">
+
+          <picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="/sites/stevie/files/styles/spotlight_685_385/public/2019-12/woman-looking-out-window_0_0.jpg 1x" media="(min-width: 1920px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_585_329/public/2019-12/woman-looking-out-window_0_0.jpg 1x" media="(min-width: 992px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_480_270/public/2019-12/woman-looking-out-window_0_0.jpg 1x" media="(min-width: 768px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_767_431/public/2019-12/woman-looking-out-window_0_0.jpg 1x" media="(min-width: 576px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_575_323/public/2019-12/woman-looking-out-window_0_0.jpg 1x" type="image/jpeg"><!--[if IE 9]></video><![endif]--><img src="/sites/stevie/files/styles/spotlight_585_329/public/2019-12/woman-looking-out-window_0_0.jpg" alt="" typeof="foaf:Image" class="img-fluid" /></source></source></source></source></source></picture></div>
+
+        <div class="content-spotlight__cta">
+          <a class="btn btn-cta" href="https://rightasrain.uwmedicine.org/well/health/endometrial-cancer">Endometrial cancer is common — so why haven’t you heard of it?</a>
+        </div>
+
+      </article><!-- /Spotlight item 1 --><!-- Spotlight item 2 --><article class="content-spotlight__item"><div class="content-spotlight__image">
+
+          <picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="/sites/stevie/files/styles/spotlight_685_385/public/2019-12/walking-at-night.jpg 1x" media="(min-width: 1920px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_585_329/public/2019-12/walking-at-night.jpg 1x" media="(min-width: 992px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_480_270/public/2019-12/walking-at-night.jpg 1x" media="(min-width: 768px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_767_431/public/2019-12/walking-at-night.jpg 1x" media="(min-width: 576px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_575_323/public/2019-12/walking-at-night.jpg 1x" type="image/jpeg"><!--[if IE 9]></video><![endif]--><img src="/sites/stevie/files/styles/spotlight_585_329/public/2019-12/walking-at-night.jpg" alt="" typeof="foaf:Image" class="img-fluid" /></source></source></source></source></source></picture></div>
+
+        <div class="content-spotlight__cta">
+          <a class="btn btn-cta" href="https://rightasrain.uwmedicine.org/life/safety-tips-for-dark-days">Staying safe when it’s darker out</a>
+        </div>
+
+      </article><!-- /Spotlight item 2 --><!-- Spotlight item 3 --><article class="content-spotlight__item"><div class="content-spotlight__image">
+
+          <picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="/sites/stevie/files/styles/spotlight_685_385/public/2019-12/jobburnout.resize.jpg 1x" media="(min-width: 1920px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_585_329/public/2019-12/jobburnout.resize.jpg 1x" media="(min-width: 992px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_480_270/public/2019-12/jobburnout.resize.jpg 1x" media="(min-width: 768px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_767_431/public/2019-12/jobburnout.resize.jpg 1x" media="(min-width: 576px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_575_323/public/2019-12/jobburnout.resize.jpg 1x" type="image/jpeg"><!--[if IE 9]></video><![endif]--><img src="/sites/stevie/files/styles/spotlight_585_329/public/2019-12/jobburnout.resize.jpg" alt="" typeof="foaf:Image" class="img-fluid" /></source></source></source></source></source></picture></div>
+
+        <div class="content-spotlight__cta">
+          <a class="btn btn-cta" href="https://newsroom.uw.edu/resource/how-manage-burnout-and-holiday-stress">How to manage burnout and holiday stress</a>
+        </div>
+
+      </article><!-- /Spotlight item 3 --><!-- Spotlight item 4 --><article class="content-spotlight__item"><div class="content-spotlight__image">
+
+          <picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="/sites/stevie/files/styles/spotlight_685_385/public/2019-06/newsroom_randy-carnell_camera.jpg 1x" media="(min-width: 1920px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_585_329/public/2019-06/newsroom_randy-carnell_camera.jpg 1x" media="(min-width: 992px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_480_270/public/2019-06/newsroom_randy-carnell_camera.jpg 1x" media="(min-width: 768px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_767_431/public/2019-06/newsroom_randy-carnell_camera.jpg 1x" media="(min-width: 576px)" type="image/jpeg"><source srcset="/sites/stevie/files/styles/spotlight_575_323/public/2019-06/newsroom_randy-carnell_camera.jpg 1x" type="image/jpeg"><!--[if IE 9]></video><![endif]--><img src="/sites/stevie/files/styles/spotlight_585_329/public/2019-06/newsroom_randy-carnell_camera.jpg" alt="" typeof="foaf:Image" class="img-fluid" /></source></source></source></source></source></picture></div>
+
+        <div class="content-spotlight__cta">
+          <a class="btn btn-cta" href="https://newsroom.uw.edu">UW Medicine Newsroom: A news source for journalists</a>
+        </div>
+
+      </article><!-- /Spotlight item 4 --></div>
+
+  </div>
+
+</section><!-- /Content Spotlight --><!-- Accelerate promo --><section class="accelerate-promotion-block uwm-accent-color__white"><div class="container-xl">
+
+    <div class="accelerate-promotion-block__inner">
+
+      <div class="row">
+
+        <div class="accelerate-promotion-block__logo col-xl-3">
+          <img class="img-fluid" src="/themes/custom/uwmbase/dist/assets/accelerate-logo.png" alt="Accelerate: The Campaign for UW Medicine" /></div>
+
+        <div class="accelerate-promotion-block__content col-xl-7">
+          <p>Right now, UW researchers, faculty and students are leading efforts to find cures, promote health and wellness around the world, and improve our community. Accelerate: The Campaign for UW Medicine allows you to be a part of this exciting future. See what's happening now and make a gift today.</p>
+        </div>
+
+        <div class="accelerate-promotion-block__cta col-xl-2">
+          <a class="btn btn-cta" href="http://www.acceleratemed.org">Learn More</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!--/ Accelerate promo -->
+    <!-- /field_uwm_homepage_markup -->
+
+  
+</article>
+
+
+
+            
+        
+          </section>
+
+  </section>
+
+    <section class="content-bottom">
+      <div class="wrap container-xl">
+
+                                  
+      </div>
+
+    </section>
+  </div>
+
+  </div>
+
+  
+
+    
+
+
+
+<footer class="uwm-footer container-fluid">
+
+    <div class="row blocks-row">
+        <div class="col-xs-12"></div>
+    </div>
+
+<div class="row navigation-row">
+ <div class="col-12 d-none d-sm-inline-block foot-third">
+                    <div class="service-icons">
+        <a href="https://www.facebook.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__facebook" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.linkedin.com/company/uw-medicine">
+            <i class="uwmed-icon uwmed-icon__linkedin" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://twitter.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__twitter" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.instagram.com/UWMedicine">
+            <i class="uwmed-icon uwmed-icon__instagram" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.youtube.com/user/UWMedicineHealth">
+            <i class="uwmed-icon uwmed-icon__youtube" aria-hidden="true"></i>
+        </a>
+    </div>
+
+            </div></div>
+    <div class="row navigation-row">
+            <div class="col-xs-12 col-md-6 foot-first">
+                                
+              <ul class="menu nav">
+                    
+        <li>
+                    <a href="/about" data-drupal-link-system-path="node/20851">            <i class="uw-s hidden-xs"></i> About UW Medicine
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="http://providerresource.uwmedicine.org/">            <i class="uw-s hidden-xs"></i> Provider Resource
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://newsroom.uw.edu">            <i class="uw-s hidden-xs"></i> Media Inquiries
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/factbook">            <i class="uw-s hidden-xs"></i> Fact Book
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/about/contact-us" data-drupal-link-system-path="node/21466">            <i class="uw-s hidden-xs"></i> Contact Us
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/about/career-opportunities" data-drupal-link-system-path="node/21461">            <i class="uw-s hidden-xs"></i> Careers
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/volunteering" data-drupal-link-system-path="node/22171">            <i class="uw-s hidden-xs"></i> Volunteer
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="http://www.acceleratemed.org/give/?source=MEDXCL%2CMDNOVT%2CUWMEDS%2CHCMISS%2CADISUN%2CNWMEDI%2CVALLEY%2CMEDNEI%2CAIRFUN">            <i class="uw-s hidden-xs"></i> Donate
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://www.uw.edu">            <i class="uw-s hidden-xs"></i> UW.edu
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/forms/website-feedback" data-drupal-link-system-path="webform/website_feedback">            <i class="uw-s hidden-xs"></i> Feedback
+          </a>
+
+                  </li>
+        </ul>
+  
+
+</div>
+
+            <div class="col-xs-12 col-md-6 d-none d-md-inline-block foot-second">
+                                
+              <ul class="menu nav">
+                    
+        <li>
+                    <a href="/harborview">            <i class="uw-s hidden-xs"></i> Harborview Medical Center 
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/northwest-hospital">            <i class="uw-s hidden-xs"></i> Northwest Hospital &amp; Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/valley-medical-center">            <i class="uw-s hidden-xs"></i> Valley Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/uw-medical-center">            <i class="uw-s hidden-xs"></i> UW Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/neighborhood-clinics">            <i class="uw-s hidden-xs"></i> UW Neighborhood Clinics
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/uw-physicians">            <i class="uw-s hidden-xs"></i> UW Physicians
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/school-of-medicine/about" data-drupal-link-system-path="node/20916">            <i class="uw-s hidden-xs"></i> UW School of Medicine
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/airlift-nw">            <i class="uw-s hidden-xs"></i> Airlift Northwest
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://rightasrain.uwmedicine.org">            <i class="uw-s hidden-xs"></i> Right as Rain
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://newsroom.uw.edu">            <i class="uw-s hidden-xs"></i> UW Medicine Newsroom
+          </a>
+
+                  </li>
+        </ul>
+  
+
+</div>
+
+            <div class="col-xs-12 col-md-3 d-inline-block d-sm-none foot-third">
+                    <div class="service-icons">
+        <a href="https://www.facebook.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__facebook" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.linkedin.com/company/uw-medicine">
+            <i class="uwmed-icon uwmed-icon__linkedin" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://twitter.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__twitter" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.instagram.com/UWMedicine">
+            <i class="uwmed-icon uwmed-icon__instagram" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.youtube.com/user/UWMedicineHealth">
+            <i class="uwmed-icon uwmed-icon__youtube" aria-hidden="true"></i>
+        </a>
+    </div>
+
+            </div>
+
+    </div>
+<div class="row navigation-row">
+      <div class="col-12 foot-fourth">
+                <a class="logo" href="/" title="Home" rel="home">
+                    <img src="/themes/custom/uwmbase/dist/images/uw-medicine-logo-gray.svg"
+                         alt="UW Medicine" width="178" height="24">
+                </a>
+            </div>
+            </div>
+    <div class="row enterprise-row">
+        <div class="col-sm-4 first copyright">
+            Copyright &copy; 2019 University of Washington | All rights reserved
+        </div>
+
+        <div class="col-sm-8 second navigation">
+            
+              <ul class="list-inline">
+                    <li class="list-inline-item">
+        <a href="https://www.washington.edu/online/privacy/">Online Privacy Statement</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="/about/policies-and-notices" data-drupal-link-system-path="node/21821">Policies and Notices</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="/about/compliance/disclaimer" data-drupal-link-system-path="node/22091">Copyright And Healthcare Disclaimer</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="https://www.washington.edu/online/terms/">Website Terms And Conditions Of Use</a>
+              </li>
+        </ul>
+  
+
+
+        </div>
+    </div>
+
+</footer>
+
+
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/48106","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajax":[],"user":{"uid":0,"permissionsHash":"ca9aaf4e9f3d0580f94a983623e5ac1f747ff03fba5aa27bb8771bf5d9d50bc6"}}</script>
+<script src="/sites/stevie/files/js/js_e-ysQUepTJbaKJjNbKhvLG6k1wIbUkP916vs2FnaJ4s.js"></script>
+<script src="//use.fontawesome.com/releases/v5.8.1/js/all.js" defer crossorigin="anonymous" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"></script>
+<script src="/sites/stevie/files/js/js_YHwnNaYGsdMGF-rXiFN1l4fffL9Em4yBwneGMTYPZPw.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="/sites/stevie/files/js/js_g9yZGHsocuIAwL-OKqNveqWslU6R5zLG4cdWVHcxHwk.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b55cc6ce81","applicationID":"55451763","transactionName":"YwMEbEsFWhBZBUIMV1pJJ1tNDVsNFyJEEEhVCjp7VhZRP3UDWBBkcAMAWUwIQC5dCEMpUVoNMkpcAXkCVg9GEFRVEglKSkkKBF0IUxdZQAMvVl0BTCJWAmUKSkA=","queueTime":0,"applicationTime":783,"atts":"T0QHGgMfSR4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -15,12 +16,15 @@ namespace SPADownloader
         private const String HREF_PARTERN = "href=\"";
         private const String DATA_IMAGE = "data-img=\"";
         private const String DATA_BG = "data-background=\"";
+        private const String SRCSET_PARTERN = "srcset=\"";
+
+
 
         private String MAIN_CONTENT = String.Empty;
-        private Boolean isDownloadResource = false;
+        private Boolean isDownloadResource = true;
         private List<String> _org = null;
         private String CRIGHT = "<!-- THIS PAGE WAS DOWNLOAD BY SP DOWNLOADER -->\n  <!-- hongkha336@gmail.com -->\n";
-       
+        private static Uri BaseUri = null;
         public frmMain()
         {
             InitializeComponent();
@@ -29,14 +33,50 @@ namespace SPADownloader
 
         private void analysis()
         {
-        
+            String encodeType = String.Empty;
+            comboBox1.Invoke((MethodInvoker)(() => encodeType = comboBox1.Text.Trim()));
             btnDownload.Invoke((MethodInvoker)(() => btnDownload.Enabled = false));
             lbStatus.Invoke((MethodInvoker)(() => lbStatus.Text = "Status: Download " + txtURL.Text));
             using (var wb = new WebClient())
             {
-                var response = wb.DownloadString(txtURL.Text);
-                MAIN_CONTENT = response.ToString();
-                MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                wb.UseDefaultCredentials = true;
+                wb.Proxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
+                var response = wb.DownloadData(txtURL.Text);
+                
+                switch(encodeType)
+                {
+                    case "UTF-8":
+                        {
+                            var htmlCode = Encoding.UTF8.GetString(response);
+                            MAIN_CONTENT = htmlCode.ToString();
+                            MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                            break;
+                        }
+                    case "ASCII":
+                        {
+                            var htmlCode = Encoding.ASCII.GetString(response);
+                            MAIN_CONTENT = htmlCode.ToString();
+                            MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                            break;
+                        }
+                    case "Unicode":
+                        {
+                            var htmlCode = Encoding.Unicode.GetString(response);
+                            MAIN_CONTENT = htmlCode.ToString();
+                            MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                            break;
+                        }
+                    default:
+                        {
+                            var htmlCode = Encoding.Default.GetString(response);
+                            MAIN_CONTENT = htmlCode.ToString();
+                            MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                            break;
+                        }
+
+                }
+              
             }
             dataGridView1.Invoke((MethodInvoker)(() => this.dataGridView1.Rows.Clear()));
             int i = 0;
@@ -46,6 +86,7 @@ namespace SPADownloader
             scanResource(MAIN_CONTENT, HREF_PARTERN);
             scanResource(MAIN_CONTENT, DATA_IMAGE);
             scanResource(MAIN_CONTENT, DATA_BG);
+            scanResource(MAIN_CONTENT, SRCSET_PARTERN);
             for (i = 0; i < _org.Count; i++)
             {
                 dataGridView1.Invoke((MethodInvoker)(() => this.dataGridView1.Rows.Add((i + 1).ToString(), _org[i], "Wait")));
@@ -83,6 +124,7 @@ namespace SPADownloader
             MAIN_CONTENT = replaceTagContent(HREF_PARTERN, MAIN_CONTENT, txtURL.Text);
             MAIN_CONTENT = replaceTagContent(DATA_IMAGE, MAIN_CONTENT, txtURL.Text);
             MAIN_CONTENT = replaceTagContent(DATA_BG, MAIN_CONTENT, txtURL.Text);
+            MAIN_CONTENT = replaceTagContent(SRCSET_PARTERN, MAIN_CONTENT,txtURL.Text);
             MessageBox.Show("Download finished");
         }
         private void BtnSaveFile_Click(object sender, EventArgs e)
@@ -109,6 +151,7 @@ namespace SPADownloader
                  }
                  else
                  {
+
                      // MessageBox.Show("Download resources...");
                      btnSaveFile.Invoke((MethodInvoker)(() => btnSaveFile.Enabled = false));
                      downloadResource();
@@ -170,14 +213,8 @@ namespace SPADownloader
                     orgContent = String.Empty;
                 }
             }
-
-
             return newContent;
         }
-
-
-
-
         private void scanResource(String orgContent, String pt )
         {   
             //progress - pattern
@@ -205,7 +242,17 @@ namespace SPADownloader
                             orgContent = orgContent.Substring(src.Length, orgContent.Length - src.Length);
                             if (!src.StartsWith("/"))
                                 src = "/" + src;
-                            _org.Add(removeQuestionPattern(src));
+
+                            int fristIndex = src.IndexOf(" ");
+                            int lastSpaceIndex = src.LastIndexOf(" ");
+                            // first == last mean no space OR 1 space.
+                            if (fristIndex == lastSpaceIndex)
+                            {
+                                //remove the content beforspace
+                                if (fristIndex != -1)
+                                    src = src.Substring(0, fristIndex).Trim() ;
+                                _org.Add(removeQuestionPattern(src));
+                            }
                         }
                     }
 
@@ -225,6 +272,13 @@ namespace SPADownloader
         private void FrmMain_Load(object sender, EventArgs e)
         {
             textBox2.Text = AppDomain.CurrentDomain.BaseDirectory;
+
+            List<String> encodingType = new List<string>
+            {
+                "UTF-8","ASCII","Unicode",
+            };
+
+            comboBox1.DataSource = encodingType;
         }
         private void BtnOpenFolder_Click(object sender, EventArgs e)
         {
@@ -282,11 +336,36 @@ namespace SPADownloader
             return url;
         }
 
+        private String GetFileNameFromUrl(String url)
+        {
+            if (url.EndsWith("/"))
+            {
+               url = url.Substring(0, url.Length - 1);
+            }
+            int lasttag = url.LastIndexOf(url);
+            if(lasttag !=-1)
+            {
+                String name = url.Substring(lasttag, url.Length - lasttag);
+                name =name.Replace("/", String.Empty);
+                return name;
+            }
+            else
+            {
+                return "unknowfile" + DateTime.Now.Millisecond;
+            }
+        }
+
 
 
         private void downloadResource()
         {
             String urlPath = txtURL.Text;
+            int lastIndex = urlPath.LastIndexOf("/");
+            if(lastIndex != -1)
+            {
+                urlPath = urlPath.Substring(0, lastIndex);
+            }
+            
             String rootPath = textBox2.Text;
             if (urlPath.EndsWith("/"))
                 urlPath = urlPath.Substring(0, urlPath.Length - 1);
@@ -295,6 +374,9 @@ namespace SPADownloader
             int index = 0;
             foreach (String str in _org)
             {
+                dataGridView1.Invoke((MethodInvoker)(() => this.dataGridView1.Rows[index].Cells[2].Value = "Pending"));
+                dataGridView1.Invoke((MethodInvoker)(() => dataGridView1.Rows[index].Cells[2].Style.BackColor = Color.MediumOrchid));
+
                 lbdownload.Invoke((MethodInvoker)(() =>
                     lbdownload.Text = "Download progess: " + (index + 1).ToString() + "/" + _org.Count
                 ));
@@ -309,6 +391,7 @@ namespace SPADownloader
                   
                     String logicalPath = rootPath + path;
                     String fileName = rootPath + mstr;
+            
                     String subUrl = urlPath + mstr;
 
                     lbStatus.Invoke((MethodInvoker)(() => lbStatus.Text = "Status: Download " + subUrl));
@@ -328,6 +411,9 @@ namespace SPADownloader
                         using (WebClient myWebClient = new WebClient())
                         {
                             //myWebClient.DownloadFileAsync(new Uri(subUrl) , fileName);
+                            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                            myWebClient.UseDefaultCredentials = true;
+                            myWebClient.Proxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
                             myWebClient.DownloadFile(subUrl, fileName);
                         }
                        // Common.SaveFile(fileName, CONTENT);
@@ -351,6 +437,11 @@ namespace SPADownloader
                       ));
                     }
                     
+                }
+                else
+                {
+                    dataGridView1.Invoke((MethodInvoker)(() => this.dataGridView1.Rows[index].Cells[2].Value = "Skip"));
+                    dataGridView1.Invoke((MethodInvoker)(() => dataGridView1.Rows[index].Cells[2].Style.BackColor = Color.Aqua));
                 }
                 index++;
 

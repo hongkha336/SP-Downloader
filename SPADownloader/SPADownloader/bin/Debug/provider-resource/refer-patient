@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " site-uuid="86b376c5-ohhh-eeee-ahhh-oooo443540e3" site-env="prod" site-file="/mnt/www/html/uwmed/docroot/modules/custom/uwmcs_utils/uwmcs_utils.module">
+  <head>
+      <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b55cc6ce81",applicationID:"55451763"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="title" content="Refer a Patient | UW Medicine" />
+<link rel="canonical" href="https://www.uwmedicine.org/provider-resource-old/refer-patient" />
+<meta name="twitter:card" content="summary" />
+<meta property="og:site_name" content="UW Medicine" />
+<meta name="twitter:title" content="Refer a Patient" />
+<meta name="twitter:site" content="@uwmedicine" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.uwmedicine.org//provider-resource-old/refer-patient" />
+<meta property="og:title" content="Refer a Patient | UW Medicine" />
+<meta name="twitter:url" content="https://www.uwmedicine.org//provider-resource-old/refer-patient" />
+<link rel="apple-touch-icon" sizes="180x180" href="/sites/stevie/files/favicons/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/sites/stevie/files/favicons/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/sites/stevie/files/favicons/favicon-16x16.png"/>
+<link rel="manifest" href="/sites/stevie/files/favicons/site.webmanifest"/>
+<link rel="mask-icon" href="/sites/stevie/files/favicons/safari-pinned-tab.svg" color="#5bbad5"/>
+<meta name="msapplication-TileColor" content="#da532c"/>
+<meta name="theme-color" content="#ffffff"/>
+<meta name="favicon-generator" content="Drupal responsive_favicons + realfavicongenerator.net" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "https://www.uwmedicine.org#webpage",
+            "author": {
+                "@type": "Organization",
+                "@id": "https://www.uwmedicine.org#organization",
+                "name": "UW Medicine",
+                "url": "https://www.uwmedicine.org"
+            },
+            "isAccessibleForFree": "True"
+        },
+        {
+            "@type": "MedicalOrganization",
+            "@id": "https://www.uwmedicine.org#organization",
+            "name": "UW Medicine",
+            "url": "https://www.uwmedicine.org",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1 (206) 520-5000",
+                "contactType": "Customer service"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.uwmedicine.org#website",
+            "name": "UW Medicine",
+            "url": "https://www.uwmedicine.org",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "query": "https://www.uwmedicine.org/search?s={search_term_string}",
+                "query-input": "required name=search_term_string",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://www.uwmedicine.org/search?s={search_term_string}"
+                }
+            }
+        }
+    ]
+}</script>
+<link rel="revision" href="/provider-resource-old/refer-patient" />
+<script src="/sites/stevie/files/google_tag/google_tag.script.js?q2h8dj"></script>
+
+        <title>Refer a Patient | UW Medicine</title>
+    
+  <link rel="stylesheet" href="/sites/stevie/files/css/css_PXKyJUac5CjOsyl7xA6aCmq51JomRky41Sc9wSdnkNM.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/modules/custom/uwmcs_utils/assets/uwm_page.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/sites/stevie/files/css/css_v52pnKvzGMwJsCsbQob1gLXKl-3n3S7iFQHISwvruAA.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/sites/stevie/files/css/css_GWif73Q2jqMxl0Jse073Yfh3yUYoWu78_VbNoYN4eNI.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Encode+Sans:300,400,500,600,700|Open+Sans:300,300i,400,400i,600,600i,700,700i" media="all" />
+
+  
+<!--[if lte IE 8]>
+<script src="/sites/stevie/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  </head>
+  <body  class="path-node-21401 user-role-anonymous is-path-node is-page-node-type-uwm-basic-page">
+      
+<a href="#main-content" class="skip-link visually-hidden visually-hidden--focusable">
+      Skip to main content
+  </a>
+  
+
+<header class="uwm-header">
+    <nav class="navbar navbar-expand-md flex-md-column">
+    <div class="purple container-fluid">
+
+                        <a class="navbar-brand" href="/" title="Home" rel="home">
+                <img src="/themes/custom/uwmbase/dist/images/uw-medicine-logo.svg"
+                     height="21" width="158" alt="UW Medicine">
+            </a>
+
+                          <button type="button" class="navbar-toggler ml-auto text-white"
+                        data-toggle="collapse"
+                        data-target=".search-collapse">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+
+                <button type="button" class="navbar-toggler text-white"
+                        data-toggle="collapse"
+                        data-target="#mainNavigationMobile"
+                        aria-controls="mainNavigationMobile" aria-expanded="false" aria-label="Toggle main navigation">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+
+
+                    
+
+        <div id="quickLinksNavigation" class="uwm-quick-links ml-auto d-none d-md-block">
+            <ul class="navbar-nav">
+            <li><a href="/patient-care/ecare">eCare Patient Portal</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="http://providerresource.uwmedicine.org/">For Providers</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/research">Research</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/school-of-medicine">School of Medicine</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/about/contact-us">Contact Us</a></li>
+                </ul>
+
+    </div>
+        <div class="d-none d-lg-block">
+            <form class="form-inline header-search-form"
+                  action="/search" accept-charset="UTF-8" method="get">
+
+                <div class="input-group header-search">
+
+                    <input name="s" type="text" class="form-control" value=""
+                           aria-label="Search terms" autocomplete="off">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+
+                </div>
+
+            </form>
+
+        </div>
+        <button type="button" class="navbar-toggler d-none d-md-inline-block d-lg-none text-white"
+            data-toggle="collapse"
+            data-target=".search-collapse">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <div class="search-collapse collapse">
+
+    <form class="form-inline header-search-form"
+          action="/search" accept-charset="UTF-8" method="get">
+        <div class="input-group">
+            <i class="fa fa-search uw-fa" aria-hidden="true"></i>
+            <input name="s" title="Search" type="text"
+                    class="form-control"
+                    aria-label="Search terms" value="" autocomplete="off">
+            <button type="button" class="navbar-toggler uw-fa"
+                    data-toggle="collapse"
+                    data-target=".search-collapse">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </form>
+    </div>
+
+    <div class="white container-fluid p-md-0 pl-lg-3">
+            
+            
+            
+
+    <div id="mainNavigation" class="collapse navbar-collapse uwm-main-navigation">
+        <ul class="navbar-nav mr-auto">
+                             <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find care"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find care
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find care">
+                                    <a class="dropdown-item" href="/services/urgent-care">Urgent care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/primary-care">Primary care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/services/virtual-clinic">Virtual clinic <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/emergency-medicine">Emergency rooms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties">Medical specialties <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/providers">Find a provider <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                    <i class="uw-b"></i>
+                                    <li class="nav-item"><a class="nav-link" href="/patient-care/making-an-appointment">Make an appointment <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        
+                    <i class="uw-b"></i>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find health &amp; patient resources"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find health &amp; patient resources
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find health &amp; patient resources">
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/">Conditions and symptoms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/Wellness/">Prevention and wellness <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">Patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/patient-education">Patient education <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                    <i class="uw-b"></i>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-I want to..."
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">I want to...
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-I want to...">
+                                    <a class="dropdown-item" href="https://www.uwmedicine.org/patient-resources/make-an-appointment">Make an appointment <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-care/ecare">Sign up or sign in for eCare <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/billing-and-insurance">Pay my bill  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/access-medical-records-images">Access medical records and images  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/interpreter-services">Find an interpreter  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/pharmacy-locations">Find a pharmacy <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">View all patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/provider-resource/refer-patient">Refer a patient <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                        </ul>
+    </div>
+
+    <div id="mainNavigationMobile" class="collapse navbar-collapse uwm-main-navigation-mobile d-md-none">
+        <ul class="navbar-nav mr-auto">
+                             <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find care"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find care
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find care">
+                                    <a class="dropdown-item" href="/services/urgent-care">Urgent care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/primary-care">Primary care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/services/virtual-clinic">Virtual clinic <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/emergency-medicine">Emergency rooms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties">Medical specialties <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/providers">Find a provider <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                                    <li class="nav-item"><a class="nav-link" href="/patient-care/making-an-appointment">Make an appointment <i class="fa fa-angle-right"
+                        aria-hidden="true"></i></a></li>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find health &amp; patient resources"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find health &amp; patient resources
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find health &amp; patient resources">
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/">Conditions and symptoms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/Wellness/">Prevention and wellness <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">Patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/patient-education">Patient education <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-I want to..."
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">I want to...
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-I want to...">
+                                    <a class="dropdown-item" href="https://www.uwmedicine.org/patient-resources/make-an-appointment">Make an appointment <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-care/ecare">Sign up or sign in for eCare <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/billing-and-insurance">Pay my bill  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/access-medical-records-images">Access medical records and images  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/interpreter-services">Find an interpreter  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/pharmacy-locations">Find a pharmacy <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">View all patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/provider-resource/refer-patient">Refer a patient <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                        </ul>
+
+        
+
+        <div class="make-a-gift-navigation">
+                    <div class="wrapper">
+
+                        <div class="gift-btn btn btn--border btn--primary btn--animated">
+                            <div class="uw-ac"></div>
+                            <a href="http://www.acceleratemed.org/give/?source=MEDXCL,MDNOVT,UWMEDS,HCMISS,ADISUN,NWMEDI,VALLEY,MEDNEI,AIRFUN">Make a Gift
+                                &nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+        
+
+        <div class="uwm-quick-links">
+            <ul class="navbar-nav">
+            <li><a href="/patient-care/ecare">eCare Patient Portal</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="http://providerresource.uwmedicine.org/">For Providers</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/research">Research</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/school-of-medicine">School of Medicine</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/about/contact-us">Contact Us</a></li>
+                </ul>
+
+        </div>
+    </div>
+
+
+                        <div id="makeAGift" class="uwm-make-a-gift-button ml-auto d-none d-md-block">
+            
+
+    
+        <ul class="navbar-nav">
+                    <li> 
+            <a href="http://www.acceleratemed.org/give/?source=MEDXCL%2CMDNOVT%2CUWMEDS%2CHCMISS%2CADISUN%2CNWMEDI%2CVALLEY%2CMEDNEI%2CAIRFUN">
+            <i class="u-a" aria-hidden="true"></i>
+            Make a Gift
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+                </ul>
+
+
+
+        </div>
+        
+        </div>
+    <div class="row shadow"></div>
+
+
+    
+    </nav>
+</header>
+
+
+  <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRG725G" height="0" width="0" title="Google Tag Manager"></iframe></noscript>
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+
+
+    <div id="main-container" role="main"  class="main-container uwm-accent-color__teal
+">
+                                            
+
+
+
+                    
+                                                    <section class="content-header container-xl">
+                    
+
+<div id="block-uwmbase-breadcrumbs" data-block-plugin-id="system_breadcrumb_block" class="block block-system block-system-breadcrumb-block">
+  
+    
+        
+<nav class="breadcrumb " role="navigation" aria-labelledby="system-breadcrumb">
+  <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+  <ol class="breadcrumb__list">
+          <li class="breadcrumb__item">
+                  <a class="breadcrumb__text breadcrumb__text--link" href="/">Home</a>
+                          <i class="breadcrumb__arrow fa fa-angle-right" aria-hidden="true"></i>
+              </li>
+          <li class="breadcrumb__item">
+                  <span class="breadcrumb__text">Refer a Patient</span>
+                      </li>
+      </ol>
+</nav>
+
+  </div>
+
+
+                    
+
+<div id="block-uwmbase-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Refer a Patient</span>
+</h1>
+
+
+  </div>
+
+
+                </section>
+                            
+                            <a id="main-content"></a>
+            
+
+  
+    
+
+  <article class=""  role="article" about="/provider-resource-old/refer-patient" class="node node-uwm_basic_page view-mode-full">
+
+        
+      
+      <div class="field field--name-field-uwm-sections field--type-entity-reference-revisions field--label-hidden field__items">
+              
+<section class="uwm-section paragraph--view-mode--default paragraph--id--25856">
+
+    
+    
+  <div class="container-xl">
+
+              
+  <h2 class="field field--name-field-uwm-section-heading field--type-text">Expert resources ready to help.</h2>
+
+    
+        
+      <div class="field field--name-field-uwm-component field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <h3>Referrals by phone</h3>
+
+<p>Call the UW Medicine Contact Center at <a href="tel:2065205000">206.520.5000</a> or <a href="tel:8775205000">877.520.5000</a> (toll-free), Monday-Friday, 7 a.m.-7 p.m. For emergencies, call 911. (Do not use our referral options.)</p>
+
+<h3>Referrals online</h3>
+
+<p>Refer a patient online using the <a href="https://www2.uwmedicine.org/referrals/refer-a-patient">UW Medicine Web form</a>.</p>
+
+<h3>Referrals by fax</h3>
+
+<p>Some services cannot be scheduled by calling the contact center phone and cannot be referred using the generic phone and online referral form. These services include:</p>
+
+<ul><li>Heart Institute</li>
+	<li>Hematology/Oncology</li>
+	<li>Kidney care and transplant services</li>
+	<li>Liver </li>
+	<li>Obstetrics</li>
+	<li>Pituitary</li>
+	<li>Pain Medicine</li>
+	<li>Radiology</li>
+	<li>Sports Medicine</li>
+	<li>Transplant</li>
+</ul><p>To refer a patient for one of the above services, please use the paper <a href="/sites/contentrepo/files/2018-11/provider-resource-UH2394_ElectronicForm.pdf">UW Medicine Referral Request Form</a>, and fax it to the appropriate contact detailed in the accordion below.</p>
+
+<h3>Patient needs immediate transfer</h3>
+
+<p>Call the Transfer Center at <a href="tel:8887314791">888.731.4791</a> (toll-free), 24 hours a day.</p>
+
+<h3>Access a specialist</h3>
+
+<p>Call Medcon at <a href="tel:8003265300">800.326.5300</a> (toll-free), 24 hours a day, or <a href="mailto:medcon@uw.edu">email</a>.</p>
+
+<p>For emergencies, call 911. (Do not use our online form or other referral options.)</p>
+
+                      </div>
+      
+      </div>
+</div>
+          </div>
+  
+
+  </div>
+</section>
+
+              
+<section class="uwm-section paragraph--view-mode--default paragraph--id--62861 uwm-section--background-gray">
+
+    
+    
+  <div class="container-xl">
+
+              
+  <h2 class="field field--name-field-uwm-section-heading field--type-text"><a id="nwh">Northwest Hospital / UW Medical Center Integration Information for Physicians</a></h2>
+
+    
+        
+      <div class="field field--name-field-uwm-component field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+
+
+<div  class="paragraph paragraph--type--uwm-accordion paragraph--view-mode--default paragraph--id--62856">
+
+
+
+
+<div class="uwm-accordion uwm-acc-t-both" id="accordion-62856" role="tablist">
+
+  
+                        <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-62856-1">
+      <h3>
+                <button class="uwm-accordion__header-link btn  collapsed
+            w-100"
+                id="button-accordion-62856-1"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-62856-1"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-62856-1"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Provider Questions:
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-62856-1" class="collapse " role="tabpanel" data-parent="#accordion-62856" aria-labelledby="heading-accordion-62856-1">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                      </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-62856-2">
+      <h3>
+                <button class="uwm-accordion__header-link btn  collapsed
+            w-100"
+                id="button-accordion-62856-2"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-62856-2"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-62856-2"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>1.	What does it mean to operate UW Medical Center and Northwest Hospital as one hospital with two campuses?
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-62856-2" class="collapse " role="tabpanel" data-parent="#accordion-62856" aria-labelledby="heading-accordion-62856-2">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p class="MsoNoSpacing"><span><span>Northwest Hospital will become one of the two campuses of UW Medical Center. The two-campus hospital will operate under a single hospital license — University of Washington Medical Center — and the unified hospital will be financially, clinically and administratively integrated.</span></span></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-62856-3">
+      <h3>
+                <button class="uwm-accordion__header-link btn  collapsed
+            w-100"
+                id="button-accordion-62856-3"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-62856-3"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-62856-3"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>2.	Why did you consolidate the two hospitals into one?
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-62856-3" class="collapse " role="tabpanel" data-parent="#accordion-62856" aria-labelledby="heading-accordion-62856-3">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p class="MsoNoSpacing"><span><span>Operating under one license will improve access for patients, better align and standardize our clinical services and reduce administrative complexity. Combining the two hospitals will position both hospitals for long-term success and enable UW Medicine to better accomplish our mission in the region. </span></span></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-62856-4">
+      <h3>
+                <button class="uwm-accordion__header-link btn  collapsed
+            w-100"
+                id="button-accordion-62856-4"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-62856-4"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-62856-4"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>3.	Will the physicians we work with change?
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-62856-4" class="collapse " role="tabpanel" data-parent="#accordion-62856" aria-labelledby="heading-accordion-62856-4">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p class="MsoNoSpacing"><span><span>The majority of the providers who presently practice at Northwest Hospital have become members of University of Washington Physicians (UWP). This means that you will be working with many of your same provider colleagues.  </span></span></p>
+
+<p class="MsoNoSpacing"><span><span>We will now have a single medical staff across the two campuses; however, we will maintain the open medical staff model on the UW Medical Center – Northwest campus.</span></span></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-62856-5">
+      <h3>
+                <button class="uwm-accordion__header-link btn  collapsed
+            w-100"
+                id="button-accordion-62856-5"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-62856-5"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-62856-5"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>4.	Are there other changes?
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-62856-5" class="collapse " role="tabpanel" data-parent="#accordion-62856" aria-labelledby="heading-accordion-62856-5">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p class="MsoNoSpacing"><span><span>All staff will become Washington state employees. There will be new signage on the UW Medical Center – Northwest campus. Changes will begin in mid-December, and we will continue to integrate and make changes throughout the coming year.</span></span></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-62856-6">
+      <h3>
+                <button class="uwm-accordion__header-link btn  collapsed
+            w-100"
+                id="button-accordion-62856-6"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-62856-6"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-62856-6"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>5.	Should I change how I transfer patients?
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-62856-6" class="collapse " role="tabpanel" data-parent="#accordion-62856" aria-labelledby="heading-accordion-62856-6">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p class="MsoNoSpacing"><span><span>Please continue to transfer or refer patients as you have in the past using the UW Medicine Contact Center at 206.520.5500 or UW Medicine Transfer Center at 888.731.4791.The same number will apply to both campuses.</span></span></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-62856-7">
+      <h3>
+                <button class="uwm-accordion__header-link btn  collapsed
+            w-100"
+                id="button-accordion-62856-7"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-62856-7"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-62856-7"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>6.	 What about Tax ID numbers?
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-62856-7" class="collapse " role="tabpanel" data-parent="#accordion-62856" aria-labelledby="heading-accordion-62856-7">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p class="MsoNoSpacing"><span><span>As a second campus of University of Washington Medical Center, the Northwest campus will use the Tax ID and NPI numbers that have always been associated with UW Medical Center.  </span></span></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-62856-8">
+      <h3>
+                <button class="uwm-accordion__header-link btn  collapsed
+            w-100"
+                id="button-accordion-62856-8"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-62856-8"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-62856-8"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>7.	What will the two campuses be called?
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-62856-8" class="collapse " role="tabpanel" data-parent="#accordion-62856" aria-labelledby="heading-accordion-62856-8">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p class="MsoNoSpacing"><span><span>Starting Jan. 1, 2020, Northwest Hospital will be called UW Medical Center – Northwest, and the original UW Medical Center location will be called UW Medical Center – Montlake. Northwest Hospital’s main campus as a whole, as well as the 11 acres adjacent to the I-5 freeway, will be called UW Medicine – Northwest Campus. </span></span></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-62856-9">
+      <h3>
+                <button class="uwm-accordion__header-link btn  collapsed
+            w-100"
+                id="button-accordion-62856-9"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-62856-9"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-62856-9"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>8.	Who will lead UW Medical Center?
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-62856-9" class="collapse " role="tabpanel" data-parent="#accordion-62856" aria-labelledby="heading-accordion-62856-9">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p class="MsoNoSpacing"><span><span>Cindy Hecker currently serves as executive director of both UW Medical Center and Northwest Hospital. Geoff Austin serves as chief operating officer for both hospitals. As of Jan. 1, 2020, Hecker and Austin will continue in these roles over the unified UW Medical Center. </span></span></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-62856-10">
+      <h3>
+                <button class="uwm-accordion__header-link btn  collapsed
+            w-100"
+                id="button-accordion-62856-10"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-62856-10"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-62856-10"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>9.	Will there be residents at UW Medical Center – Northwest?
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-62856-10" class="collapse " role="tabpanel" data-parent="#accordion-62856" aria-labelledby="heading-accordion-62856-10">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p class="MsoNoSpacing"><span><span>For many years Northwest Hospital has had some residents who are in various levels of training. The Montlake campus of UW Medical Center will remain the primary teaching campus.</span></span></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-62856-11">
+      <h3>
+                <button class="uwm-accordion__header-link btn  collapsed
+            w-100"
+                id="button-accordion-62856-11"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-62856-11"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-62856-11"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>10.	If patients are transferred from UW Medical Center – Northwest to UW Medical Center – Montlake, will physicians be able to see those patients at the Montlake campus?
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-62856-11" class="collapse " role="tabpanel" data-parent="#accordion-62856" aria-labelledby="heading-accordion-62856-11">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p class="MsoNoSpacing"><span><span>Any physician who transfers a patient from UW Medical Center – Northwest to the Montlake campus will be able to see that patient and access their medical record. They will coordinate care with UW Medical Center – Montlake physicians and staff.  </span></span></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-62856-12">
+      <h3>
+                <button class="uwm-accordion__header-link btn  collapsed
+            w-100"
+                id="button-accordion-62856-12"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-62856-12"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-62856-12"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>11.	What if my patient has trouble with insurance coverage now that Northwest Hospital is a campus of UW Medical Center?
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-62856-12" class="collapse " role="tabpanel" data-parent="#accordion-62856" aria-labelledby="heading-accordion-62856-12">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p class="MsoNoSpacing"><span><span>In preparation for the integration, UW Medical Center worked with insurance carriers to transfer coverage from Northwest Hospital to UW Medical Center. Patients should experience no problems; however, if you or your patient has questions, please contact UW Medical Center’s billing and insurance office at 206.598.1950. They can review coverage to ensure a seamless transition for Jan. 1, 2020.</span></span></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+          </div>
+  
+
+  </div>
+</section>
+
+              
+<section class="uwm-section paragraph--view-mode--default paragraph--id--25866 uwm-section--background-white">
+
+    
+    
+  <div class="container-xl">
+
+              
+  <h2 class="field field--name-field-uwm-section-heading field--type-text">Additional contact information by specialty:</h2>
+
+    
+        
+      <div class="field field--name-field-uwm-component field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+
+
+<div  class="paragraph paragraph--type--uwm-accordion paragraph--view-mode--default paragraph--id--25871">
+
+
+
+
+<div class="uwm-accordion uwm-acc-t-both" id="accordion-25871" role="tablist">
+
+        
+                        <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25871-1">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25871-1"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25871-1"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25871-1"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Heart Institute
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25871-1" class="collapse " role="tabpanel" data-parent="#accordion-25871" aria-labelledby="heading-accordion-25871-1">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>To refer patients to all Heart Institute clinical services and locations, please call <a href="tel:8668943278">866.894.3278</a>.</p>
+
+<p>Referrals can be sent via fax using the <a href="/sites/contentrepo/files/2018-11/provider-resource-UH2394_ElectronicForm.pdf">UW Medicine Referral Request</a> Form or directly online using the <a href="/provider-resource/refer-a-patient/web-form">UW Medicine Web form</a>. If referring for <a href="https://www.uwmedicine.org/provider-resource/refer-patient/transcatheter-aortic-valve-replacement-tavr-referral.pdf">Structural Heart Services</a>, use this service-specific form.</p>
+
+<p>For more information, view our <a href="/sites/contentrepo/files/2018-11/provider-resource-RHC-Provider-FS.pdf">fact sheet</a> for referring providers, or contact the Heart Institute physician liaison at <a href="mailto:uwheart@uw.edu">uwheart@uw.edu </a>or <a href="tel:2065983473">206.598.3473</a>.</p>
+
+<p>Patients who are requesting appointments or self-referrals may call <a href="tel:2065984300">206.598.4300</a>.</p>
+
+<p>Or you may dial one of the following locations directly:<br /><br /><strong>UW Medical Center Cardiology</strong><br />
+Referrals: <a href="tel:2065980190">206.598.0190</a>, Fax: 206.598.1451<br /><br /><strong>Eastside Specialty Center Cardiology</strong><br />
+Referrals: <a href="tel:4256467777">425.646.7777</a>, Fax: 206.520.2299<br /><br /><strong>RHC-Edmonds Cardiology</strong><br />
+Referrals: <a href="tel:4257748251">425.774.8251</a>, Fax: 425.775.1063<br /><br /><strong>Harborview Medical Center Cardiology</strong><br />
+Referrals: <a href="tel:2065205000">206.520.5000</a>, Fax: 206.744.8527</p>
+
+<p> </p>
+
+<h5>Direct contact information below for sub-specialty services:</h5>
+
+<p><strong>Adult Congenital Heart Disease Program</strong><br />
+Phone: <a href="tel:2065983734">206.598.3734</a>; Fax: 206.598.7451</p>
+
+<p><strong>Advanced Heart Failure, Cardiac Transplant, Mechanical Circulatory Support</strong><br />
+Phone: <a href="tel:2065988069">206.598.8069</a>; Fax 206.598.7451</p>
+
+<p><strong>Cardiothoracic Surgery</strong><br />
+Phone: <a href="tel:2065983636">206.598.3636</a>; Fax: 206.598.2414</p>
+
+<p><strong>Complex Coronary Artery Disease Program</strong><br />
+Phone: <a href="tel:2065987126">206.598.7126</a>; Fax: 206.598.3037</p>
+
+<p><strong>Electrophysiology Services</strong><br />
+Phone: <a href="tel:2065988069">206.598.8069</a>; Fax 206.598.7451</p>
+
+<p><strong>Hypertrophic Cardiomyopathy Program and Cardiovascular Genetics Clinic</strong><br />
+Phone: <a href="tel:2065988069">206.598.8069</a>; Fax 206.598.7451</p>
+
+<p><strong>Interventional Cardiology Services</strong><br />
+Phone: <a href="tel:2065988069">206.598.8069</a>; Fax 206.598.7451</p>
+
+<p><strong>Structural Heart Services</strong> (TAVR and other valve disorders, LAA closures, etc.)<br />
+Phone: <a href="tel:2065988258">206.598.8258</a>; Fax: 206.598.3037</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25871-2">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25871-2"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25871-2"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25871-2"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Hematology/Oncology
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25871-2" class="collapse " role="tabpanel" data-parent="#accordion-25871" aria-labelledby="heading-accordion-25871-2">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>View the <a href="https://www.seattlecca.org/healthcare-professionals/refer-a-patient">Seattle Cancer Care Alliance referral resources</a>.</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25871-3">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25871-3"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25871-3"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25871-3"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Kidney Care and Transplant Services
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25871-3" class="collapse " role="tabpanel" data-parent="#accordion-25871" aria-labelledby="heading-accordion-25871-3">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>To evaluate your patient as a candidate for kidney transplantation, please provide the information and records faxed to UWMC Transplant Services:</p>
+
+<ul><li>Patient Demographics (Name, DOB, Contact information)</li>
+	<li>Referring Physician Name and NPI number</li>
+	<li>Patient H&amp;P</li>
+	<li>Cardiac Testing (if available)</li>
+	<li>Recent Labs</li>
+	<li>Patient Insurance information (Insurer, Group #, ID #)</li>
+	<li>For dialysis patients, please include Medicare form 2728 (if available)</li>
+</ul><p>Download a copy of the <a href="https://www.uwmedicine.org/uwmc-kidney-transplant-referrals.pdf">Kidney Care referral form</a>​​. </p>
+
+<p>Once we receive this information, our Patient Intake Coordinator will contact your patient. After we register your patient, you will be notified that the pre-transplant process has begun. <br /><br />
+Please feel free to call if you have any questions about the status of your patient’s referral.</p>
+
+<p><strong>Phone</strong><br /><a href="tel:2065983882">206.598.3882</a></p>
+
+<p><strong>Fax</strong><br />
+206.598.7176</p>
+
+<p><strong>Address</strong><br />
+1959 NE Pacific Street <br />
+Box 356174, Room EE404 <br />
+Seattle, WA 98195-6174</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25871-4">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25871-4"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25871-4"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25871-4"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Liver
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25871-4" class="collapse " role="tabpanel" data-parent="#accordion-25871" aria-labelledby="heading-accordion-25871-4">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>To have your patient evaluated for our Hepatitis C Clinic, Hepatology Clinic or Liver Transplant Clinic, download and complete the <a href="https://www.uwmedicine.org/sites/stevie/files/2019-01/Liver-Care-Line.pdf">Liver Care Line Consultation Request form</a> and fax it to <a href="tel:2065984287">206.598.4287</a>. If you have any questions about the program or want to schedule an appointment, call <a href="tel:2065984973">206.598.4973</a>.</p>
+
+<p> </p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25871-5">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25871-5"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25871-5"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25871-5"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Medical Respite
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25871-5" class="collapse " role="tabpanel" data-parent="#accordion-25871" aria-labelledby="heading-accordion-25871-5">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>To refer a patient to Harborview's Medical Respite Program (Edward Thomas House Medical Respite), please call the Screener directly at <a href="tel:206-744-5277">206.744.5277</a>. If your referral meets eligibility criteria, you will be directed to complete a <a href="https://www.uwmedicine.org/sites/stevie/files/2019-01/Respite-Referral-Form.pdf">Respite Referral Form</a> and fax it to the screener at 206.744.5233. If you are referring from an inpatient unit, use the Inpatient to <a href="https://www.uwmedicine.org/sites/stevie/files/2019-01/Respite-Referral-Checklist.pdf">Respite Referral Checklist</a> to gather and fax information required for a complete referral.</p>
+
+<p><a class="btn btn-cta" href="/provider-resource/refer-patient/medical-respite">LEARN MORE</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25871-6">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25871-6"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25871-6"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25871-6"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Obstetrics
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25871-6" class="collapse " role="tabpanel" data-parent="#accordion-25871" aria-labelledby="heading-accordion-25871-6">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><strong>To refer high-risk obstetrics patients to the <a href="https://www.uwmedicine.org/locations/maternal-and-infant-care-uwmc">Maternal and Infant Care Clinic at UW Medical Center</a></strong><strong>:</strong></p>
+
+<p>Call <a href="tel:2065984072">206.598.4072</a> (Monday-Friday, 8 a.m.-5 p.m), or complete the <a href="/sites/contentrepo/files/2018-11/provider-resource-UH2394_ElectronicForm.pdf">UW Medicine referral form</a> and fax it to 206.598.2359.</p>
+
+<p><strong>To refer patients to the Family Planning Clinic at UWMC-Roosevelt:</strong></p>
+
+<p>Call <a href="tel:2065985500">206.598.5500</a>, or complete the <a href="/sites/contentrepo/files/2018-11/provider-resource-UH2394_ElectronicForm.pdf">UW Medicine referral form</a> and fax it to 206.598.8722.</p>
+
+<p>The Family Planning Clinic provides comprehensive birth control and pregnancy termination services. Contact the Women's Health Care Center Referral Coordinator, Debra Young, at <a href="tel:2065987743">206.598.7743</a> or by fax at 206.598.6048 for more information or assistance.</p>
+
+<p><strong>To transfer a patient, or for other urgent and after-hours requests:</strong></p>
+
+<p>Call Medcon at <a href="tel:8003265300">800.326.5300</a> and ask for the MICC doctor or perinatologist on call. Please fax your transfer patient’s records to UWMC Labor and Delivery at 206.598.7664.</p>
+
+<p><strong>For more information about Perinatal Services patient referrals:</strong></p>
+
+<p>Please contact physician liaison Enedina Dumas at <a href="tel:2065981944">206.598.1944</a> or <a href="mailto:edumas@uw.edu">edumas@uw.edu</a>.</p>
+
+<p><strong>To contact the Prenatal Diagnosis, Perinatal Genetics and Fetal Therapy Program:</strong></p>
+
+<p>Call <a href="tel:2065988130">206.598.8130</a> from Monday to Friday between 8 a.m. and 5 p.m. If you need assistance after hours or on the weekend or holidays, please call Medcon at <a href="tel:8003265300">800.326.5300</a> and ask for the MICC doctor on call.</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25871-7">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25871-7"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25871-7"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25871-7"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Oral/Facial Surgery
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25871-7" class="collapse " role="tabpanel" data-parent="#accordion-25871" aria-labelledby="heading-accordion-25871-7">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>To refer a patient to the University of Washington's Northwest Center for Oral and Facial Surgery clinic, please complete the <a href="https://www.uwmedicine.org/sites/contentrepo/files/2018-11/provider-resource-UH2394_ElectronicForm.pdf">UW Medicine Referral Request Form</a> and fax it to 206.616.7251.</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25871-8">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25871-8"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25871-8"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25871-8"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Pituitary
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25871-8" class="collapse " role="tabpanel" data-parent="#accordion-25871" aria-labelledby="heading-accordion-25871-8">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>For questions about referring your patient, please contact Drs. Ferreira, Failor or De Santis at <a href="tel:2067449300">206.744.9300</a>. The Neurological Surgery Clinic fax number is 206.744.9943.</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25871-9">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25871-9"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25871-9"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25871-9"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Pain Medicine
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25871-9" class="collapse " role="tabpanel" data-parent="#accordion-25871" aria-labelledby="heading-accordion-25871-9">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="http://depts.washington.edu/anesth/education/pain/index.shtml">Access the Pain Medicine Provider Toolkit</a>.</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25871-10">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25871-10"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25871-10"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25871-10"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Radiology
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25871-10" class="collapse " role="tabpanel" data-parent="#accordion-25871" aria-labelledby="heading-accordion-25871-10">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>For radiology orders, please call <a href="tel:2065985800">206.598.5800</a>.</p>
+
+<p><strong>UW Medical Center, Roosevelt &amp; Eastside Specialty Center radiology scheduling: </strong><br />
+Phone: <a href="tel:2065987200">206.598.7200</a> Fax: 206.597.4004<br />
+Call: 8 a.m.- 5 p.m. for radiology appointments*, and please have your referral form or imaging order faxed <em>prior </em>to calling. </p>
+
+<p><strong>Harborview Medical Center radiology scheduling:</strong> <br />
+Phone: <a href="tel:2067443105">206.744.3105</a> Fax: 206.598.7690<br />
+Call 6 a.m.-6 p.m. for radiology appointments*, and please have your referral form or imaging order faxed <em>prior </em>to calling. </p>
+
+<p><strong>Northwest Hospital</strong> <strong>radiology scheduling:</strong><br />
+Phone: <a href="tel:2066682778">206.668.2778</a> Fax: 206.668.6160<br />
+Call 7:30 a.m.-6 p.m. for radiology appointments*, and please have your referral form or imaging order faxed <em>prior </em>to calling.</p>
+
+<p>Referring providers, please call the radiology consultant phone line at <a href="tel:2065980101">206.598.0101</a> with any questions.</p>
+
+<p><em>*To schedule a mammogram, please call Seattle Cancer Care Alliance at <a href="tel:2066067800">206.606.7800</a> or Seattle Breast Center at <a href="tel:2066681749">206.668.1749</a>.</em></p>
+
+<p class="ghost-button"><a class="btn btn-cta" href="https://www.uwmedicine.org/sites/default/files/2018-10/Radiology_Referral_HMC.pdf">Harborview referral form</a></p>
+
+<p class="ghost-button"><a class="btn btn-cta" href="https://www.uwmedicine.org/sites/default/files/2018-11/Radiology_UWMC_ESC_ROOS_%20ReferralForm.pdf">UWMC referral form</a></p>
+
+<p class="ghost-button"><a class="btn btn-cta" href="https://www.uwmedicine.org/sites/default/files/2018-10/Radiology_NWH_%20Scheduling%20Order_Form.pdf&#10;">NWH referral form</a></p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25871-11">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25871-11"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25871-11"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25871-11"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Sports Medicine
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25871-11" class="collapse " role="tabpanel" data-parent="#accordion-25871" aria-labelledby="heading-accordion-25871-11">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p>Healthcare professionals making a referral should fax a UW Medicine referral request directly to the individual desired clinic location for initial review. To refer a patient, use the <a href="/sites/contentrepo/files/2018-11/provider-resource-UH2394_ElectronicForm.pdf">UW Medicine referral form</a>. To find fax information for individual clinics, please visit the <a href="https://www.uwmedicine.org/search/locations">Find a Location page</a>. </p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+                      <div class="card uwm-accordion__card border-0 mb-3">
+    <div class="card-header uwm-accordion__card-header p-0 border-0" id="heading-accordion-25871-12">
+      <h3>
+                <button class="uwm-accordion__header-link btn show-indicators collapsed
+            w-100"
+                id="button-accordion-25871-12"
+                data-toggle="collapse"
+                data-target="#collapse-accordion-25871-12"
+                aria-expanded="false"
+                aria-controls="collapse-accordion-25871-12"
+        >
+          <i class="fas fa-plus-circle"></i><i class="fas fa-minus-circle"></i>Transplant
+        </button>
+      </h3>
+    </div>
+
+    <div id="collapse-accordion-25871-12" class="collapse " role="tabpanel" data-parent="#accordion-25871" aria-labelledby="heading-accordion-25871-12">
+      <div class="card-body uwm-accordion__card-body">
+        <hr class="uwm-accordion__body-separator" />
+                                                                                                                                                      
+
+  <div class="paragraph paragraph--type--uwm-basic-content paragraph--view-mode--default">
+          
+            <div class="field field--name-uwm-text field--type-text-long field--label-hidden field__item">
+        <p><a href="/pdf/provider-resource-uw-medicine-transplantation-contacts.pdf">Direct contacts</a> for transplant by organ.</p>
+
+                      </div>
+      
+      </div>
+
+              </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+          </div>
+  
+
+  </div>
+</section>
+
+          </div>
+  
+  
+  
+</article>
+
+
+
+            </div>
+
+  </div>
+
+  
+
+    
+
+
+
+<footer class="uwm-footer container-fluid">
+
+    <div class="row blocks-row">
+        <div class="col-xs-12"></div>
+    </div>
+
+<div class="row navigation-row">
+ <div class="col-12 d-none d-sm-inline-block foot-third">
+                    <div class="service-icons">
+        <a href="https://www.facebook.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__facebook" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.linkedin.com/company/uw-medicine">
+            <i class="uwmed-icon uwmed-icon__linkedin" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://twitter.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__twitter" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.instagram.com/UWMedicine">
+            <i class="uwmed-icon uwmed-icon__instagram" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.youtube.com/user/UWMedicineHealth">
+            <i class="uwmed-icon uwmed-icon__youtube" aria-hidden="true"></i>
+        </a>
+    </div>
+
+            </div></div>
+    <div class="row navigation-row">
+            <div class="col-xs-12 col-md-6 foot-first">
+                                
+              <ul class="menu nav">
+                    
+        <li>
+                    <a href="/about" data-drupal-link-system-path="node/20851">            <i class="uw-s hidden-xs"></i> About UW Medicine
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="http://providerresource.uwmedicine.org/">            <i class="uw-s hidden-xs"></i> Provider Resource
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://newsroom.uw.edu">            <i class="uw-s hidden-xs"></i> Media Inquiries
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/factbook">            <i class="uw-s hidden-xs"></i> Fact Book
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/about/contact-us" data-drupal-link-system-path="node/21466">            <i class="uw-s hidden-xs"></i> Contact Us
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/about/career-opportunities" data-drupal-link-system-path="node/21461">            <i class="uw-s hidden-xs"></i> Careers
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/volunteering" data-drupal-link-system-path="node/22171">            <i class="uw-s hidden-xs"></i> Volunteer
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="http://www.acceleratemed.org/give/?source=MEDXCL%2CMDNOVT%2CUWMEDS%2CHCMISS%2CADISUN%2CNWMEDI%2CVALLEY%2CMEDNEI%2CAIRFUN">            <i class="uw-s hidden-xs"></i> Donate
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://www.uw.edu">            <i class="uw-s hidden-xs"></i> UW.edu
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/forms/website-feedback" data-drupal-link-system-path="webform/website_feedback">            <i class="uw-s hidden-xs"></i> Feedback
+          </a>
+
+                  </li>
+        </ul>
+  
+
+</div>
+
+            <div class="col-xs-12 col-md-6 d-none d-md-inline-block foot-second">
+                                
+              <ul class="menu nav">
+                    
+        <li>
+                    <a href="/harborview">            <i class="uw-s hidden-xs"></i> Harborview Medical Center 
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/northwest-hospital">            <i class="uw-s hidden-xs"></i> Northwest Hospital &amp; Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/valley-medical-center">            <i class="uw-s hidden-xs"></i> Valley Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/uw-medical-center">            <i class="uw-s hidden-xs"></i> UW Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/neighborhood-clinics">            <i class="uw-s hidden-xs"></i> UW Neighborhood Clinics
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/uw-physicians">            <i class="uw-s hidden-xs"></i> UW Physicians
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/school-of-medicine/about" data-drupal-link-system-path="node/20916">            <i class="uw-s hidden-xs"></i> UW School of Medicine
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/airlift-nw">            <i class="uw-s hidden-xs"></i> Airlift Northwest
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://rightasrain.uwmedicine.org">            <i class="uw-s hidden-xs"></i> Right as Rain
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://newsroom.uw.edu">            <i class="uw-s hidden-xs"></i> UW Medicine Newsroom
+          </a>
+
+                  </li>
+        </ul>
+  
+
+</div>
+
+            <div class="col-xs-12 col-md-3 d-inline-block d-sm-none foot-third">
+                    <div class="service-icons">
+        <a href="https://www.facebook.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__facebook" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.linkedin.com/company/uw-medicine">
+            <i class="uwmed-icon uwmed-icon__linkedin" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://twitter.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__twitter" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.instagram.com/UWMedicine">
+            <i class="uwmed-icon uwmed-icon__instagram" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.youtube.com/user/UWMedicineHealth">
+            <i class="uwmed-icon uwmed-icon__youtube" aria-hidden="true"></i>
+        </a>
+    </div>
+
+            </div>
+
+    </div>
+<div class="row navigation-row">
+      <div class="col-12 foot-fourth">
+                <a class="logo" href="/" title="Home" rel="home">
+                    <img src="/themes/custom/uwmbase/dist/images/uw-medicine-logo-gray.svg"
+                         alt="UW Medicine" width="178" height="24">
+                </a>
+            </div>
+            </div>
+    <div class="row enterprise-row">
+        <div class="col-sm-4 first copyright">
+            Copyright &copy; 2019 University of Washington | All rights reserved
+        </div>
+
+        <div class="col-sm-8 second navigation">
+            
+              <ul class="list-inline">
+                    <li class="list-inline-item">
+        <a href="https://www.washington.edu/online/privacy/">Online Privacy Statement</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="/about/policies-and-notices" data-drupal-link-system-path="node/21821">Policies and Notices</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="/about/compliance/disclaimer" data-drupal-link-system-path="node/22091">Copyright And Healthcare Disclaimer</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="https://www.washington.edu/online/terms/">Website Terms And Conditions Of Use</a>
+              </li>
+        </ul>
+  
+
+
+        </div>
+    </div>
+
+</footer>
+
+
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/21401","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","specialtyDescriptions":{"38466":{"name":"Burn: Adult \u0026 Pediatric","description":"\u003Cp\u003EUW Medicine Trauma \u0026amp; Emergency Services provides emergency medical services 24 hours per day, seven days per week, and is staffed and equipped to care for all emergent medical conditions, illnesses and injuries. Our research scientists advance the standards of trauma and emergency care by exploring new therapeutic strategies to enhance the care of these complex patients.\u003C\/p\u003E\r\n"},"37996":{"name":"Cardiovascular","description":"\u003Cp\u003EUW Medicine Heart Institute (HI) provides a full range of cardiac care - from acute inpatient through outpatient clinic and diagnostic care - at hospital and clinic locations around the region. Our multidisciplinary team of cardiologists, cardiothoracic surgeons, and other highly-trained clinicians is internationally recognized for their expertise in treating coronary artery disease, heart rhythm disturbances such as atrial fibrillation, heart failure and adult congenital heart disease. We\u2019re also adept at performing advanced procedures and complex surgeries, including heart transplantation, ablations and percutaneous heart valve replacement.\u003C\/p\u003E\r\n\r\n\u003Cp\u003EImprove patient care through professional education, visit our \u003Ca href=\u0022https:\/\/cardiology.uw.edu\/grand-rounds\u0022 title=\u0022UW Cardiology Grand Rounds\u0022\u003EGrand Rounds\u003C\/a\u003E to learn more.\u003C\/p\u003E\r\n"},"38471":{"name":"Clinical Care Pathways","description":"\u003Cp\u003EUW Medicine develops clinical care pathways to document standard management and treatment of specific patient populations across their continuum of care. To ensure all aspects of the patient\u0027s care are in coordination, a multi-disciplinary team works together to create the pathway document as well as a supplemental caremap to be used in patient and family education.\u003C\/p\u003E\r\n\r\n\u003Cp\u003EPathways are intended only as a guide for practitioners. Pathways should be adapted to each specific patient based on practitioners\u0027 professional judgment and their consideration of the unique circumstances and needs of each patient and their family. Each healthcare organization should consider their individual practices and processes for best outcomes.\u003C\/p\u003E\r\n\r\n\u003Cp\u003EBelow is a sample of earlier versions of pathways developed by UW Medicine. UW Medicine care teams may find the most recent versions in \u003Ca href=\u0022https:\/\/occam.uwmedicine.org\/\u0022 target=\u0022_blank\u0022\u003EOCCAM\u003C\/a\u003E.\u003C\/p\u003E\r\n"},"38476":{"name":"Featured","description":null},"38046":{"name":"Neurosciences Institute","description":"\u003Cp\u003EThe UW Medicine Neurosciences Institute (NSI) is a multidisciplinary team organized to diagnose and treat disorders of the nervous system. Our comprehensive team of specialists provides compassionate care for neurologic disorders, conducts world class research to discover novel treatments, and educates future generations of neuroscientists and clinicians.\u003C\/p\u003E\r\n"},"38481":{"name":"Oncology","description":"\u003Cp\u003EUW Medicine provides a full spectrum of cancer management \u2013 from prevention to caring for newly diagnosed patients, to coordinating specialty care for patients with advanced forms of the disease. We provide leading-edge treatments and clinical trials for \u003Ca href=\u0022\/locations\/alvord-brain-tumor-center\u0022 target=\u0022_blank\u0022\u003Ebrain\u003C\/a\u003E, \u003Ca href=\u0022\/services\/cancer-care\/cancer-types\/breast\u0022 target=\u0022_blank\u0022\u003Ebreast\u003C\/a\u003E, \u003Ca href=\u0022\/locations\/colorectal-services\u0022 target=\u0022_blank\u0022\u003Ecolorectal\u003C\/a\u003E, \u003Ca href=\u0022\/services\/cancer-care\u0022\u003Egenitourinary\u003C\/a\u003E, \u003Ca href=\u0022\/services\/gynecology\/gynecologic-cancer\u0022 target=\u0022_blank\u0022\u003Egynecologic\u003C\/a\u003E, \u003Ca href=\u0022\/locations\/liver-tumor-uwmc\u0022 target=\u0022_blank\u0022\u003Eliver\u003C\/a\u003E, \u003Ca href=\u0022\/locations\/thoracic-surgery-uwmc\u0022 target=\u0022_blank\u0022\u003Elung\u003C\/a\u003E, \u003Ca href=\u0022\/locations\/surgical-oncology-uwmc\u0022 target=\u0022_blank\u0022\u003Epancreatic\u003C\/a\u003E, \u003Ca href=\u0022\/locations\/urology-uwmc\u0022 target=\u0022_blank\u0022\u003Eprostate\u003C\/a\u003E, \u003Ca href=\u0022\/services\/cancer-care\u0022\u003Eskin and sarcoma cancers\u003C\/a\u003E in addition to \u003Ca href=\u0022\/services\/cancer-care\u0022\u003Elymphatic\u003C\/a\u003E and other \u003Ca href=\u0022\/services\/cancer-care\u0022\u003Eblood\u003C\/a\u003E cancers.\u003C\/p\u003E\r\n"},"38051":{"name":"Pediatrics","description":"\u003Cp\u003EUW Medicine offers the latest therapies for premature infants in our Level IV and III neonatal intensive care units, located at UW Medical Center and Valley Medical Center. Also provided are specialized pediatric gynecology, neurosurgery, and trauma services. Located at Harborview Medical Center, UW Medicine operates the only Level I pediatric trauma center in the Washington, Wyoming, Alaska, Montana, and Idaho (WWAMI) region.\u003C\/p\u003E\r\n"},"38486":{"name":"Sports Medicine \u0026 Orthopedic Surgery","description":"\u003Cp\u003EUW Medicine Sports, Spine \u0026amp; Orthopedic Health is a multidisciplinary team of specially trained, highly experienced rehab medicine and sports medicine physicians, orthopedic, plastic and spine surgeons, podiatrists, physical and occupational therapists and sports psychologists. As a partner in your patient\u2019s care, surgical treatment is considered a last option. That is why our specialists offer the latest advances in non-surgical treatments, such as physical therapy, to restore your muscle strength and range of motion or joint injections that help reduce inflammation and pain at the injury site. However, sometimes surgery is necessary. Patients who require surgical treatment are able to consult with skilled orthopedic surgeons who have extensive experience performing a variety of procedures, including minimally invasive arthroscopic surgeries at our state-of-the-art, outpatient facilities.\u003C\/p\u003E\r\n"},"38491":{"name":"Transplant","description":"\u003Cp\u003EUW Medicine Transplantation Services is a combination of clinical, academic and research activities. Transplantation Services are principally organized around six multidisciplinary clinical teams:\u0026nbsp;\u003Ca href=\u0022https:\/\/www.uwmedicine.org\/services\/transplant\/heart-transplant\u0022\u003EHeart transplantation\u003C\/a\u003E, \u003Ca href=\u0022https:\/\/www.uwmedicine.org\/services\/transplant\/kidney-transplant\u0022\u003EKidney-pancreas transplantation\u003C\/a\u003E, \u003Ca href=\u0022https:\/\/www.uwmedicine.org\/services\/transplant\/liver-transplant\u0022\u003ELiver transplantation\u003C\/a\u003E, \u003Ca href=\u0022https:\/\/www.uwmedicine.org\/services\/transplant\/lung-transplant\u0022\u003ELung transplantation\u003C\/a\u003E, Intestinal transplantation and Reconstructive Transplantation (Face \u0026amp; Hand). The transplant teams support patients before, during and after surgery to ensure the best outcome possible.\u003C\/p\u003E\r\n"},"38071":{"name":"Trauma: Level 1 Adult \u0026 Pediatric","description":"\u003Cp\u003EUW Medicine Trauma \u0026amp; Emergency Services provides emergency medical services 24 hours per day, seven days per week, and is staffed and equipped to care for all emergent medical conditions, illnesses and injuries. Our research scientists advance the standards of trauma and emergency care by exploring new therapeutic strategies to enhance the care of these complex patients.\u003C\/p\u003E\r\n"},"38076":{"name":"Women\u0027s Health","description":"\u003Cp\u003EUW Medicine offers holistic healthcare services to women across the continuum from adolescence through late adulthood. UW Medicine provides wellness and preventive services as well as care for normal to high-risk pregnancies, and breast, gynecologic and pelvic health. Our experts care for women with complicated medical conditions (such as reproductive\/infertility and gynecologic oncology) that may require minimally invasive procedures or comprehensive surgical care. In addition, UW Medicine is prepared to care for infants requiring special or intensive care services within our three Neonatal Intensive Care Units (NICUs). Our level 3 and level 4 NICUs provide the latest therapies for infants born preterm or those who require highly skilled care. Our physicians are researchers who are making medical discoveries that are improving the lives of women and infants throughout the world.\u003C\/p\u003E\r\n"}},"ajax":[],"user":{"uid":0,"permissionsHash":"ca9aaf4e9f3d0580f94a983623e5ac1f747ff03fba5aa27bb8771bf5d9d50bc6"}}</script>
+<script src="/sites/stevie/files/js/js_yCFYs_LGt3NMrX7wq3rY13whYWABqIUCVmCDbRkY0AM.js"></script>
+<script src="//use.fontawesome.com/releases/v5.8.1/js/all.js" defer crossorigin="anonymous" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"></script>
+<script src="/sites/stevie/files/js/js_JdikXsINDZmBcoeNjvZQPWUasQUWoh0KllI62wO5PV4.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js" integrity="sha256-7QS1cHsH75h3IFgrFKsdhmKHHpWqF82sb/9vNLqcqs0=" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b55cc6ce81","applicationID":"55451763","transactionName":"YwMEbEsFWhBZBUIMV1pJJ1tNDVsNFyJEEEhVCjp7VhZRP3UDWBBkcAMAWUwIQC5dCEMpUVoNMkpcAXkCVg9GEFRVEglKSkkKBF0IUxdZQAMvVl0BTCJWAmUKSkA=","queueTime":0,"applicationTime":688,"atts":"T0QHGgMfSR4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

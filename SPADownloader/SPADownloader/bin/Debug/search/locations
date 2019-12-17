@@ -1,0 +1,3485 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " site-uuid="86b376c5-ohhh-eeee-ahhh-oooo443540e3" site-env="prod" site-file="/mnt/www/html/uwmed/docroot/modules/custom/uwmcs_utils/uwmcs_utils.module">
+  <head>
+      <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b55cc6ce81",applicationID:"55451763"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="title" content="Find a location | UW Medicine" />
+<meta name="twitter:card" content="summary" />
+<meta property="og:site_name" content="UW Medicine" />
+<link rel="canonical" href="https://www.uwmedicine.org/search/locations" />
+<meta property="og:type" content="website" />
+<meta name="twitter:site" content="@uwmedicine" />
+<meta name="twitter:title" content="Find a location" />
+<meta property="og:url" content="https://www.uwmedicine.org/search/locations" />
+<meta property="og:title" content="Find a location | UW Medicine" />
+<meta name="twitter:url" content="https://www.uwmedicine.org/search/locations" />
+<link rel="apple-touch-icon" sizes="180x180" href="/sites/stevie/files/favicons/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/sites/stevie/files/favicons/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/sites/stevie/files/favicons/favicon-16x16.png"/>
+<link rel="manifest" href="/sites/stevie/files/favicons/site.webmanifest"/>
+<link rel="mask-icon" href="/sites/stevie/files/favicons/safari-pinned-tab.svg" color="#5bbad5"/>
+<meta name="msapplication-TileColor" content="#da532c"/>
+<meta name="theme-color" content="#ffffff"/>
+<meta name="favicon-generator" content="Drupal responsive_favicons + realfavicongenerator.net" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="/sites/stevie/files/google_tag/google_tag.script.js?q2h8dj"></script>
+
+        <title>Find a location | UW Medicine</title>
+    
+  <link rel="stylesheet" href="/sites/stevie/files/css/css_HPq2oxDG8mQsrd1BJYtnJzlY2J1Pm0RhZZBuRMFV8BM.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/modules/custom/uwmcs_utils/assets/uwm_page.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/sites/stevie/files/css/css_VLOLJL5YI6e3Nb6iRZSSyGrC2rLBzzgBRld7QHBUN34.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="/sites/stevie/files/css/css_nEE3PnHkBQsLndu1haRWiNSakwurRtEkDYMQ2WIRAVY.css?q2h8dj" media="all" />
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Encode+Sans:300,400,500,600,700|Open+Sans:300,300i,400,400i,600,600i,700,700i" media="all" />
+
+  
+<!--[if lte IE 8]>
+<script src="/sites/stevie/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  </head>
+  <body  class="path-search-locations user-role-anonymous is-path-search">
+      
+<a href="#main-content" class="skip-link visually-hidden visually-hidden--focusable">
+      Skip to main content
+  </a>
+  
+
+<header class="uwm-header">
+    <nav class="navbar navbar-expand-md flex-md-column">
+    <div class="purple container-fluid">
+
+                        <a class="navbar-brand" href="/" title="Home" rel="home">
+                <img src="/themes/custom/uwmbase/dist/images/uw-medicine-logo.svg"
+                     height="21" width="158" alt="UW Medicine">
+            </a>
+
+                          <button type="button" class="navbar-toggler ml-auto text-white"
+                        data-toggle="collapse"
+                        data-target=".search-collapse">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+
+                <button type="button" class="navbar-toggler text-white"
+                        data-toggle="collapse"
+                        data-target="#mainNavigationMobile"
+                        aria-controls="mainNavigationMobile" aria-expanded="false" aria-label="Toggle main navigation">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+
+
+                    
+
+        <div id="quickLinksNavigation" class="uwm-quick-links ml-auto d-none d-md-block">
+            <ul class="navbar-nav">
+            <li><a href="/patient-care/ecare">eCare Patient Portal</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="http://providerresource.uwmedicine.org/">For Providers</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/research">Research</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/school-of-medicine">School of Medicine</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/about/contact-us">Contact Us</a></li>
+                </ul>
+
+    </div>
+        <div class="d-none d-lg-block">
+            <form class="form-inline header-search-form"
+                  action="/search" accept-charset="UTF-8" method="get">
+
+                <div class="input-group header-search">
+
+                    <input name="s" type="text" class="form-control" value=""
+                           aria-label="Search terms" autocomplete="off">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+
+                </div>
+
+            </form>
+
+        </div>
+        <button type="button" class="navbar-toggler d-none d-md-inline-block d-lg-none text-white"
+            data-toggle="collapse"
+            data-target=".search-collapse">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <div class="search-collapse collapse">
+
+    <form class="form-inline header-search-form"
+          action="/search" accept-charset="UTF-8" method="get">
+        <div class="input-group">
+            <i class="fa fa-search uw-fa" aria-hidden="true"></i>
+            <input name="s" title="Search" type="text"
+                    class="form-control"
+                    aria-label="Search terms" value="" autocomplete="off">
+            <button type="button" class="navbar-toggler uw-fa"
+                    data-toggle="collapse"
+                    data-target=".search-collapse">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </form>
+    </div>
+
+    <div class="white container-fluid p-md-0 pl-lg-3">
+            
+            
+            
+
+    <div id="mainNavigation" class="collapse navbar-collapse uwm-main-navigation">
+        <ul class="navbar-nav mr-auto">
+                             <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find care"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find care
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find care">
+                                    <a class="dropdown-item" href="/services/urgent-care">Urgent care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/primary-care">Primary care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/services/virtual-clinic">Virtual clinic <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/emergency-medicine">Emergency rooms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties">Medical specialties <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/providers">Find a provider <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                    <i class="uw-b"></i>
+                                    <li class="nav-item"><a class="nav-link" href="/patient-care/making-an-appointment">Make an appointment <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        
+                    <i class="uw-b"></i>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find health &amp; patient resources"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find health &amp; patient resources
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find health &amp; patient resources">
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/">Conditions and symptoms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/Wellness/">Prevention and wellness <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">Patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/patient-education">Patient education <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                    <i class="uw-b"></i>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-I want to..."
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">I want to...
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-I want to...">
+                                    <a class="dropdown-item" href="https://www.uwmedicine.org/patient-resources/make-an-appointment">Make an appointment <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-care/ecare">Sign up or sign in for eCare <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/billing-and-insurance">Pay my bill  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/access-medical-records-images">Access medical records and images  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/interpreter-services">Find an interpreter  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/pharmacy-locations">Find a pharmacy <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">View all patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/provider-resource/refer-patient">Refer a patient <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+        
+                        </ul>
+    </div>
+
+    <div id="mainNavigationMobile" class="collapse navbar-collapse uwm-main-navigation-mobile d-md-none">
+        <ul class="navbar-nav mr-auto">
+                             <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find care"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find care
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find care">
+                                    <a class="dropdown-item" href="/services/urgent-care">Urgent care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/primary-care">Primary care <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/services/virtual-clinic">Virtual clinic <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties/emergency-medicine">Emergency rooms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/specialties">Medical specialties <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/providers">Find a provider <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                                    <li class="nav-item"><a class="nav-link" href="/patient-care/making-an-appointment">Make an appointment <i class="fa fa-angle-right"
+                        aria-hidden="true"></i></a></li>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-Find health &amp; patient resources"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">Find health &amp; patient resources
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-Find health &amp; patient resources">
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/">Conditions and symptoms <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="http://healthlibrary.uwmedicine.org/Wellness/">Prevention and wellness <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">Patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/patient-education">Patient education <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                                     <li class="nav-item dropdown">
+                <a href="#"
+                    id="uw-main-navigation-I want to..."
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown">I want to...
+                    <i class="fa fa-angle-down"
+                        aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="uw-main-navigation-I want to...">
+                                    <a class="dropdown-item" href="https://www.uwmedicine.org/patient-resources/make-an-appointment">Make an appointment <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-care/ecare">Sign up or sign in for eCare <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/billing-and-insurance">Pay my bill  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/access-medical-records-images">Access medical records and images  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/interpreter-services">Find an interpreter  <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/search/locations">Find a location <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources/pharmacy-locations">Find a pharmacy <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/patient-resources">View all patient resources <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" href="/provider-resource/refer-patient">Refer a patient <i class="fa fa-angle-right float-right"
+                        aria-hidden="true"></i></a>
+                                </div>  
+            </li>
+                        </ul>
+
+        
+
+        <div class="make-a-gift-navigation">
+                    <div class="wrapper">
+
+                        <div class="gift-btn btn btn--border btn--primary btn--animated">
+                            <div class="uw-ac"></div>
+                            <a href="http://www.acceleratemed.org/give/?source=MEDXCL,MDNOVT,UWMEDS,HCMISS,ADISUN,NWMEDI,VALLEY,MEDNEI,AIRFUN">Make a Gift
+                                &nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+        
+
+        <div class="uwm-quick-links">
+            <ul class="navbar-nav">
+            <li><a href="/patient-care/ecare">eCare Patient Portal</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="http://providerresource.uwmedicine.org/">For Providers</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/research">Research</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/school-of-medicine">School of Medicine</a></li>
+                    <i class="uw-b"></i>
+                      <li><a href="/about/contact-us">Contact Us</a></li>
+                </ul>
+
+        </div>
+    </div>
+
+
+                        <div id="makeAGift" class="uwm-make-a-gift-button ml-auto d-none d-md-block">
+            
+
+    
+        <ul class="navbar-nav">
+                    <li> 
+            <a href="http://www.acceleratemed.org/give/?source=MEDXCL%2CMDNOVT%2CUWMEDS%2CHCMISS%2CADISUN%2CNWMEDI%2CVALLEY%2CMEDNEI%2CAIRFUN">
+            <i class="u-a" aria-hidden="true"></i>
+            Make a Gift
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+                </ul>
+
+
+
+        </div>
+        
+        </div>
+    <div class="row shadow"></div>
+
+
+    
+    </nav>
+</header>
+
+
+  <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRG725G" height="0" width="0" title="Google Tag Manager"></iframe></noscript>
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+
+
+  <div id="main-container" role="main"  class="main-container">
+
+      <section class="content-topper">
+    <div class="wrap container-xl">
+
+            
+            
+                              <div class="row">
+            <div class="col-sm-12">
+
+<div id="block-uwmbase-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title">Find a location</h1>
+
+
+  </div>
+
+</div>
+          </div>
+              
+            
+            
+                              <div class="row">
+            <div class="col-sm-12">
+
+  <div class="filters-wrap">
+
+  
+  
+  
+  
+    
+  
+        <form class="views-exposed-form" data-drupal-selector="views-exposed-form-uwm-locations-geo-search-page-1" action="/search/locations" method="get" id="views-exposed-form-uwm-locations-geo-search-page-1" accept-charset="UTF-8">
+  <div class="form--inline clearfix">
+  <div class="js-form-item form-item js-form-type-search-api-autocomplete form-type-search-api-autocomplete js-form-item-s form-item-s form-no-label">
+        <input placeholder="Enter a location name..." class="dm-form-item-collection form-autocomplete form-text" autocomplete="off" data-drupal-selector="edit-s" data-search-api-autocomplete-search="uwm_locations_autocomplete" data-autocomplete-path="/search_api_autocomplete/uwm_locations_autocomplete?display=page_1&amp;&amp;filter=s" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" />
+
+        </div>
+<div class="location-address-keywords js-form-wrapper form-wrapper" data-drupal-selector="edit-location-address-keywords" id="edit-location-address-keywords"><div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-l form-item-l form-no-label">
+        <input placeholder="Enter a zip code, neighborhood or city..." autocomplete="off" data-drupal-selector="edit-l" type="text" id="edit-l" name="l" value="" size="30" maxlength="128" class="form-text" />
+
+      <span class="field-suffix"><a href="#" class="toggle-uml-dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+<div class="dropdown"><div class="dropdown-menu"><a id="umlDropdownLink" href="#">Use my location</a></div></div>
+<div class="status-message"></div></span>
+        </div>
+</div>
+<div class="use-my-location js-form-wrapper form-wrapper" data-drupal-selector="edit-use-my-location" id="edit-use-my-location"><div class="use-my-location__prefix">or</div><button class="use-my-location__button btn btn-cta btn-cta-link" type="button">Use my location</button><input class="use-my-location__coordinates" data-drupal-selector="edit-latlng" type="hidden" name="latlng" value="" />
+<div class="use-my-location__status"></div></div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><button data-drupal-selector="edit-submit-uwm-locations-geo-search" type="submit" id="edit-submit-uwm-locations-geo-search" value="Apply" class="button js-form-submit form-submit btn btn-cta">Apply</button>
+</div>
+
+</div>
+
+</form>
+
+
+
+
+
+  
+
+
+
+
+
+
+<div class="dm-facets-selector dm-facets-widget-links dm-facet-id-locations_geo_facet_expertise">
+
+
+  <select class="selectpicker show-tick form-control" title="Medical Specialties"
+          data-live-search="true" data-width="100%"
+          data-max-options="1" multiple>
+
+    
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Addiction medicine"
+                value="expertise:Addiction medicine"
+                data-subtext="(2)"
+
+          >
+          Addiction Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Adolescent medicine"
+                value="expertise:Adolescent medicine"
+                data-subtext="(13)"
+
+          >
+          Adolescent Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Adult congenital heart disease"
+                value="expertise:Adult congenital heart disease"
+                data-subtext="(1)"
+
+          >
+          Adult Congenital Heart Disease</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Advanced heart failure &amp; transplant"
+                value="expertise:Advanced heart failure &amp; transplant"
+                data-subtext="(6)"
+
+          >
+          Advanced Heart Failure &amp; Transplant</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Allergy and immunology"
+                value="expertise:Allergy and immunology"
+                data-subtext="(10)"
+
+          >
+          Allergy And Immunology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Anesthesiology"
+                value="expertise:Anesthesiology"
+                data-subtext="(4)"
+
+          >
+          Anesthesiology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Brain injury"
+                value="expertise:Brain injury"
+                data-subtext="(5)"
+
+          >
+          Brain Injury</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Cardiology"
+                value="expertise:Cardiology"
+                data-subtext="(12)"
+
+          >
+          Cardiology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Cardiovascular disease"
+                value="expertise:Cardiovascular disease"
+                data-subtext="(1)"
+
+          >
+          Cardiovascular Disease</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Cardiovascular surgery"
+                value="expertise:Cardiovascular surgery"
+                data-subtext="(2)"
+
+          >
+          Cardiovascular Surgery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Child and adolescent psychiatry"
+                value="expertise:Child and adolescent psychiatry"
+                data-subtext="(1)"
+
+          >
+          Child And Adolescent Psychiatry</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Clinical genetics"
+                value="expertise:Clinical genetics"
+                data-subtext="(1)"
+
+          >
+          Clinical Genetics</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Colorectal surgery"
+                value="expertise:Colorectal surgery"
+                data-subtext="(2)"
+
+          >
+          Colorectal Surgery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Complex family planning"
+                value="expertise:Complex family planning"
+                data-subtext="(3)"
+
+          >
+          Complex Family Planning</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Critical care medicine"
+                value="expertise:Critical care medicine"
+                data-subtext="(7)"
+
+          >
+          Critical Care Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Dermatologic surgery"
+                value="expertise:Dermatologic surgery"
+                data-subtext="(1)"
+
+          >
+          Dermatologic Surgery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Dermatology"
+                value="expertise:Dermatology"
+                data-subtext="(8)"
+
+          >
+          Dermatology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Diagnostic radiology"
+                value="expertise:Diagnostic radiology"
+                data-subtext="(4)"
+
+          >
+          Diagnostic Radiology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Electrophysiology"
+                value="expertise:Electrophysiology"
+                data-subtext="(1)"
+
+          >
+          Electrophysiology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Emergency medicine"
+                value="expertise:Emergency medicine"
+                data-subtext="(9)"
+
+          >
+          Emergency Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Endocrinology"
+                value="expertise:Endocrinology"
+                data-subtext="(5)"
+
+          >
+          Endocrinology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Environmental &amp; occupational medicine"
+                value="expertise:Environmental &amp; occupational medicine"
+                data-subtext="(1)"
+
+          >
+          Environmental &amp; Occupational Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Epilepsy"
+                value="expertise:Epilepsy"
+                data-subtext="(9)"
+
+          >
+          Epilepsy</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Family medicine"
+                value="expertise:Family medicine"
+                data-subtext="(29)"
+
+          >
+          Family Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Female pelvic medicine &amp; reconstructive surgery"
+                value="expertise:Female pelvic medicine &amp; reconstructive surgery"
+                data-subtext="(2)"
+
+          >
+          Female Pelvic Medicine &amp; Reconstructive Surgery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Gastroenterology"
+                value="expertise:Gastroenterology"
+                data-subtext="(8)"
+
+          >
+          Gastroenterology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="General surgery"
+                value="expertise:General surgery"
+                data-subtext="(13)"
+
+          >
+          General Surgery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Genetic counseling"
+                value="expertise:Genetic counseling"
+                data-subtext="(7)"
+
+          >
+          Genetic Counseling</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Geriatric medicine"
+                value="expertise:Geriatric medicine"
+                data-subtext="(11)"
+
+          >
+          Geriatric Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Gynecologic oncology"
+                value="expertise:Gynecologic oncology"
+                data-subtext="(4)"
+
+          >
+          Gynecologic Oncology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Gynecology"
+                value="expertise:Gynecology"
+                data-subtext="(21)"
+
+          >
+          Gynecology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Hand &amp; wrist surgery"
+                value="expertise:Hand &amp; wrist surgery"
+                data-subtext="(5)"
+
+          >
+          Hand &amp; Wrist Surgery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Hematology"
+                value="expertise:Hematology"
+                data-subtext="(8)"
+
+          >
+          Hematology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Hospital medicine"
+                value="expertise:Hospital medicine"
+                data-subtext="(2)"
+
+          >
+          Hospital Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Infectious diseases"
+                value="expertise:Infectious diseases"
+                data-subtext="(7)"
+
+          >
+          Infectious Diseases</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Internal medicine"
+                value="expertise:Internal medicine"
+                data-subtext="(39)"
+
+          >
+          Internal Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Interventional cardiology"
+                value="expertise:Interventional cardiology"
+                data-subtext="(2)"
+
+          >
+          Interventional Cardiology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Interventional radiology"
+                value="expertise:Interventional radiology"
+                data-subtext="(3)"
+
+          >
+          Interventional Radiology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Kidney care (nephrology)"
+                value="expertise:Kidney care (nephrology)"
+                data-subtext="(8)"
+
+          >
+          Kidney Care (Nephrology)</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Laboratory medicine"
+                value="expertise:Laboratory medicine"
+                data-subtext="(12)"
+
+          >
+          Laboratory Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Liver care (hepatology)"
+                value="expertise:Liver care (hepatology)"
+                data-subtext="(8)"
+
+          >
+          Liver Care (Hepatology)</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Maternal fetal medicine"
+                value="expertise:Maternal fetal medicine"
+                data-subtext="(4)"
+
+          >
+          Maternal Fetal Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Medical biochemical genetics"
+                value="expertise:Medical biochemical genetics"
+                data-subtext="(1)"
+
+          >
+          Medical Biochemical Genetics</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Medical oncology"
+                value="expertise:Medical oncology"
+                data-subtext="(7)"
+
+          >
+          Medical Oncology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Midwifery"
+                value="expertise:Midwifery"
+                data-subtext="(5)"
+
+          >
+          Midwifery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Neonatal-perinatal medicine"
+                value="expertise:Neonatal-perinatal medicine"
+                data-subtext="(4)"
+
+          >
+          Neonatal-Perinatal Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Neurological surgery"
+                value="expertise:Neurological surgery"
+                data-subtext="(7)"
+
+          >
+          Neurological Surgery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Neurology"
+                value="expertise:Neurology"
+                data-subtext="(13)"
+
+          >
+          Neurology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Neuromuscular diseases"
+                value="expertise:Neuromuscular diseases"
+                data-subtext="(5)"
+
+          >
+          Neuromuscular Diseases</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Neuroradiology"
+                value="expertise:Neuroradiology"
+                data-subtext="(2)"
+
+          >
+          Neuroradiology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Nuclear medicine"
+                value="expertise:Nuclear medicine"
+                data-subtext="(4)"
+
+          >
+          Nuclear Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Obstetrics"
+                value="expertise:Obstetrics"
+                data-subtext="(21)"
+
+          >
+          Obstetrics</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Occupational medicine"
+                value="expertise:Occupational medicine"
+                data-subtext="(5)"
+
+          >
+          Occupational Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Occupational therapy"
+                value="expertise:Occupational therapy"
+                data-subtext="(9)"
+
+          >
+          Occupational Therapy</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Oncology"
+                value="expertise:Oncology"
+                data-subtext="(14)"
+
+          >
+          Oncology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Ophthalmology (eye disorders)"
+                value="expertise:Ophthalmology (eye disorders)"
+                data-subtext="(6)"
+
+          >
+          Ophthalmology (Eye Disorders)</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Oral and maxillofacial surgery"
+                value="expertise:Oral and maxillofacial surgery"
+                data-subtext="(2)"
+
+          >
+          Oral And Maxillofacial Surgery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Orthopedic surgery"
+                value="expertise:Orthopedic surgery"
+                data-subtext="(18)"
+
+          >
+          Orthopedic Surgery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Otolaryngology [ENT] - head and neck surgery"
+                value="expertise:Otolaryngology [ENT] - head and neck surgery"
+                data-subtext="(9)"
+
+          >
+          Otolaryngology [Ent] - Head And Neck Surgery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Pain management"
+                value="expertise:Pain management"
+                data-subtext="(11)"
+
+          >
+          Pain Management</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Pathology"
+                value="expertise:Pathology"
+                data-subtext="(10)"
+
+          >
+          Pathology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Pediatric cardiology"
+                value="expertise:Pediatric cardiology"
+                data-subtext="(1)"
+
+          >
+          Pediatric Cardiology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Pediatric emergency care"
+                value="expertise:Pediatric emergency care"
+                data-subtext="(1)"
+
+          >
+          Pediatric Emergency Care</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Pediatric neurology"
+                value="expertise:Pediatric neurology"
+                data-subtext="(2)"
+
+          >
+          Pediatric Neurology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Pediatrics"
+                value="expertise:Pediatrics"
+                data-subtext="(18)"
+
+          >
+          Pediatrics</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Physical medicine and rehabilitation"
+                value="expertise:Physical medicine and rehabilitation"
+                data-subtext="(1)"
+
+          >
+          Physical Medicine And Rehabilitation</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Plastic and reconstructive surgery"
+                value="expertise:Plastic and reconstructive surgery"
+                data-subtext="(6)"
+
+          >
+          Plastic And Reconstructive Surgery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Podiatry"
+                value="expertise:Podiatry"
+                data-subtext="(3)"
+
+          >
+          Podiatry</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Preventive medicine"
+                value="expertise:Preventive medicine"
+                data-subtext="(28)"
+
+          >
+          Preventive Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Primary care"
+                value="expertise:Primary care"
+                data-subtext="(37)"
+
+          >
+          Primary Care</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Psychiatry"
+                value="expertise:Psychiatry"
+                data-subtext="(4)"
+
+          >
+          Psychiatry</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Psychology"
+                value="expertise:Psychology"
+                data-subtext="(3)"
+
+          >
+          Psychology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Public health"
+                value="expertise:Public health"
+                data-subtext="(2)"
+
+          >
+          Public Health</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Pulmonary and respiratory disease care"
+                value="expertise:Pulmonary and respiratory disease care"
+                data-subtext="(9)"
+
+          >
+          Pulmonary And Respiratory Disease Care</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Radiation oncology"
+                value="expertise:Radiation oncology"
+                data-subtext="(9)"
+
+          >
+          Radiation Oncology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Radiology and imaging"
+                value="expertise:Radiology and imaging"
+                data-subtext="(6)"
+
+          >
+          Radiology And Imaging</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Rehabilitation medicine"
+                value="expertise:Rehabilitation medicine"
+                data-subtext="(14)"
+
+          >
+          Rehabilitation Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Reproductive endocrinology and infertility"
+                value="expertise:Reproductive endocrinology and infertility"
+                data-subtext="(1)"
+
+          >
+          Reproductive Endocrinology And Infertility</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Rheumatology (connective tissue disease)"
+                value="expertise:Rheumatology (connective tissue disease)"
+                data-subtext="(7)"
+
+          >
+          Rheumatology (Connective Tissue Disease)</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Senior psychiatry (geriatrics)"
+                value="expertise:Senior psychiatry (geriatrics)"
+                data-subtext="(4)"
+
+          >
+          Senior Psychiatry (Geriatrics)</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Sleep medicine"
+                value="expertise:Sleep medicine"
+                data-subtext="(10)"
+
+          >
+          Sleep Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Speech therapy"
+                value="expertise:Speech therapy"
+                data-subtext="(3)"
+
+          >
+          Speech Therapy</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Spinal cord injury (SCI)"
+                value="expertise:Spinal cord injury (SCI)"
+                data-subtext="(9)"
+
+          >
+          Spinal Cord Injury (Sci)</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Sports medicine"
+                value="expertise:Sports medicine"
+                data-subtext="(19)"
+
+          >
+          Sports Medicine</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Thoracic surgery"
+                value="expertise:Thoracic surgery"
+                data-subtext="(1)"
+
+          >
+          Thoracic Surgery</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Urgent care"
+                value="expertise:Urgent care"
+                data-subtext="(7)"
+
+          >
+          Urgent Care</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Urogynecology"
+                value="expertise:Urogynecology"
+                data-subtext="(5)"
+
+          >
+          Urogynecology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Urology"
+                value="expertise:Urology"
+                data-subtext="(12)"
+
+          >
+          Urology</option>
+        
+      
+        
+                                                        
+        
+                                
+
+                                                                
+
+        
+
+        
+
+        
+        
+        <option data-url=""
+                data-facet-value="Vascular surgery"
+                value="expertise:Vascular surgery"
+                data-subtext="(11)"
+
+          >
+          Vascular Surgery</option>
+        
+          
+
+  </select>
+
+
+</div>
+
+  <div class="hidden facets-widget facets-widget-links"
+       id="facet-links-locations_geo_facet_expertise">
+              
+    
+    
+        <ul data-drupal-facet-id="locations_geo_facet_expertise" data-drupal-facet-alias="expertise" class="item-list__links">
+
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AAddiction%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Addiction-medicine" data-drupal-facet-item-value="Addiction medicine"><span class="facet-item__value">Addiction medicine</span>
+  <span class="facet-item__count">(2)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AAdolescent%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Adolescent-medicine" data-drupal-facet-item-value="Adolescent medicine"><span class="facet-item__value">Adolescent medicine</span>
+  <span class="facet-item__count">(13)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AAdult%20congenital%20heart%20disease" rel="nofollow" data-drupal-facet-item-id="expertise-Adult-congenital-heart-disease" data-drupal-facet-item-value="Adult congenital heart disease"><span class="facet-item__value">Adult congenital heart disease</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AAdvanced%20heart%20failure%20%26%20transplant" rel="nofollow" data-drupal-facet-item-id="expertise-Advanced-heart-failure-&amp;-transplant" data-drupal-facet-item-value="Advanced heart failure &amp; transplant"><span class="facet-item__value">Advanced heart failure &amp; transplant</span>
+  <span class="facet-item__count">(6)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AAllergy%20and%20immunology" rel="nofollow" data-drupal-facet-item-id="expertise-Allergy-and-immunology" data-drupal-facet-item-value="Allergy and immunology"><span class="facet-item__value">Allergy and immunology</span>
+  <span class="facet-item__count">(10)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AAnesthesiology" rel="nofollow" data-drupal-facet-item-id="expertise-Anesthesiology" data-drupal-facet-item-value="Anesthesiology"><span class="facet-item__value">Anesthesiology</span>
+  <span class="facet-item__count">(4)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ABrain%20injury" rel="nofollow" data-drupal-facet-item-id="expertise-Brain-injury" data-drupal-facet-item-value="Brain injury"><span class="facet-item__value">Brain injury</span>
+  <span class="facet-item__count">(5)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ACardiology" rel="nofollow" data-drupal-facet-item-id="expertise-Cardiology" data-drupal-facet-item-value="Cardiology"><span class="facet-item__value">Cardiology</span>
+  <span class="facet-item__count">(12)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ACardiovascular%20disease" rel="nofollow" data-drupal-facet-item-id="expertise-Cardiovascular-disease" data-drupal-facet-item-value="Cardiovascular disease"><span class="facet-item__value">Cardiovascular disease</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ACardiovascular%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-Cardiovascular-surgery" data-drupal-facet-item-value="Cardiovascular surgery"><span class="facet-item__value">Cardiovascular surgery</span>
+  <span class="facet-item__count">(2)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AChild%20and%20adolescent%20psychiatry" rel="nofollow" data-drupal-facet-item-id="expertise-Child-and-adolescent-psychiatry" data-drupal-facet-item-value="Child and adolescent psychiatry"><span class="facet-item__value">Child and adolescent psychiatry</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AClinical%20genetics" rel="nofollow" data-drupal-facet-item-id="expertise-Clinical-genetics" data-drupal-facet-item-value="Clinical genetics"><span class="facet-item__value">Clinical genetics</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AColorectal%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-Colorectal-surgery" data-drupal-facet-item-value="Colorectal surgery"><span class="facet-item__value">Colorectal surgery</span>
+  <span class="facet-item__count">(2)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AComplex%20family%20planning" rel="nofollow" data-drupal-facet-item-id="expertise-Complex-family-planning" data-drupal-facet-item-value="Complex family planning"><span class="facet-item__value">Complex family planning</span>
+  <span class="facet-item__count">(3)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ACritical%20care%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Critical-care-medicine" data-drupal-facet-item-value="Critical care medicine"><span class="facet-item__value">Critical care medicine</span>
+  <span class="facet-item__count">(7)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ADermatologic%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-Dermatologic-surgery" data-drupal-facet-item-value="Dermatologic surgery"><span class="facet-item__value">Dermatologic surgery</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ADermatology" rel="nofollow" data-drupal-facet-item-id="expertise-Dermatology" data-drupal-facet-item-value="Dermatology"><span class="facet-item__value">Dermatology</span>
+  <span class="facet-item__count">(8)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ADiagnostic%20radiology" rel="nofollow" data-drupal-facet-item-id="expertise-Diagnostic-radiology" data-drupal-facet-item-value="Diagnostic radiology"><span class="facet-item__value">Diagnostic radiology</span>
+  <span class="facet-item__count">(4)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AElectrophysiology" rel="nofollow" data-drupal-facet-item-id="expertise-Electrophysiology" data-drupal-facet-item-value="Electrophysiology"><span class="facet-item__value">Electrophysiology</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AEmergency%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Emergency-medicine" data-drupal-facet-item-value="Emergency medicine"><span class="facet-item__value">Emergency medicine</span>
+  <span class="facet-item__count">(9)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AEndocrinology" rel="nofollow" data-drupal-facet-item-id="expertise-Endocrinology" data-drupal-facet-item-value="Endocrinology"><span class="facet-item__value">Endocrinology</span>
+  <span class="facet-item__count">(5)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AEnvironmental%20%26%20occupational%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Environmental-&amp;-occupational-medicine" data-drupal-facet-item-value="Environmental &amp; occupational medicine"><span class="facet-item__value">Environmental &amp; occupational medicine</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AEpilepsy" rel="nofollow" data-drupal-facet-item-id="expertise-Epilepsy" data-drupal-facet-item-value="Epilepsy"><span class="facet-item__value">Epilepsy</span>
+  <span class="facet-item__count">(9)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AFamily%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Family-medicine" data-drupal-facet-item-value="Family medicine"><span class="facet-item__value">Family medicine</span>
+  <span class="facet-item__count">(29)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AFemale%20pelvic%20medicine%20%26%20reconstructive%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-Female-pelvic-medicine-&amp;-reconstructive-surgery" data-drupal-facet-item-value="Female pelvic medicine &amp; reconstructive surgery"><span class="facet-item__value">Female pelvic medicine &amp; reconstructive surgery</span>
+  <span class="facet-item__count">(2)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AGastroenterology" rel="nofollow" data-drupal-facet-item-id="expertise-Gastroenterology" data-drupal-facet-item-value="Gastroenterology"><span class="facet-item__value">Gastroenterology</span>
+  <span class="facet-item__count">(8)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AGeneral%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-General-surgery" data-drupal-facet-item-value="General surgery"><span class="facet-item__value">General surgery</span>
+  <span class="facet-item__count">(13)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AGenetic%20counseling" rel="nofollow" data-drupal-facet-item-id="expertise-Genetic-counseling" data-drupal-facet-item-value="Genetic counseling"><span class="facet-item__value">Genetic counseling</span>
+  <span class="facet-item__count">(7)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AGeriatric%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Geriatric-medicine" data-drupal-facet-item-value="Geriatric medicine"><span class="facet-item__value">Geriatric medicine</span>
+  <span class="facet-item__count">(11)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AGynecologic%20oncology" rel="nofollow" data-drupal-facet-item-id="expertise-Gynecologic-oncology" data-drupal-facet-item-value="Gynecologic oncology"><span class="facet-item__value">Gynecologic oncology</span>
+  <span class="facet-item__count">(4)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AGynecology" rel="nofollow" data-drupal-facet-item-id="expertise-Gynecology" data-drupal-facet-item-value="Gynecology"><span class="facet-item__value">Gynecology</span>
+  <span class="facet-item__count">(21)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AHand%20%26%20wrist%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-Hand-&amp;-wrist-surgery" data-drupal-facet-item-value="Hand &amp; wrist surgery"><span class="facet-item__value">Hand &amp; wrist surgery</span>
+  <span class="facet-item__count">(5)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AHematology" rel="nofollow" data-drupal-facet-item-id="expertise-Hematology" data-drupal-facet-item-value="Hematology"><span class="facet-item__value">Hematology</span>
+  <span class="facet-item__count">(8)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AHospital%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Hospital-medicine" data-drupal-facet-item-value="Hospital medicine"><span class="facet-item__value">Hospital medicine</span>
+  <span class="facet-item__count">(2)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AInfectious%20diseases" rel="nofollow" data-drupal-facet-item-id="expertise-Infectious-diseases" data-drupal-facet-item-value="Infectious diseases"><span class="facet-item__value">Infectious diseases</span>
+  <span class="facet-item__count">(7)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AInternal%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Internal-medicine" data-drupal-facet-item-value="Internal medicine"><span class="facet-item__value">Internal medicine</span>
+  <span class="facet-item__count">(39)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AInterventional%20cardiology" rel="nofollow" data-drupal-facet-item-id="expertise-Interventional-cardiology" data-drupal-facet-item-value="Interventional cardiology"><span class="facet-item__value">Interventional cardiology</span>
+  <span class="facet-item__count">(2)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AInterventional%20radiology" rel="nofollow" data-drupal-facet-item-id="expertise-Interventional-radiology" data-drupal-facet-item-value="Interventional radiology"><span class="facet-item__value">Interventional radiology</span>
+  <span class="facet-item__count">(3)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AKidney%20care%20%28nephrology%29" rel="nofollow" data-drupal-facet-item-id="expertise-Kidney-care-(nephrology)" data-drupal-facet-item-value="Kidney care (nephrology)"><span class="facet-item__value">Kidney care (nephrology)</span>
+  <span class="facet-item__count">(8)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ALaboratory%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Laboratory-medicine" data-drupal-facet-item-value="Laboratory medicine"><span class="facet-item__value">Laboratory medicine</span>
+  <span class="facet-item__count">(12)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ALiver%20care%20%28hepatology%29" rel="nofollow" data-drupal-facet-item-id="expertise-Liver-care-(hepatology)" data-drupal-facet-item-value="Liver care (hepatology)"><span class="facet-item__value">Liver care (hepatology)</span>
+  <span class="facet-item__count">(8)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AMaternal%20fetal%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Maternal-fetal-medicine" data-drupal-facet-item-value="Maternal fetal medicine"><span class="facet-item__value">Maternal fetal medicine</span>
+  <span class="facet-item__count">(4)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AMedical%20biochemical%20genetics" rel="nofollow" data-drupal-facet-item-id="expertise-Medical-biochemical-genetics" data-drupal-facet-item-value="Medical biochemical genetics"><span class="facet-item__value">Medical biochemical genetics</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AMedical%20oncology" rel="nofollow" data-drupal-facet-item-id="expertise-Medical-oncology" data-drupal-facet-item-value="Medical oncology"><span class="facet-item__value">Medical oncology</span>
+  <span class="facet-item__count">(7)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AMidwifery" rel="nofollow" data-drupal-facet-item-id="expertise-Midwifery" data-drupal-facet-item-value="Midwifery"><span class="facet-item__value">Midwifery</span>
+  <span class="facet-item__count">(5)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ANeonatal-perinatal%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Neonatal-perinatal-medicine" data-drupal-facet-item-value="Neonatal-perinatal medicine"><span class="facet-item__value">Neonatal-perinatal medicine</span>
+  <span class="facet-item__count">(4)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ANeurological%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-Neurological-surgery" data-drupal-facet-item-value="Neurological surgery"><span class="facet-item__value">Neurological surgery</span>
+  <span class="facet-item__count">(7)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ANeurology" rel="nofollow" data-drupal-facet-item-id="expertise-Neurology" data-drupal-facet-item-value="Neurology"><span class="facet-item__value">Neurology</span>
+  <span class="facet-item__count">(13)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ANeuromuscular%20diseases" rel="nofollow" data-drupal-facet-item-id="expertise-Neuromuscular-diseases" data-drupal-facet-item-value="Neuromuscular diseases"><span class="facet-item__value">Neuromuscular diseases</span>
+  <span class="facet-item__count">(5)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ANeuroradiology" rel="nofollow" data-drupal-facet-item-id="expertise-Neuroradiology" data-drupal-facet-item-value="Neuroradiology"><span class="facet-item__value">Neuroradiology</span>
+  <span class="facet-item__count">(2)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ANuclear%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Nuclear-medicine" data-drupal-facet-item-value="Nuclear medicine"><span class="facet-item__value">Nuclear medicine</span>
+  <span class="facet-item__count">(4)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AObstetrics" rel="nofollow" data-drupal-facet-item-id="expertise-Obstetrics" data-drupal-facet-item-value="Obstetrics"><span class="facet-item__value">Obstetrics</span>
+  <span class="facet-item__count">(21)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AOccupational%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Occupational-medicine" data-drupal-facet-item-value="Occupational medicine"><span class="facet-item__value">Occupational medicine</span>
+  <span class="facet-item__count">(5)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AOccupational%20therapy" rel="nofollow" data-drupal-facet-item-id="expertise-Occupational-therapy" data-drupal-facet-item-value="Occupational therapy"><span class="facet-item__value">Occupational therapy</span>
+  <span class="facet-item__count">(9)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AOncology" rel="nofollow" data-drupal-facet-item-id="expertise-Oncology" data-drupal-facet-item-value="Oncology"><span class="facet-item__value">Oncology</span>
+  <span class="facet-item__count">(14)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AOphthalmology%20%28eye%20disorders%29" rel="nofollow" data-drupal-facet-item-id="expertise-Ophthalmology-(eye-disorders)" data-drupal-facet-item-value="Ophthalmology (eye disorders)"><span class="facet-item__value">Ophthalmology (eye disorders)</span>
+  <span class="facet-item__count">(6)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AOral%20and%20maxillofacial%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-Oral-and-maxillofacial-surgery" data-drupal-facet-item-value="Oral and maxillofacial surgery"><span class="facet-item__value">Oral and maxillofacial surgery</span>
+  <span class="facet-item__count">(2)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AOrthopedic%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-Orthopedic-surgery" data-drupal-facet-item-value="Orthopedic surgery"><span class="facet-item__value">Orthopedic surgery</span>
+  <span class="facet-item__count">(18)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AOtolaryngology%20%5BENT%5D%20-%20head%20and%20neck%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-Otolaryngology-[ENT]---head-and-neck-surgery" data-drupal-facet-item-value="Otolaryngology [ENT] - head and neck surgery"><span class="facet-item__value">Otolaryngology [ENT] - head and neck surgery</span>
+  <span class="facet-item__count">(9)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APain%20management" rel="nofollow" data-drupal-facet-item-id="expertise-Pain-management" data-drupal-facet-item-value="Pain management"><span class="facet-item__value">Pain management</span>
+  <span class="facet-item__count">(11)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APathology" rel="nofollow" data-drupal-facet-item-id="expertise-Pathology" data-drupal-facet-item-value="Pathology"><span class="facet-item__value">Pathology</span>
+  <span class="facet-item__count">(10)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APediatric%20cardiology" rel="nofollow" data-drupal-facet-item-id="expertise-Pediatric-cardiology" data-drupal-facet-item-value="Pediatric cardiology"><span class="facet-item__value">Pediatric cardiology</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APediatric%20emergency%20care" rel="nofollow" data-drupal-facet-item-id="expertise-Pediatric-emergency-care" data-drupal-facet-item-value="Pediatric emergency care"><span class="facet-item__value">Pediatric emergency care</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APediatric%20neurology" rel="nofollow" data-drupal-facet-item-id="expertise-Pediatric-neurology" data-drupal-facet-item-value="Pediatric neurology"><span class="facet-item__value">Pediatric neurology</span>
+  <span class="facet-item__count">(2)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APediatrics" rel="nofollow" data-drupal-facet-item-id="expertise-Pediatrics" data-drupal-facet-item-value="Pediatrics"><span class="facet-item__value">Pediatrics</span>
+  <span class="facet-item__count">(18)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APhysical%20medicine%20and%20rehabilitation" rel="nofollow" data-drupal-facet-item-id="expertise-Physical-medicine-and-rehabilitation" data-drupal-facet-item-value="Physical medicine and rehabilitation"><span class="facet-item__value">Physical medicine and rehabilitation</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APlastic%20and%20reconstructive%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-Plastic-and-reconstructive-surgery" data-drupal-facet-item-value="Plastic and reconstructive surgery"><span class="facet-item__value">Plastic and reconstructive surgery</span>
+  <span class="facet-item__count">(6)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APodiatry" rel="nofollow" data-drupal-facet-item-id="expertise-Podiatry" data-drupal-facet-item-value="Podiatry"><span class="facet-item__value">Podiatry</span>
+  <span class="facet-item__count">(3)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APreventive%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Preventive-medicine" data-drupal-facet-item-value="Preventive medicine"><span class="facet-item__value">Preventive medicine</span>
+  <span class="facet-item__count">(28)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APrimary%20care" rel="nofollow" data-drupal-facet-item-id="expertise-Primary-care" data-drupal-facet-item-value="Primary care"><span class="facet-item__value">Primary care</span>
+  <span class="facet-item__count">(37)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APsychiatry" rel="nofollow" data-drupal-facet-item-id="expertise-Psychiatry" data-drupal-facet-item-value="Psychiatry"><span class="facet-item__value">Psychiatry</span>
+  <span class="facet-item__count">(4)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APsychology" rel="nofollow" data-drupal-facet-item-id="expertise-Psychology" data-drupal-facet-item-value="Psychology"><span class="facet-item__value">Psychology</span>
+  <span class="facet-item__count">(3)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APublic%20health" rel="nofollow" data-drupal-facet-item-id="expertise-Public-health" data-drupal-facet-item-value="Public health"><span class="facet-item__value">Public health</span>
+  <span class="facet-item__count">(2)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3APulmonary%20and%20respiratory%20disease%20care" rel="nofollow" data-drupal-facet-item-id="expertise-Pulmonary-and-respiratory-disease-care" data-drupal-facet-item-value="Pulmonary and respiratory disease care"><span class="facet-item__value">Pulmonary and respiratory disease care</span>
+  <span class="facet-item__count">(9)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ARadiation%20oncology" rel="nofollow" data-drupal-facet-item-id="expertise-Radiation-oncology" data-drupal-facet-item-value="Radiation oncology"><span class="facet-item__value">Radiation oncology</span>
+  <span class="facet-item__count">(9)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ARadiology%20and%20imaging" rel="nofollow" data-drupal-facet-item-id="expertise-Radiology-and-imaging" data-drupal-facet-item-value="Radiology and imaging"><span class="facet-item__value">Radiology and imaging</span>
+  <span class="facet-item__count">(6)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ARehabilitation%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Rehabilitation-medicine" data-drupal-facet-item-value="Rehabilitation medicine"><span class="facet-item__value">Rehabilitation medicine</span>
+  <span class="facet-item__count">(14)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AReproductive%20endocrinology%20and%20infertility" rel="nofollow" data-drupal-facet-item-id="expertise-Reproductive-endocrinology-and-infertility" data-drupal-facet-item-value="Reproductive endocrinology and infertility"><span class="facet-item__value">Reproductive endocrinology and infertility</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ARheumatology%20%28connective%20tissue%20disease%29" rel="nofollow" data-drupal-facet-item-id="expertise-Rheumatology-(connective-tissue-disease)" data-drupal-facet-item-value="Rheumatology (connective tissue disease)"><span class="facet-item__value">Rheumatology (connective tissue disease)</span>
+  <span class="facet-item__count">(7)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ASenior%20psychiatry%20%28geriatrics%29" rel="nofollow" data-drupal-facet-item-id="expertise-Senior-psychiatry-(geriatrics)" data-drupal-facet-item-value="Senior psychiatry (geriatrics)"><span class="facet-item__value">Senior psychiatry (geriatrics)</span>
+  <span class="facet-item__count">(4)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ASleep%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Sleep-medicine" data-drupal-facet-item-value="Sleep medicine"><span class="facet-item__value">Sleep medicine</span>
+  <span class="facet-item__count">(10)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ASpeech%20therapy" rel="nofollow" data-drupal-facet-item-id="expertise-Speech-therapy" data-drupal-facet-item-value="Speech therapy"><span class="facet-item__value">Speech therapy</span>
+  <span class="facet-item__count">(3)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ASpinal%20cord%20injury%20%28SCI%29" rel="nofollow" data-drupal-facet-item-id="expertise-Spinal-cord-injury-(SCI)" data-drupal-facet-item-value="Spinal cord injury (SCI)"><span class="facet-item__value">Spinal cord injury (SCI)</span>
+  <span class="facet-item__count">(9)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3ASports%20medicine" rel="nofollow" data-drupal-facet-item-id="expertise-Sports-medicine" data-drupal-facet-item-value="Sports medicine"><span class="facet-item__value">Sports medicine</span>
+  <span class="facet-item__count">(19)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AThoracic%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-Thoracic-surgery" data-drupal-facet-item-value="Thoracic surgery"><span class="facet-item__value">Thoracic surgery</span>
+  <span class="facet-item__count">(1)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AUrgent%20care" rel="nofollow" data-drupal-facet-item-id="expertise-Urgent-care" data-drupal-facet-item-value="Urgent care"><span class="facet-item__value">Urgent care</span>
+  <span class="facet-item__count">(7)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AUrogynecology" rel="nofollow" data-drupal-facet-item-id="expertise-Urogynecology" data-drupal-facet-item-value="Urogynecology"><span class="facet-item__value">Urogynecology</span>
+  <span class="facet-item__count">(5)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AUrology" rel="nofollow" data-drupal-facet-item-id="expertise-Urology" data-drupal-facet-item-value="Urology"><span class="facet-item__value">Urology</span>
+  <span class="facet-item__count">(12)</span>
+</a></li>
+          <li  class="facet-item"><a href="/search/locations?f%5B0%5D=expertise%3AVascular%20surgery" rel="nofollow" data-drupal-facet-item-id="expertise-Vascular-surgery" data-drupal-facet-item-value="Vascular surgery"><span class="facet-item__value">Vascular surgery</span>
+  <span class="facet-item__count">(11)</span>
+</a></li>
+    
+  </ul>
+    
+  </div>
+
+
+
+<div class="submit-wrapper">
+  <span class="uwm-accent-color__purple">
+    <a class="btn btn-cta btn-cta-link submit" href="#">SEARCH</a>
+  </span>
+
+      <span class="uwm-accent-color__blue">
+      <a class="btn btn-cta btn-cta-link reset" href="/search/locations">RESET</a>
+    </span>
+  </div>
+
+
+<div class="filter-tips"></div>
+  
+  
+</div>
+
+
+
+  
+  
+
+      
+
+      
+
+    
+
+
+  
+
+<div id="block-hidden-show-region-item" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title">Find a location</h1>
+
+
+  </div>
+
+</div>
+          </div>
+                  </div>
+  </section>
+
+      <section class="content-columns">
+    <div class="container-xl">
+
+                  <section class="content-main">
+                                <a id="main-content"></a>
+              
+
+  
+    
+
+  <div class="views-element-container">
+
+
+<div class="view view-uwm-locations-geo-search view-id-uwm_locations_geo_search view-display-id-page_1 js-view-dom-id-1df0d8af543648a48bbb343e7f2f03c4e941dde5f47203d0eb63529c9ad0df19 views-view view-total-rows-395 view-without-query" data-view-total-rows="395">
+  
+  
+  
+
+  
+    
+
+  
+  
+
+    
+  
+  
+
+  
+  
+</div>
+
+      <div class="views-element-container">
+
+
+<div class="view view-uwm-locations-geo-search view-id-uwm_locations_geo_search view-display-id-featured_block js-view-dom-id-2d95347b778ab785177776305d27a23e01d082bd111f9d705c4aeeecf210c903 views-view view-total-rows-0 view-without-query" data-view-total-rows="0">
+  
+  
+  
+
+        
+  
+  
+
+        <div class="featured-locations-title">Our Hospitals</div>
+<div class="row">
+      
+    
+
+
+
+
+<article  role="article" about="/locations/harborview-medical-center" class="node node-res_clinic view-mode-card clinic-card col-sm-6 col-lg-4 col-xxl-3 cta-parent-card cta-parent-res-clinic">
+  <div class="clinic-card__inner">
+
+                    
+          <div class="clinic-card__image">
+                                        <a href="https://www.uwmedicine.org/locations/harborview-medical-center" class="uwm-cta cta-to-wwwuwmedicineorg cta-to-locations-harborview-medical-center cta-from-search-locations cta-parent-card cta-parent-res-clinic" data-context-title="Harborview Medical Center">
+  <div class="field field--name-field-res-image field--type-image field--label-hidden">
+
+                <div class="field__item">
+              <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source srcset="/sites/stevie/files/styles/card_414_215/public/Adult-Medicine-Clinic-at-Harborview.jpg?itok=qJOnUmQt 1x" media="(min-width: 1920px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_348_180/public/Adult-Medicine-Clinic-at-Harborview.jpg?itok=xAH7eacI 1x" media="(min-width: 1200px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_368_191/public/Adult-Medicine-Clinic-at-Harborview.jpg?itok=hb-UDY0f 1x" media="(min-width: 992px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_464_240/public/Adult-Medicine-Clinic-at-Harborview.jpg?itok=wNFK_PnF 1x" media="(min-width: 768px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_352_182/public/Adult-Medicine-Clinic-at-Harborview.jpg?itok=pmwOyP4j 1x" media="(min-width: 576px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_544_282/public/Adult-Medicine-Clinic-at-Harborview.jpg?itok=stJmZDGX 1x" type="image/jpeg"/>
+            <!--[if IE 9]></video><![endif]-->
+            <img src="/sites/stevie/files/styles/card_348_180/public/Adult-Medicine-Clinic-at-Harborview.jpg?itok=xAH7eacI" alt="Harborview Medical Center" typeof="foaf:Image" class="img-fluid" />
+
+  </picture>
+
+
+      </div>
+    
+  </div>
+
+</a>
+
+
+      </div>
+    
+    <div class="clinic-card__details">
+
+            <address class="clinic-card__address">
+
+        <h2 class="clinic-card__name">
+                              <a href="https://www.uwmedicine.org/locations/harborview-medical-center" class="uwm-cta cta-to-wwwuwmedicineorg cta-to-locations-harborview-medical-center cta-from-search-locations cta-parent-card cta-parent-res-clinic" data-context-title="Harborview Medical Center"><span class="field field--name-title field--type-string field--label-hidden">Harborview Medical Center</span>
+</a>
+        </h2>
+        
+
+                                                                    <a href="https://www.uwmedicine.org/locations/harborview-medical-center#directions-tab-tab---"
+                 class="clinic-card__street-address-link">
+
+
+            <div class="field field--name-field-res-address field--type-address field--label-hidden field__item"><div class="clinic-card__street-address" translate="no">
+    <span>325 9th Ave., </span><span>Seattle, </span><span>WA </span><span>98104</span></div>
+</div>
+      
+</a>
+                              
+      </address>
+
+            
+            
+        <div class="clinic-card__field clinic-card__location-hours icon">
+
+          <span class="uwm-icon uwm-icon--clock" aria-hidden="true"></span>
+
+          <h3 class="clinic-card__subheader">Hours Today</h3>
+
+          
+        
+  <div class="hours always-open has-primary-hours ">
+    
+    
+          <div class="hospital-hours">This location is open 24 hours a day, 7 days a week.</div>
+    
+    
+  </div>
+
+
+
+        </div>
+                        
+        <div class="clinic-card__field clinic-card__appointments icon">
+
+                      <span class="uwm-icon uwm-icon--heart" aria-hidden="true"></span>
+            <h3 class="clinic-card__subheader">Contact</h3>
+          
+          <div class="clinic-card__appointment_buttons">
+                          <div class="clinic-card__appointment_button clinic-card__phone-button">
+                
+                                                                <a href="tel:206-744-3000" class="uwm-cta cta-to-206-744-3000 cta-from-search-locations cta-parent-card cta-parent-res-clinic btn" data-context-title="Harborview Medical Center">206.744.3000</a>
+              </div>
+                                  </div>
+        </div>
+      
+                </div>
+
+          <div class="clinic-card__cta uwm-accent-color__purple">
+        
+                        <a href="https://www.uwmedicine.org/locations/harborview-medical-center" class="uwm-cta cta-to-wwwuwmedicineorg cta-to-locations-harborview-medical-center cta-from-search-locations cta-parent-card cta-parent-res-clinic btn btn-cta clinic-card" data-context-title="Harborview Medical Center
+">See location details</a>
+
+      </div>
+    
+  </div>
+</article>
+      
+    
+
+
+
+
+<article  role="article" about="/locations/northwest-hospital" class="node node-res_clinic view-mode-card clinic-card col-sm-6 col-lg-4 col-xxl-3 cta-parent-card cta-parent-res-clinic">
+  <div class="clinic-card__inner">
+
+                    
+          <div class="clinic-card__image">
+                                        <a href="https://www.uwmedicine.org/locations/northwest-hospital" class="uwm-cta cta-to-wwwuwmedicineorg cta-to-locations-northwest-hospital cta-from-search-locations cta-parent-card cta-parent-res-clinic" data-context-title="Northwest Hospital &amp; Medical Center">
+  <div class="field field--name-field-res-image field--type-image field--label-hidden">
+
+                <div class="field__item">
+              <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source srcset="/sites/stevie/files/styles/card_414_215/public/NWH_Entrance.jpg?itok=oTQj5F8x 1x" media="(min-width: 1920px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_348_180/public/NWH_Entrance.jpg?itok=gP6TLxq1 1x" media="(min-width: 1200px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_368_191/public/NWH_Entrance.jpg?itok=pKdPyKg2 1x" media="(min-width: 992px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_464_240/public/NWH_Entrance.jpg?itok=KGGdla_w 1x" media="(min-width: 768px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_352_182/public/NWH_Entrance.jpg?itok=nhUMKC7r 1x" media="(min-width: 576px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_544_282/public/NWH_Entrance.jpg?itok=saSmdLap 1x" type="image/jpeg"/>
+            <!--[if IE 9]></video><![endif]-->
+            <img src="/sites/stevie/files/styles/card_348_180/public/NWH_Entrance.jpg?itok=gP6TLxq1" alt="Northwest Hospital &amp; Medical Center" typeof="foaf:Image" class="img-fluid" />
+
+  </picture>
+
+
+      </div>
+    
+  </div>
+
+</a>
+
+
+      </div>
+    
+    <div class="clinic-card__details">
+
+            <address class="clinic-card__address">
+
+        <h2 class="clinic-card__name">
+                              <a href="https://www.uwmedicine.org/locations/northwest-hospital" class="uwm-cta cta-to-wwwuwmedicineorg cta-to-locations-northwest-hospital cta-from-search-locations cta-parent-card cta-parent-res-clinic" data-context-title="Northwest Hospital &amp; Medical Center"><span class="field field--name-title field--type-string field--label-hidden">Northwest Hospital &amp; Medical Center</span>
+</a>
+        </h2>
+        
+
+                                                                    <a href="https://www.uwmedicine.org/locations/northwest-hospital#directions-tab-tab---"
+                 class="clinic-card__street-address-link">
+
+
+            <div class="field field--name-field-res-address field--type-address field--label-hidden field__item"><div class="clinic-card__street-address" translate="no">
+    <span>1550 N 115th St., </span><span>Seattle, </span><span>WA </span><span>98133</span></div>
+</div>
+      
+</a>
+                              
+      </address>
+
+            
+            
+        <div class="clinic-card__field clinic-card__location-hours icon">
+
+          <span class="uwm-icon uwm-icon--clock" aria-hidden="true"></span>
+
+          <h3 class="clinic-card__subheader">Hours Today</h3>
+
+          
+        
+  <div class="hours always-open has-primary-hours ">
+    
+    
+          <div class="hospital-hours">This location is open 24 hours a day, 7 days a week.</div>
+    
+    
+  </div>
+
+
+
+        </div>
+                        
+        <div class="clinic-card__field clinic-card__appointments icon">
+
+                      <span class="uwm-icon uwm-icon--heart" aria-hidden="true"></span>
+            <h3 class="clinic-card__subheader">Contact</h3>
+          
+          <div class="clinic-card__appointment_buttons">
+                          <div class="clinic-card__appointment_button clinic-card__phone-button">
+                
+                                                                <a href="tel:877-694-4677" class="uwm-cta cta-to-877-694-4677 cta-from-search-locations cta-parent-card cta-parent-res-clinic btn" data-context-title="Northwest Hospital &amp; Medical Center">877.694.4677</a>
+              </div>
+                                  </div>
+        </div>
+      
+                </div>
+
+          <div class="clinic-card__cta uwm-accent-color__purple">
+        
+                        <a href="https://www.uwmedicine.org/locations/northwest-hospital" class="uwm-cta cta-to-wwwuwmedicineorg cta-to-locations-northwest-hospital cta-from-search-locations cta-parent-card cta-parent-res-clinic btn btn-cta clinic-card" data-context-title="Northwest Hospital &amp; Medical Center
+">See location details</a>
+
+      </div>
+    
+  </div>
+</article>
+      
+    
+
+
+
+
+<article  role="article" about="/locations/uw-medical-center" class="node node-res_clinic view-mode-card clinic-card col-sm-6 col-lg-4 col-xxl-3 cta-parent-card cta-parent-res-clinic">
+  <div class="clinic-card__inner">
+
+                    
+          <div class="clinic-card__image">
+                                        <a href="https://www.uwmedicine.org/locations/uw-medical-center" class="uwm-cta cta-to-wwwuwmedicineorg cta-to-locations-uw-medical-center cta-from-search-locations cta-parent-card cta-parent-res-clinic" data-context-title="UW Medical Center">
+  <div class="field field--name-field-res-image field--type-image field--label-hidden">
+
+                <div class="field__item">
+              <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source srcset="/sites/stevie/files/styles/card_414_215/public/Childbirth-Center-at-UWMC-University.jpg?itok=6r64qa5b 1x" media="(min-width: 1920px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_348_180/public/Childbirth-Center-at-UWMC-University.jpg?itok=X_OccUuM 1x" media="(min-width: 1200px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_368_191/public/Childbirth-Center-at-UWMC-University.jpg?itok=Og1JJbSU 1x" media="(min-width: 992px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_464_240/public/Childbirth-Center-at-UWMC-University.jpg?itok=QY4SQBZb 1x" media="(min-width: 768px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_352_182/public/Childbirth-Center-at-UWMC-University.jpg?itok=-XCbhTtS 1x" media="(min-width: 576px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_544_282/public/Childbirth-Center-at-UWMC-University.jpg?itok=l0iktj_c 1x" type="image/jpeg"/>
+            <!--[if IE 9]></video><![endif]-->
+            <img src="/sites/stevie/files/styles/card_348_180/public/Childbirth-Center-at-UWMC-University.jpg?itok=X_OccUuM" alt="UW Medical Center" typeof="foaf:Image" class="img-fluid" />
+
+  </picture>
+
+
+      </div>
+    
+  </div>
+
+</a>
+
+
+      </div>
+    
+    <div class="clinic-card__details">
+
+            <address class="clinic-card__address">
+
+        <h2 class="clinic-card__name">
+                              <a href="https://www.uwmedicine.org/locations/uw-medical-center" class="uwm-cta cta-to-wwwuwmedicineorg cta-to-locations-uw-medical-center cta-from-search-locations cta-parent-card cta-parent-res-clinic" data-context-title="UW Medical Center"><span class="field field--name-title field--type-string field--label-hidden">UW Medical Center</span>
+</a>
+        </h2>
+        
+
+                                                                    <a href="https://www.uwmedicine.org/locations/uw-medical-center#directions-tab-tab---"
+                 class="clinic-card__street-address-link">
+
+
+            <div class="field field--name-field-res-address field--type-address field--label-hidden field__item"><div class="clinic-card__street-address" translate="no">
+    <span>1959 NE Pacific St., </span><span>Seattle, </span><span>WA </span><span>98195</span></div>
+</div>
+      
+</a>
+                              
+      </address>
+
+            
+            
+        <div class="clinic-card__field clinic-card__location-hours icon">
+
+          <span class="uwm-icon uwm-icon--clock" aria-hidden="true"></span>
+
+          <h3 class="clinic-card__subheader">Hours Today</h3>
+
+          
+        
+  <div class="hours always-open has-primary-hours ">
+    
+    
+          <div class="hospital-hours">This location is open 24 hours a day, 7 days a week.</div>
+    
+    
+  </div>
+
+
+
+        </div>
+                        
+        <div class="clinic-card__field clinic-card__appointments icon">
+
+                      <span class="uwm-icon uwm-icon--heart" aria-hidden="true"></span>
+            <h3 class="clinic-card__subheader">Contact</h3>
+          
+          <div class="clinic-card__appointment_buttons">
+                          <div class="clinic-card__appointment_button clinic-card__phone-button">
+                
+                                                                <a href="tel:206-598-3300" class="uwm-cta cta-to-206-598-3300 cta-from-search-locations cta-parent-card cta-parent-res-clinic btn" data-context-title="UW Medical Center">206.598.3300</a>
+              </div>
+                                  </div>
+        </div>
+      
+                </div>
+
+          <div class="clinic-card__cta uwm-accent-color__purple">
+        
+                        <a href="https://www.uwmedicine.org/locations/uw-medical-center" class="uwm-cta cta-to-wwwuwmedicineorg cta-to-locations-uw-medical-center cta-from-search-locations cta-parent-card cta-parent-res-clinic btn btn-cta clinic-card" data-context-title="UW Medical Center
+">See location details</a>
+
+      </div>
+    
+  </div>
+</article>
+      
+    
+
+
+
+
+<article  role="article" about="/locations/valley-medical-center" class="node node-res_clinic view-mode-card clinic-card col-sm-6 col-lg-4 col-xxl-3 cta-parent-card cta-parent-res-clinic">
+  <div class="clinic-card__inner">
+
+                    
+          <div class="clinic-card__image">
+                                        <a href="https://www.uwmedicine.org/locations/valley-medical-center" class="uwm-cta cta-to-wwwuwmedicineorg cta-to-locations-valley-medical-center cta-from-search-locations cta-parent-card cta-parent-res-clinic" data-context-title="Valley Medical Center">
+  <div class="field field--name-field-res-image field--type-image field--label-hidden">
+
+                <div class="field__item">
+              <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source srcset="/sites/stevie/files/styles/card_414_215/public/Maternal-Fetal-Medicine-at-Valley.jpg?itok=fRTjccJN 1x" media="(min-width: 1920px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_348_180/public/Maternal-Fetal-Medicine-at-Valley.jpg?itok=xN8rmvOt 1x" media="(min-width: 1200px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_368_191/public/Maternal-Fetal-Medicine-at-Valley.jpg?itok=7gA7SerY 1x" media="(min-width: 992px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_464_240/public/Maternal-Fetal-Medicine-at-Valley.jpg?itok=bzCfjIa9 1x" media="(min-width: 768px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_352_182/public/Maternal-Fetal-Medicine-at-Valley.jpg?itok=lL2REhLJ 1x" media="(min-width: 576px)" type="image/jpeg"/>
+              <source srcset="/sites/stevie/files/styles/card_544_282/public/Maternal-Fetal-Medicine-at-Valley.jpg?itok=_lepNYQi 1x" type="image/jpeg"/>
+            <!--[if IE 9]></video><![endif]-->
+            <img src="/sites/stevie/files/styles/card_348_180/public/Maternal-Fetal-Medicine-at-Valley.jpg?itok=xN8rmvOt" alt="Valley Medical Center" typeof="foaf:Image" class="img-fluid" />
+
+  </picture>
+
+
+      </div>
+    
+  </div>
+
+</a>
+
+
+      </div>
+    
+    <div class="clinic-card__details">
+
+            <address class="clinic-card__address">
+
+        <h2 class="clinic-card__name">
+                              <a href="https://www.uwmedicine.org/locations/valley-medical-center" class="uwm-cta cta-to-wwwuwmedicineorg cta-to-locations-valley-medical-center cta-from-search-locations cta-parent-card cta-parent-res-clinic" data-context-title="Valley Medical Center"><span class="field field--name-title field--type-string field--label-hidden">Valley Medical Center</span>
+</a>
+        </h2>
+        
+
+                                                                    <a href="https://www.uwmedicine.org/locations/valley-medical-center#directions-tab-tab---"
+                 class="clinic-card__street-address-link">
+
+
+            <div class="field field--name-field-res-address field--type-address field--label-hidden field__item"><div class="clinic-card__street-address" translate="no">
+    <span>400 S. 43rd St., </span><span>Renton, </span><span>WA </span><span>98055</span></div>
+</div>
+      
+</a>
+                              
+      </address>
+
+            
+            
+        <div class="clinic-card__field clinic-card__location-hours icon">
+
+          <span class="uwm-icon uwm-icon--clock" aria-hidden="true"></span>
+
+          <h3 class="clinic-card__subheader">Hours Today</h3>
+
+          
+        
+  <div class="hours always-open has-primary-hours ">
+    
+    
+          <div class="hospital-hours">This location is open 24 hours a day, 7 days a week.</div>
+    
+    
+  </div>
+
+
+
+        </div>
+                        
+        <div class="clinic-card__field clinic-card__appointments icon">
+
+                      <span class="uwm-icon uwm-icon--heart" aria-hidden="true"></span>
+            <h3 class="clinic-card__subheader">Contact</h3>
+          
+          <div class="clinic-card__appointment_buttons">
+                          <div class="clinic-card__appointment_button clinic-card__phone-button">
+                
+                                                                <a href="tel:425-690-1000" class="uwm-cta cta-to-425-690-1000 cta-from-search-locations cta-parent-card cta-parent-res-clinic btn" data-context-title="Valley Medical Center">425.690.1000</a>
+              </div>
+                                  </div>
+        </div>
+      
+                </div>
+
+          <div class="clinic-card__cta uwm-accent-color__purple">
+        
+                        <a href="https://www.uwmedicine.org/locations/valley-medical-center" class="uwm-cta cta-to-wwwuwmedicineorg cta-to-locations-valley-medical-center cta-from-search-locations cta-parent-card cta-parent-res-clinic btn btn-cta clinic-card" data-context-title="Valley Medical Center
+">See location details</a>
+
+      </div>
+    
+  </div>
+</article>
+  </div>
+
+    
+  
+  
+  
+
+  
+  
+</div>
+
+</div>
+
+  </div>
+
+
+
+            
+              </section>
+
+    </div>
+  </section>
+
+    <section class="content-bottom">
+      <div class="wrap container-xl">
+
+                                  
+      </div>
+
+    </section>
+  </div>
+
+  </div>
+
+  
+
+    
+
+
+
+<footer class="uwm-footer container-fluid">
+
+    <div class="row blocks-row">
+        <div class="col-xs-12"></div>
+    </div>
+
+<div class="row navigation-row">
+ <div class="col-12 d-none d-sm-inline-block foot-third">
+                    <div class="service-icons">
+        <a href="https://www.facebook.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__facebook" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.linkedin.com/company/uw-medicine">
+            <i class="uwmed-icon uwmed-icon__linkedin" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://twitter.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__twitter" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.instagram.com/UWMedicine">
+            <i class="uwmed-icon uwmed-icon__instagram" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.youtube.com/user/UWMedicineHealth">
+            <i class="uwmed-icon uwmed-icon__youtube" aria-hidden="true"></i>
+        </a>
+    </div>
+
+            </div></div>
+    <div class="row navigation-row">
+            <div class="col-xs-12 col-md-6 foot-first">
+                                
+              <ul class="menu nav">
+                    
+        <li>
+                    <a href="/about" data-drupal-link-system-path="node/20851">            <i class="uw-s hidden-xs"></i> About UW Medicine
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="http://providerresource.uwmedicine.org/">            <i class="uw-s hidden-xs"></i> Provider Resource
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://newsroom.uw.edu">            <i class="uw-s hidden-xs"></i> Media Inquiries
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/factbook">            <i class="uw-s hidden-xs"></i> Fact Book
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/about/contact-us" data-drupal-link-system-path="node/21466">            <i class="uw-s hidden-xs"></i> Contact Us
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/about/career-opportunities" data-drupal-link-system-path="node/21461">            <i class="uw-s hidden-xs"></i> Careers
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/volunteering" data-drupal-link-system-path="node/22171">            <i class="uw-s hidden-xs"></i> Volunteer
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="http://www.acceleratemed.org/give/?source=MEDXCL%2CMDNOVT%2CUWMEDS%2CHCMISS%2CADISUN%2CNWMEDI%2CVALLEY%2CMEDNEI%2CAIRFUN">            <i class="uw-s hidden-xs"></i> Donate
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://www.uw.edu">            <i class="uw-s hidden-xs"></i> UW.edu
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/forms/website-feedback" data-drupal-link-system-path="webform/website_feedback">            <i class="uw-s hidden-xs"></i> Feedback
+          </a>
+
+                  </li>
+        </ul>
+  
+
+</div>
+
+            <div class="col-xs-12 col-md-6 d-none d-md-inline-block foot-second">
+                                
+              <ul class="menu nav">
+                    
+        <li>
+                    <a href="/harborview">            <i class="uw-s hidden-xs"></i> Harborview Medical Center 
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/northwest-hospital">            <i class="uw-s hidden-xs"></i> Northwest Hospital &amp; Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/valley-medical-center">            <i class="uw-s hidden-xs"></i> Valley Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/uw-medical-center">            <i class="uw-s hidden-xs"></i> UW Medical Center
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/neighborhood-clinics">            <i class="uw-s hidden-xs"></i> UW Neighborhood Clinics
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/uw-physicians">            <i class="uw-s hidden-xs"></i> UW Physicians
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/school-of-medicine/about" data-drupal-link-system-path="node/20916">            <i class="uw-s hidden-xs"></i> UW School of Medicine
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="/airlift-nw">            <i class="uw-s hidden-xs"></i> Airlift Northwest
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://rightasrain.uwmedicine.org">            <i class="uw-s hidden-xs"></i> Right as Rain
+          </a>
+
+                  </li>
+                
+        <li>
+                    <a href="https://newsroom.uw.edu">            <i class="uw-s hidden-xs"></i> UW Medicine Newsroom
+          </a>
+
+                  </li>
+        </ul>
+  
+
+</div>
+
+            <div class="col-xs-12 col-md-3 d-inline-block d-sm-none foot-third">
+                    <div class="service-icons">
+        <a href="https://www.facebook.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__facebook" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.linkedin.com/company/uw-medicine">
+            <i class="uwmed-icon uwmed-icon__linkedin" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://twitter.com/uwmedicine">
+            <i class="uwmed-icon uwmed-icon__twitter" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.instagram.com/UWMedicine">
+            <i class="uwmed-icon uwmed-icon__instagram" aria-hidden="true"></i>
+        </a>
+        <i class="uw-s"></i>
+        <a href="https://www.youtube.com/user/UWMedicineHealth">
+            <i class="uwmed-icon uwmed-icon__youtube" aria-hidden="true"></i>
+        </a>
+    </div>
+
+            </div>
+
+    </div>
+<div class="row navigation-row">
+      <div class="col-12 foot-fourth">
+                <a class="logo" href="/" title="Home" rel="home">
+                    <img src="/themes/custom/uwmbase/dist/images/uw-medicine-logo-gray.svg"
+                         alt="UW Medicine" width="178" height="24">
+                </a>
+            </div>
+            </div>
+    <div class="row enterprise-row">
+        <div class="col-sm-4 first copyright">
+            Copyright &copy; 2019 University of Washington | All rights reserved
+        </div>
+
+        <div class="col-sm-8 second navigation">
+            
+              <ul class="list-inline">
+                    <li class="list-inline-item">
+        <a href="https://www.washington.edu/online/privacy/">Online Privacy Statement</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="/about/policies-and-notices" data-drupal-link-system-path="node/21821">Policies and Notices</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="/about/compliance/disclaimer" data-drupal-link-system-path="node/22091">Copyright And Healthcare Disclaimer</a>
+              </li>
+                <li class="list-inline-item">
+        <a href="https://www.washington.edu/online/terms/">Website Terms And Conditions Of Use</a>
+              </li>
+        </ul>
+  
+
+
+        </div>
+    </div>
+
+</footer>
+
+
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"search\/locations","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"classy\/base,classy\/messages,core\/html5shiv,core\/normalize,core\/picturefill,search_api_autocomplete\/search_api_autocomplete,system\/base,uwmbase\/anchor-scroll,uwmbase\/autocomplete,uwmbase\/box,uwmbase\/clinic-card,uwmbase\/collapsible-fieldset,uwmbase\/comment,uwmbase\/footer,uwmbase\/form-item,uwmbase\/form-table,uwmbase\/gdpr_banner,uwmbase\/header,uwmbase\/hidden,uwmbase\/inline-links,uwmbase\/inline-sibling,uwmbase\/pager,uwmbase\/print-none,uwmbase\/progress-bar,uwmbase\/progress-throbber,uwmbase\/resizable-textarea,uwmbase\/responsive-video,uwmbase\/search-locations,uwmbase\/skip-link,uwmbase\/table-drag,uwmbase\/wireframe,uwmcs_utils\/uwm-page-css,uwmed_uwmcms_gtm\/header-search-form,uwmed_uwmcms_gtm\/location-search-page,uwmed_uwmcms_search\/location-search-form,views\/views.module","theme":"uwmbase","theme_token":null},"ajaxTrustedUrl":{"\/search\/locations":true},"search_api_autocomplete":{"uwm_locations_autocomplete":{"min_length":3}},"ajax":[],"user":{"uid":0,"permissionsHash":"ca9aaf4e9f3d0580f94a983623e5ac1f747ff03fba5aa27bb8771bf5d9d50bc6"}}</script>
+<script src="/sites/stevie/files/js/js_tJJXRT8RW1QLKOTWIEDg0i1gBBkOX53KsyTz1WKK6UQ.js"></script>
+<script src="//use.fontawesome.com/releases/v5.8.1/js/all.js" defer crossorigin="anonymous" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"></script>
+<script src="/sites/stevie/files/js/js_NNOcWcdF_jVTM7UYQhRwLwD28W6rqrInw-S_M0W0nmY.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByrxkfuhG5kyhL4Y95EA6wfSQrB45XCZM"></script>
+<script src="/sites/stevie/files/js/js_rUDl54uu4B9SqwPntOgHAvs7VoiIvlbDsbIjOYZr8a8.js"></script>
+<script src="https://www.clockwisemd.com/hospitals/clockwise_api.js"></script>
+<script src="/sites/stevie/files/js/js_QiI3T9JQ0YyroVrGPBhnJdiHei8lx7JwOcuhIJ_nXWA.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b55cc6ce81","applicationID":"55451763","transactionName":"YwMEbEsFWhBZBUIMV1pJJ1tNDVsNFyJEEEhVCjp7VhZRP3UDWBBkcAMAWUwIQC5dCEMpUVoNMkpcAXkCVg9GEFRVEglKSkkKBF0IUxdZQAMvVl0BTCJWAmUKSkA=","queueTime":0,"applicationTime":768,"atts":"T0QHGgMfSR4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
