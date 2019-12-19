@@ -1,9 +1,11 @@
-﻿using System;
+﻿using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -17,19 +19,36 @@ namespace SPADownloader
         private const String DATA_IMAGE = "data-img=\"";
         private const String DATA_BG = "data-background=\"";
         private const String SRCSET_PARTERN = "srcset=\"";
-
-
+        private const String URL_PARTERN = "url(\"";
+        private const String LAZY_PARTERN = "data-lazy-interchange=\"";
 
         private String MAIN_CONTENT = String.Empty;
         private Boolean isDownloadResource = true;
         private List<String> _org = null;
         private String CRIGHT = "<!-- THIS PAGE WAS DOWNLOAD BY SP DOWNLOADER -->\n  <!-- hongkha336@gmail.com -->\n";
         private static Uri BaseUri = null;
+     
         public frmMain()
         {
             InitializeComponent();
         }
 
+
+        private async void analysiswithHttpClientAsync()
+        {
+            //var client = new RestClient("https://www.plannedparenthood.org/");
+            //client.Timeout = -1;
+            //var request = new RestRequest(Method.GET);
+            //IRestResponse response = client.Execute(request);
+            //Console.WriteLine(response.Content);
+
+            var client = new RestClient(txtURL.Text);
+            var request = new RestRequest( Method.GET);
+            IRestResponse response = client.Execute(request);
+            MAIN_CONTENT = response.Content;
+        }
+
+      
 
         private void analysis()
         {
@@ -37,56 +56,71 @@ namespace SPADownloader
             comboBox1.Invoke((MethodInvoker)(() => encodeType = comboBox1.Text.Trim()));
             btnDownload.Invoke((MethodInvoker)(() => btnDownload.Enabled = false));
             lbStatus.Invoke((MethodInvoker)(() => lbStatus.Text = "Status: Download " + txtURL.Text));
-            using (var wb = new WebClient())
+            try
             {
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                wb.UseDefaultCredentials = true;
-                wb.Proxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
-                var response = wb.DownloadData(txtURL.Text);
-                
-                switch(encodeType)
+                using (var wb = new WebClient())
                 {
-                    case "UTF-8":
-                        {
-                            var htmlCode = Encoding.UTF8.GetString(response);
-                            MAIN_CONTENT = htmlCode.ToString();
-                            MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
-                            break;
-                        }
-                    case "ASCII":
-                        {
-                            var htmlCode = Encoding.ASCII.GetString(response);
-                            MAIN_CONTENT = htmlCode.ToString();
-                            MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
-                            break;
-                        }
-                    case "Unicode":
-                        {
-                            var htmlCode = Encoding.Unicode.GetString(response);
-                            MAIN_CONTENT = htmlCode.ToString();
-                            MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
-                            break;
-                        }
-                    default:
-                        {
-                            var htmlCode = Encoding.Default.GetString(response);
-                            MAIN_CONTENT = htmlCode.ToString();
-                            MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
-                            break;
-                        }
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                    wb.UseDefaultCredentials = true;
+
+                    wb.Proxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
+                    var response = wb.DownloadData(txtURL.Text);
+
+                    switch (encodeType)
+                    {
+                        case "UTF-8":
+                            {
+                                var htmlCode = Encoding.UTF8.GetString(response);
+                                MAIN_CONTENT = htmlCode.ToString();
+                                MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                                break;
+                            }
+                        case "ASCII":
+                            {
+                                var htmlCode = Encoding.ASCII.GetString(response);
+                                MAIN_CONTENT = htmlCode.ToString();
+                                MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                                break;
+                            }
+                        case "Unicode":
+                            {
+                                var htmlCode = Encoding.Unicode.GetString(response);
+                                MAIN_CONTENT = htmlCode.ToString();
+                                MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                                break;
+                            }
+                        default:
+                            {
+                                var htmlCode = Encoding.Default.GetString(response);
+                                MAIN_CONTENT = htmlCode.ToString();
+                                MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                                break;
+                            }
+
+                    }
 
                 }
-              
+        
+            }
+            catch
+            {
+                //analysiswithHttpClientAsync();
+                var client = new RestClient(txtURL.Text);
+                var request = new RestRequest(Method.GET);
+                IRestResponse response = client.Execute(request);
+                MAIN_CONTENT = response.Content;
             }
             dataGridView1.Invoke((MethodInvoker)(() => this.dataGridView1.Rows.Clear()));
             int i = 0;
             _org = new List<string>();
-
+            scanLazyInterchange();
+            scanResource(MAIN_CONTENT, URL_PARTERN);
             scanResource(MAIN_CONTENT, SRC_PARTTERN);
             scanResource(MAIN_CONTENT, HREF_PARTERN);
             scanResource(MAIN_CONTENT, DATA_IMAGE);
             scanResource(MAIN_CONTENT, DATA_BG);
             scanResource(MAIN_CONTENT, SRCSET_PARTERN);
+        
             for (i = 0; i < _org.Count; i++)
             {
                 dataGridView1.Invoke((MethodInvoker)(() => this.dataGridView1.Rows.Add((i + 1).ToString(), _org[i], "Wait")));
@@ -120,11 +154,13 @@ namespace SPADownloader
 
         private void replaceCommon()
         {
+            replaceLazyInterchange();
             MAIN_CONTENT = replaceTagContent(SRC_PARTTERN, MAIN_CONTENT, txtURL.Text);
             MAIN_CONTENT = replaceTagContent(HREF_PARTERN, MAIN_CONTENT, txtURL.Text);
             MAIN_CONTENT = replaceTagContent(DATA_IMAGE, MAIN_CONTENT, txtURL.Text);
             MAIN_CONTENT = replaceTagContent(DATA_BG, MAIN_CONTENT, txtURL.Text);
             MAIN_CONTENT = replaceTagContent(SRCSET_PARTERN, MAIN_CONTENT,txtURL.Text);
+            MAIN_CONTENT = replaceTagContent(URL_PARTERN, MAIN_CONTENT, txtURL.Text);
             MessageBox.Show("Download finished");
         }
         private void BtnSaveFile_Click(object sender, EventArgs e)
@@ -447,5 +483,243 @@ namespace SPADownloader
 
             }
         }
+
+
+        private Boolean IsExistedInList(String str, List<String> listStr)
+        {
+            foreach(String s in listStr)
+            {
+                if (str.Equals(s))
+                    return true;
+            }
+            return false;
+        }
+
+        private void replaceLazyInterchange()
+        {
+
+            //String URLDOMAIN = txtURL.Text;
+            ////progressURL_DOMAIN
+            //int ix = URLDOMAIN.LastIndexOf("/");
+            //if(ix != -1)
+            //{
+            //    URLDOMAIN =  URLDOMAIN.Substring(0, ix);
+            //}
+
+            //if(!URLDOMAIN.EndsWith("/"))
+            //{
+            //    URLDOMAIN = URLDOMAIN + "/";
+            //}
+
+            ////progressURL_DOMAIN
+
+            //String temp_content = MAIN_CONTENT;
+            //int index = temp_content.IndexOf(LAZY_PARTERN);
+            //while (index != -1)
+            //{
+            //    //check is that start with [ //right
+            //    temp_content = temp_content.Substring(index + LAZY_PARTERN.Length, temp_content.Length - index - LAZY_PARTERN.Length).Trim();
+            //    int dotIndex = temp_content.IndexOf("\"");
+            //    // check is that end with ] //right
+            //    String org_lazyContent = temp_content.Substring(0, dotIndex);
+            //    //progress with orgLazyContent
+            //    //remove [ ] 
+            //    //org_lazyContent = org_lazyContent.Substring(1, org_lazyContent.Length - 1);
+            //    //org_lazyContent = org_lazyContent.Substring(0, org_lazyContent.Length - 1);
+
+            //    //now,split by '['
+            //    String[] orgURL = org_lazyContent.Split('[');
+            //    //this is the main result
+            //    String progressResult = String.Empty;
+            //    foreach (String url in orgURL)
+            //    { 
+            //        if (url.Equals(String.Empty))
+            //        {
+            //            continue;
+            //        }
+            //        else
+            //        {
+            //            progressResult = String.Empty;
+            //            String[] sUrl = url.Split(',');
+            //            for (int i = 0; i < sUrl.Length; i++)
+            //            {
+
+            //                if (i == 0)
+            //                {
+            //                    progressResult = progressResult + "[" + URLDOMAIN + sUrl[0];
+            //                }
+            //                else
+            //                {
+            //                    progressResult = progressResult + "," + URLDOMAIN + sUrl[i];
+            //                }
+            //            }
+            //            MAIN_CONTENT = MAIN_CONTENT.Replace(org_lazyContent, progressResult);
+            //        }
+
+            //    }
+
+           
+            //    //next round
+            //    temp_content = temp_content.Substring(org_lazyContent.Length, temp_content.Length - org_lazyContent.Length);
+            //    index = temp_content.IndexOf(LAZY_PARTERN);
+                
+
+            //}
+
+        }
+
+        private void scanLazyInterchange()
+        {
+            String URLDOMAIN = txtURL.Text;
+            //progressURL_DOMAIN
+            String temp_content = MAIN_CONTENT;
+            int index = temp_content.IndexOf(LAZY_PARTERN);
+            while (index != -1)
+            {
+                //check is that start with [ //right
+                temp_content = temp_content.Substring(index + LAZY_PARTERN.Length, temp_content.Length - index - LAZY_PARTERN.Length).Trim();
+                int dotIndex = temp_content.IndexOf("\"");
+                // check is that end with ] //right
+                String org_lazyContent = temp_content.Substring(0, dotIndex);
+                //progress with orgLazyContent
+                //remove [ ] 
+                org_lazyContent = org_lazyContent.Substring(1, org_lazyContent.Length - 1);
+                org_lazyContent = org_lazyContent.Substring(0, org_lazyContent.Length - 1);
+
+                //now,split by '['
+                String[] orgURL = org_lazyContent.Split('[');
+                //this is the main result
+                String progressResult = String.Empty;
+                foreach (String url in orgURL)
+                {
+                    String[] sUrl = url.Split(',');
+                    _org.Add(removeQuestionPattern(sUrl[0]));
+
+                }
+                //next round
+                index = temp_content.IndexOf(LAZY_PARTERN);
+            }
+        }
+
+    
+
+        /// <summary>
+        /// The first start string must NOT be the interchaneg parttern
+        /// </summary>
+        /// <returns></returns>
+        //private String getFristLazyInterchange()
+        //{
+        //  //Start with [
+           
+        //}
+
+
+        private void BtnAnaHC_Click(object sender, EventArgs e)
+        {
+            String encodeType = String.Empty;
+            comboBox1.Invoke((MethodInvoker)(() => encodeType = comboBox1.Text.Trim()));
+            btnDownload.Invoke((MethodInvoker)(() => btnDownload.Enabled = false));
+            lbStatus.Invoke((MethodInvoker)(() => lbStatus.Text = "Status: Download " + txtURL.Text));
+            analysiswithHttpClientAsync();
+            dataGridView1.Invoke((MethodInvoker)(() => this.dataGridView1.Rows.Clear()));
+            int i = 0;
+            _org = new List<string>();
+            scanLazyInterchange();
+            scanResource(MAIN_CONTENT, SRC_PARTTERN);
+            scanResource(MAIN_CONTENT, HREF_PARTERN);
+            scanResource(MAIN_CONTENT, DATA_IMAGE);
+            scanResource(MAIN_CONTENT, DATA_BG);
+            scanResource(MAIN_CONTENT, SRCSET_PARTERN);
+            for (i = 0; i < _org.Count; i++)
+            {
+                dataGridView1.Invoke((MethodInvoker)(() => this.dataGridView1.Rows.Add((i + 1).ToString(), _org[i], "Wait")));
+            }
+            btnDownload.Invoke((MethodInvoker)(() => btnDownload.Enabled = true));
+            lbdownload.Invoke((MethodInvoker)(() =>
+               lbdownload.Text = "Download progess: " + 0 + "/" + _org.Count
+            ));
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BtnAnaAuto_Click(object sender, EventArgs e)
+        {
+            String encodeType = String.Empty;
+            comboBox1.Invoke((MethodInvoker)(() => encodeType = comboBox1.Text.Trim()));
+            btnDownload.Invoke((MethodInvoker)(() => btnDownload.Enabled = false));
+            lbStatus.Invoke((MethodInvoker)(() => lbStatus.Text = "Status: Download " + txtURL.Text));
+            try
+            {
+                lbMethod.Invoke((MethodInvoker)(() => lbMethod.Text ="Method: WB"));
+                using (var wb = new WebClient())
+                {
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                    wb.UseDefaultCredentials = true;
+
+                    wb.Proxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
+                    var response = wb.DownloadData(txtURL.Text);
+
+                    switch (encodeType)
+                    {
+                        case "UTF-8":
+                            {
+                                var htmlCode = Encoding.UTF8.GetString(response);
+                                MAIN_CONTENT = htmlCode.ToString();
+                                MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                                break;
+                            }
+                        case "ASCII":
+                            {
+                                var htmlCode = Encoding.ASCII.GetString(response);
+                                MAIN_CONTENT = htmlCode.ToString();
+                                MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                                break;
+                            }
+                        case "Unicode":
+                            {
+                                var htmlCode = Encoding.Unicode.GetString(response);
+                                MAIN_CONTENT = htmlCode.ToString();
+                                MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                                break;
+                            }
+                        default:
+                            {
+                                var htmlCode = Encoding.Default.GetString(response);
+                                MAIN_CONTENT = htmlCode.ToString();
+                                MAIN_CONTENT = CRIGHT + MAIN_CONTENT;
+                                break;
+                            }
+
+                    }
+
+                }
+            }
+            catch
+            {
+                lbMethod.Invoke((MethodInvoker)(() => lbMethod.Text = "Method: HC"));
+                analysiswithHttpClientAsync();
+            }
+            dataGridView1.Invoke((MethodInvoker)(() => this.dataGridView1.Rows.Clear()));
+            int i = 0;
+            _org = new List<string>();
+            scanLazyInterchange();
+            scanResource(MAIN_CONTENT, SRC_PARTTERN);
+            scanResource(MAIN_CONTENT, HREF_PARTERN);
+            scanResource(MAIN_CONTENT, DATA_IMAGE);
+            scanResource(MAIN_CONTENT, DATA_BG);
+            scanResource(MAIN_CONTENT, SRCSET_PARTERN);
+            for (i = 0; i < _org.Count; i++)
+            {
+                dataGridView1.Invoke((MethodInvoker)(() => this.dataGridView1.Rows.Add((i + 1).ToString(), _org[i], "Wait")));
+            }
+            btnDownload.Invoke((MethodInvoker)(() => btnDownload.Enabled = true));
+            lbdownload.Invoke((MethodInvoker)(() =>
+               lbdownload.Text = "Download progess: " + 0 + "/" + _org.Count
+            ));
+        }
     }
+  
 }
